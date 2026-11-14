@@ -1,4 +1,4 @@
-# Research de Copi (negocio, mercado y legal)
+# Copi: negocio, finanzas, mercado y legal
 
 Material de Jaime para el pitch: mercado, modelo financiero, competencia, viabilidad y marco legal.
 
