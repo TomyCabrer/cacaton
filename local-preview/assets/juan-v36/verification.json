@@ -1,0 +1,15 @@
+{
+  "revision": "Juan — v36",
+  "preview": "http://127.0.0.1:4187/",
+  "checked": [
+    "Desktop 1440×1000: both complete A4 images loaded, no horizontal overflow",
+    "Mobile 390×844: stacked pages, no horizontal overflow",
+    "Both snapshots enlarge; mobile dialog fits viewport",
+    "Escape and close button restore focus to opener",
+    "Spanish/English switching preserves original publisher images",
+    "Next and previous presentation navigation",
+    "Reduced-motion CSS retained; new hover movement disabled by media rule",
+    "JavaScript syntax check passed"
+  ],
+  "publication": "Local preview only; no deployment, commit or push"
+}
