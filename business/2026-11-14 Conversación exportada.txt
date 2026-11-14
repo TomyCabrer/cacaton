@@ -1,0 +1,1476 @@
+▗ ▗   ▖ ▖  Claude Code v2.1.322
+           Opus 5.5 · Claude Pro
+ ▘▘   ▝▝   ~/Documents/Vault/30 Projects/Copi
+
+
+❯ /clear                                                                        
+
+❯ hola, estamos haceidno un hackathon yo y tres colegas más                     
+  estamos haciendo copi                                                         
+  un agente que estará en las torres de control de trenes en españa, no toma    
+  decisiones simplemente supervisa las acciones que toman el controlador de     
+  adif y el maquinista del tren.                                                
+  es un backup                                                                  
+  tengo que hacer un analisis de mercado y financiero                           
+
+⏺ Skill(anthropic-skills:docs)
+  ⎿  Successfully loaded skill
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Esqueleto listo; ahora investigo el contexto ferroviario y el mercado.
+
+⏺ Artifact(open https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W)
+  ⎿  Opened ⧉ Copi: análisis de mercado y financiero 
+     (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W)
+
+  Called Claude Docs 3 times (ctrl+o to expand)
+
+⏺ Web Search("accidente Adamuz 2026 Iryo Alvia causas víctimas")
+  ⎿  Did 1 search in 9s
+
+⏺ Web Search("ADIF centros de regulación y control CRC número puestos de mando
+            red kilómetros 2025")
+  ⎿  Did 1 search in 7s
+
+⏺ Web Search("Renfe número de trenes diarios maquinistas plantilla 2025")
+  ⎿  Did 1 search in 8s
+
+⏺ Web Search("railway signalling market size 2025 Europe billion CAGR")
+  ⎿  Did 1 search in 6s
+
+⏺ Web Search("ADIF presupuesto 2026 inversión seguridad digitalización
+            millones")
+  ⎿  Did 1 search in 8s
+
+⏺ Web Search("AI driver assistance rail startup safety monitoring cab funding
+            2025")
+  ⎿  Did 1 search in 8s
+
+⏺ Web Search("Óscar Puente centro de control H24 octubre 2026 incidente
+            ferroviario")
+  ⎿  Did 1 search in 8s
+
+⏺ Web Search("Gelida accidente Rodalies enero 2026 maquinista muerto muro")
+  ⎿  Did 1 search in 8s
+
+⏺ Web Search("ERA report railway safety EU 2024 significant accidents fatalities
+            cost human factor SPAD")
+  ⎿  Did 1 search in 7s
+
+⏺ Web Search("Adif Renfe trenes diarios circulan red española viajeros 2025
+            récord")
+  ⎿  Did 1 search in 10s
+
+⏺ web-fetch(Verify Toledo and Adamuz facts)
+  ⎿  Received 148 bytes
+
+› Message from web-fetch
+  Two pages read. Both were fetched from non-preapproved sources, so the quotes
+  below are short and the rest is paraphrased.
+
+  **1. Euronews (Spanish), Toledo/Urda rail accident of 28 Oct 2026**
+  URL read: https://es.euronews.com/2026/10/28/oscar-puente-considera-inexplicab
+  le-que-el-centro-de-control-autorizara-al-ave-a-reanudar-
+  - Published 28 Oct 2026, 15:29 CET, updated 15:45. Author: Marina Neila.
+  - Death and injury toll, per Transport Minister Óscar Puente: 64 killed and 50
+  injured ("un balance de 64 fallecidos y 50 heridos"). The accident happened
+  "este miércoles" in Castilla-La Mancha. The article's photo caption places it
+  in Urda.
+  - Discrepancy: the page's "related news" links carry a headline saying "Al
+  menos 69 muertos" and a URL slug saying "al-menos-46-muertos". These are not
+  from the article body, and I could not reconcile them with the 64 figure.
+  - Trains: an AVE high-speed train collided with an Iryo train that was stopped
+  in the station. The AVE had travelled about 25 km on a stretch where up to
+  200 km/h is allowed. Impact time: 8:53 am.
+  - LZB failure: a computer fault took the LZB safety system out of service over
+  a 63 km stretch where about six trains were running. Puente said the computer
+  fault was not the decisive problem, because a safety mechanism then stopped
+  the trains.
+  - Control centre: after the interruption it took over traffic management and
+  contacted the affected trains. One or more people in the control centre (it is
+  unclear whether individually or collectively) authorised the AVE to resume
+  "con normalidad". The correct course, per Puente, was to resume under the
+  "marcha a la vista" procedure, which requires the driver to run slowly enough
+  to stop before any obstacle or other train on the track. Puente called the
+  decision "inexplicable".
+  - The 17-minute detail: I found no "17 minutos" or equivalent in the article
+  text.
+  - Human error: the article does not use the phrase "error humano". Puente said
+  the system has limits, "especialmente los relacionados con la intervención
+  humana", and that he "ha evitado señalar culpables", leaving responsibility to
+  the investigation. He also called the accident "un accidente inverosímil" and
+  said "tenemos un sistema ferroviario seguro y homologable". Asked about
+  resigning, he said "No estoy pensando en mí".
+  - The article says the circumstances are still being investigated.
+
+  **2. Xataka (Spanish), high-speed ridership after Adamuz**
+  URL read: https://www.xataka.com/movilidad/adamuz-alta-velocidad-espana-no-rem
+  onta-ha-perdido-casi-20-viajeros-cuatro-meses
+  - Published 17 Jun 2026 (2026-06-17T08:00:17Z). Author: Antonio Vallejo. Data
+  source: INE, as reported by EFE and El Mundo.
+  - Adamuz accident: 18 January 2026, Córdoba province, 46 deaths per the
+  article.
+  - Headline figure: January to April 2026, passengers on AVE, Avlo, Iryo and
+  Ouigo fell 19.6% against the same period of 2025, from 13.75 to 11.06 million.
+  The article says this is "casi un 20%" in four months.
+  - Month by month, versus the same month of 2025: February -32% (the worst
+  month), March -18%, April -15%.
+  - The January-April 2026 total is below the 11.63 million recorded in
+  January-April 2024.
+  - Other factors cited: closure of the Madrid-Málaga corridor for four months
+  after a slope collapsed at Álora (service restored 30 April); speed
+  restrictions (LTV) imposed by Adif; only 46.9% of AVE and long-distance trains
+  arrived less than five minutes late (Renfe report).
+  - Recovery signs: Trainline reports Madrid-Barcelona fares 9% higher than
+  summer 2025.
+  - Other transport in April: intercity bus +4.7%, air +3.2%, urban transport
+  +8.4%, sea -11.2%.
+
+  Final URLs read:
+  - https://es.euronews.com/2026/10/28/oscar-puente-considera-inexplicable-que-e
+  l-centro-de-control-autorizara-al-ave-a-reanudar-
+  - https://www.xataka.com/movilidad/adamuz-alta-velocidad-espana-no-remonta-ha-
+  perdido-casi-20-viajeros-cuatro-meses
+
+⏺ Escribo la sección del problema.
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Web Search("Renfe flota total trenes número unidades 2025 Iryo Ouigo flota
+            trenes España")
+  ⎿  Did 1 search in 6s
+⏺ Web Search("ETCS onboard retrofit cost per vehicle euros cab")
+  ⎿  Did 1 search in 7s
+
+⏺ Web Search("Europe number of rail traffic control centres signallers Network
+            Rail DB Netz SNCF Réseau dispatchers")
+  ⎿  Did 1 search in 7s
+
+⏺ Web Search("AI in railways market size 2025 billion CAGR")
+  ⎿  Did 1 search in 7s
+
+⏺ Ahora el tamaño de mercado.
+
+  Called Claude Docs 3 times (ctrl+o to expand)
+
+⏺ Ahora competencia (texto; el mapa de posicionamiento irá después).
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Ahora modelo de negocio y precios.
+
+  Called Claude Docs, ran 1 shell command (ctrl+o to expand)
+
+⏺ Ahora el modelo financiero.
+
+  Called Claude Docs 2 times, ran 1 shell command (ctrl+o to expand)
+
+⏺ Ahora riesgos y regulación.
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Ahora fuentes y resumen ejecutivo.
+
+  Called Claude Docs 2 times (ctrl+o to expand)
+
+⏺ Añado el gráfico de caja acumulada.
+
+  Called Claude Docs 2 times (ctrl+o to expand)
+
+⏺ Documento completo. Ahora lo registro en la vault.
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ Tienes el análisis de mercado y financiero listo en ⧉ Copi: análisis de
+  mercado y financiero (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W). Lo
+  podéis editar los cuatro o dejar comentarios.
+
+  Las cifras clave:
+  - El argumento principal es el accidente de Toledo (28 de octubre de 2026, 64 
+    muertos). Se cayó el LZB, el sistema que controla la velocidad del tren, y
+    el centro de control autorizó al AVE a seguir con normalidad. Es justo el
+    fallo que Copi detecta. También salen Adamuz, Gelida y Angrois, y la caída
+    del 19,6% de viajeros de alta velocidad tras Adamuz.
+  - Mercado: unos 13 M€ al año en España (unos 240 puestos de control de ADIF y
+    unas 2.000 cabinas) y unos 170 M€ en Europa.
+  - Precio: 30.000 € por puesto y año (lo paga ADIF) y 3.000 € por cabina y año
+    (lo paga el operador). Se entra con un piloto pagado en un centro de
+    control.
+  - Finanzas: 16,3 M€ de ingresos en 2031 y beneficio operativo desde 2029. La
+    caja más baja es -1,8 M€ en 2028, así que pedís una ronda de 2,5 M€. Si la
+    licitación pública se retrasa un año, haría falta entre 4 y 6,4 M€.
+  - Riesgo principal: la homologación de seguridad y que los sindicatos de
+    maquinistas lo vean como vigilancia. La tecnología pesa menos.
+
+  Antes de presentarlo, revisad esto:
+  - Hipótesis nuestras, sin fuente: los precios, los 240 puestos y las 2.000
+    cabinas. No encontré datos públicos de cuántas cabinas activas hay ni de
+    cuántos puestos tiene cada centro. En el documento he dejado tareas para
+    validarlo.
+  - Muertos de Toledo: el 64 es la cifra provisional que dio el ministro el
+    mismo día. En otras noticias aparecen otras cifras distintas.
+  - Angrois: lo cito de memoria, no lo he comprobado en ninguna fuente.
+
+  En la vault he creado [[Copi]] con las cifras clave y los siguientes pasos, y
+  lo he añadido a [[Projects Index]] y [[Vault-Log]].
+
+  ¿Te preparo las diapositivas de mercado y finanzas para el pitch?
+
+✻ Brewed for 7m 6s · done 3:57 PM
+
+※ recap: Para el hackathon de Copi ya está hecho el análisis de mercado y financiero, y está en la vault. El siguiente paso es validar los precios, el número de puestos y las cabinas, y después preparar las diapositivas del pitch si quieres. (disable recaps in /config)
+
+❯ pero una cosa, dónde en el vault has metido todo esto                         
+
+⏺ He metido una sola nota nueva en la vault: 30 Projects/Copi/Copi.md, es decir,
+  [[Copi]]. Tiene qué es el proyecto, las cifras clave, el enlace al documento,
+  los siguientes pasos y un log.
+
+  Además he tocado dos notas que ya existían, añadiendo una línea en cada una:
+  - [[Projects Index]]: en "Activos", debajo de FYP.
+  - [[Vault-Log]]: una entrada nueva con fecha 2026-11-14.
+
+  El análisis completo no está dentro de la vault. Está en Claude Docs, en ⧉
+  Copi: análisis de mercado y financiero
+  (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W), para que lo podáis editar
+  y comentar los cuatro. En la vault solo están el enlace y el resumen.
+
+  Si prefieres tenerlo entero en la vault, puedo copiarlo como 30 
+  Projects/Copi/Copi análisis de mercado y financiero.md. El inconveniente es
+  que tendrías dos versiones que mantener al día.
+
+✻ Crunched for 4s · done 4:43 PM
+
+❯ vale respecto a las versiones, me da igual hacemos la que sea más conveniente 
+  para ti                                                                       
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Lo dejamos así: el análisis completo solo está en el ⧉ documento de Claude
+  Docs (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W), que es donde editáis
+  los cuatro. En la vault, [[Copi]] guarda solo el resumen y el enlace, así no
+  hay dos copias del análisis que mantener al día.
+
+  En [[Copi]] he añadido que la versión buena es el documento, y he apuntado la
+  decisión en su log. Si cambian las cifras clave en el documento, actualizo el
+  resumen de la nota.
+
+✻ Cogitated for 9s · done 4:45 PM
+
+❯ a ver, qué dudas tienes sobre el proyecto, yo te las doy, quieroq tengas full 
+  contexto, del problema que solucionamos y de nuestro approach                 
+
+⏺ Sobre todo necesito saber cómo funciona Copi por dentro y a quién se lo
+  vendéis. Eso cambia los números del análisis. Te dejo las dudas por orden de
+  importancia:
+
+  1. Qué hace Copi exactamente
+  - ¿De dónde saca los datos? ¿Escucha la radio entre controlador y maquinista
+    (GSM-R), lee el sistema de control de tráfico de ADIF, usa la telemetría o
+    el registrador del tren, o tiene cámaras en cabina o en el puesto?
+  - ¿Qué detecta, en concreto? Por ejemplo, una orden incoherente con el estado
+    de la vía (Toledo), un exceso de velocidad (Angrois) o un malentendido entre
+    los dos.
+  - Cuando detecta algo, ¿avisa al controlador, al maquinista, a los dos o a un
+    supervisor del H24? ¿En tiempo real o es un registro para revisar después?
+  - ¿Es un LLM, reglas, modelos propios o una mezcla? ¿Funciona en local o en la
+    nube?
+
+  2. Dónde se instala
+  - ¿Solo en la torre de control, solo en el tren o en los dos? Ahora he
+    supuesto los dos (precio por puesto y precio por cabina). Si es solo en la
+    torre, el mercado baja a unos 7 M€ en España.
+  - ¿Necesita hardware en el tren?
+
+  3. Cliente y modelo de negocio
+  - ¿Pensabais vendérselo a ADIF, a Renfe o a la Agencia de Seguridad
+    Ferroviaria (AESF)? ¿O es más un producto para el Ministerio?
+  - ¿Teníais pensado algún precio o modelo de cobro? ¿Habéis pensado en salir
+    fuera de España?
+
+  4. El hackathon
+  - ¿Cuál es, quién organiza y cuál es el reto concreto? ¿Hay algún patrocinador
+    del sector, como ADIF, Renfe o Indra?
+  - ¿Qué entregáis: pitch, demo, diapositivas? ¿Cuánto dura el pitch y cuándo es
+    la entrega?
+  - ¿Qué criterios usa el jurado? Así sé cuánto peso dar a la parte financiera.
+
+  5. El equipo
+  - ¿Quiénes sois y qué hace cada uno? Si alguien tiene contacto con ADIF o
+    Renfe, o experiencia en ferrocarril, es un argumento para el pitch.
+
+  6. Lo que tengáis ya hecho
+  - ¿Hay una demo, un repositorio, diapositivas o notas? Si me las pasas o me
+    dices dónde están, las leo y lo apunto todo en [[Copi]].
+
+  Si vas con prisa, las más importantes son la 1, la 2 y la 4.
+
+✻ Cooked for 10s · done 4:46 PM
+
+❯ 1                                                                             
+  escucha las conversaciones, está en activo en el centro de control, tiene     
+  monitorizado tanto las comunicaciones por radio como todos los otros medios   
+  de comms q tienen las dos personas. Hace de supervisor entre las dos personas 
+  porq una IA (estamos viendo cual) es perfecta para las tareas de "como se     
+  debe actuar en cada protocolo" una persona no es perfecta en a la hora de     
+  seguir al 100% tareas rutinarias. además una persona tiene fatiga, y una ia   
+  que esté todo el rato de superisor hace que la persona no tenga tanto estrés  
+  de estar haciéndolo 100% bien, porq sabe q si se equivoca COPI  se lo va a    
+  flaggear.                                                                     
+  usa también telemetría y registros de tren, todas las llegadas de info q le   
+  llegan al centro de control                                                   
+  claro ej. un caso en el que en en cierta zona el maquinista deba hacer algo   
+  por ejemplo ir a cierta velocidad (eg 40), el controlador le dice q vaya a    
+  50, pues copi detectaría eso y lo flaggearía al controlador para q recuerda q 
+  está haciendo algo mal respecto al protocolo establecido.                     
+  malentendidos, ordenes contradictorias, todo lo q pueda generar una situacion 
+  peligrosa o problemática asumiendo q los protocolos de actuación son          
+  perfectos. o sea in a nutshell hace esto: 1 indentifica qué protocolo tendría 
+  q estar siguiendo dada la casuística 2determina si se está siguiendo ese      
+  protocolo o no                                                                
+                                                                                
+  2 eso lo pensé antes, creoq solo en la torre de control porq no sé de qué     
+  manera se podría transmitir al tren en movimiento, porq por la vías puede ser 
+  q falle el sistema de comunicaciones y q no le llegue la data al del tren.    
+  efectively, en el centro de control agregan todos los datos q llegan          
+  clasifica al protocolo q debería estar siguiendo y mira si se está haciendo o 
+  no                                                                            
+  el tren no necesita hardware                                                  
+                                                                                
+  3 Sí ese tipo de empresas y ministerios, en concreto para adif y tal          
+  no nada de pricing model. se podría salir fuera de españa si. como next steps 
+  después de q esto funcione se podría meter a aviones también. o sea un        
+  supervisor de q los controladores están siguiendo los protocolos que deben.   
+  imagino q es buena la de tener en cuenta cuánto le han costado a españa todos 
+  los protocolos ytodas las cosas de seguridad vial que usa ahora mismo.        
+                                                                                
+  4 tenemos q hacer una presentación,  hacer un entregable con simulaciones y   
+  creo q un MVP.                                                                
+  yo me encargo ahora de hacer la parte de finacials, market considerations     
+  feasability y tal                                                             
+  la parte financiera no es lo más importante peor bueno es la parte de         
+  business qué siempre viene bien q sepan q lo hemos tenido en cuenta           
+                                                                                
+  5 4personas                                                                   
+                                                                                
+  sobri: la implementación del modelo finetuning modelos de Adaption (sponsor   
+  principal del hackathon) el hackathon es el AI hackathon de imperial 2026     
+  tomy michel: hacen la plataaforma en sí                                       
+                                                                                
+  6                                                                             
+  https://github.com/TomyCabrer/cacaton                                         
+                                                                                
+  info:                                                                         
+  El sistema DaVinci es la plataforma tecnológica centralizada de Adif que      
+  integra la gestión del tráfico ferroviario en tiempo real desde los Centros   
+  de Regulación y Control. Durante el accidente de Urda, la herramienta reflejó 
+  en las pantallas la ocupación de la vía, pero carecía de mecanismos           
+  automatizados para bloquear una orden verbal errónea emitida por el puesto de 
+  mando. Para más detalles, visita infoLibre.                                   
+  https://www.infolibre.es/politica/papel-centro-control-adif-accidente-urda-po 
+  ne-duda-gestion-alta-velocidad_1_2239187.html                                 
+  pero flaggea un error cuando una persona dice algo mal?                       
+  Davinci tiene algún tipo de api o de manera de sacar la info que le llega?    
+  nos vendría genial para nuestras simulaciones de copi                         
+⏺ web-fetch(Read infoLibre Urda article)
+  ⎿  Received 148 bytes
+
+⏺ Web Search("Adif Da Vinci sistema gestión tráfico Indra API interfaz
+            integración datos")
+  ⎿  Did 1 search in 7s
+
+⏺ Web Search("Adif datos abiertos API circulaciones tiempo real trenes posición
+            open data")
+  ⎿  Did 1 search in 7s
+
+  Ran 1 shell command (ctrl+o to expand)
+
+› Message from web-fetch
+  Source read: https://www.infolibre.es/politica/papel-centro-control-adif-accid
+  ente-urda-pone-duda-gestion-alta-velocidad_1_2239187.html (HTTP 200,
+  non-preapproved source). Author Fernando Varela, published 29 Oct 2026 06:01,
+  updated 19:34.
+
+  Main finding: the article is paywalled ("Artículo exclusivo para socias y
+  socios"). The fetch returned only the headline, the standfirst, the photo
+  caption and the first paragraph. The body is not visible to me, so most of
+  what you asked for is unknown to me, not absent from the article.
+
+  What the visible text says:
+  - Standfirst bullet: "El puesto de Atocha asumió la circulación tras caer el
+  LZB y autorizó al AVE a avanzar hasta chocar con el Iryo detenido más
+  adelante."
+  - Lead paragraph: the Adif control centre in Atocha, "desde el que este
+  miércoles se autorizó a un AVE de Renfe a reanudar la marcha con normalidad
+  pese a que un tren de Iryo estaba detenido más adelante, cerca de la localidad
+  toledana de Urda, es una de las piezas centrales de la gestión de la alta
+  velocidad en España."
+  - Photo caption: Luis Pedro Marco (president of Adif) and Óscar Puente
+  (Minister of Transport) at the Atocha control centre "este miércoles". 28 Oct
+  2026 was a Wednesday, which fits.
+  - A linked related article (not fetched):
+  https://www.infolibre.es/politica/falla-lzb-control-maquinista-tres-errores-de
+  tras-inexplicable-tragedia-ferrovaria-urda_1_2239177.html
+
+  Your specific questions:
+  - DaVinci: not mentioned anywhere in the visible text. Who built it, what it
+  does, and what it showed are unknown to me.
+  - Checks or blocks on verbal orders: unknown. Nothing visible addresses this.
+  - How verbal orders are given and recorded (radio, phone, forms): unknown.
+  - Sequence of events in the control centre: only the standfirst summary above.
+  The LZB failure, the Atocha post taking over circulation, and the
+  authorisation of the AVE to proceed toward the stopped Iryo are stated, but
+  there are no times or steps.
+  - Numbers (deaths, minutes, km, controllers): none in the visible text.
+
+  To get the body, the article needs a subscription or a logged-in session,
+  which I cannot use. Re-fetching the same URL would return the same paywalled
+  page. Possible next steps: have the user paste the article text, or check the
+  related article above, which may be free.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Web Search("Reglamento de Circulación Ferroviaria Real Decreto 664/2015 BOE
+            marcha a la vista")
+  ⎿  Did 1 search in 7s
+
+⏺ Web Search("Adif inversión ERTMS España millones contrato licitación 2025 2026
+            señalización")
+  ⎿  Did 1 search in 9s
+
+⏺ Web Search("infolibre falla LZB control maquinista tres errores Urda")
+  ⎿  Did 1 search in 9s
+
+⏺ web-fetch(Read Urda accident detail pages)
+  ⎿  Received 148 bytes
+
+› Message from web-fetch
+  Only 1 of the 3 pages could be read. Two returned HTTP 403 and could not be
+  read.
+
+  1. https://lapatilla.com/2026/10/31/fallo-centro-control-adif-atocha-accidente
+  -urda/ : NOT READ. HTTP 403 Forbidden, no Retry-After. Permanent for this URL,
+  so sending it again will fail the same way. Nothing from this page is
+  reported, so the 22-minute timeline, the warning to Atocha, the
+  communications, the death toll and the screen content are all unknown to me.
+
+  2.
+  https://www.vozpopuli.com/economia/transporte/la-ciaf-pidio-medidas-tecnicas-p
+  ara-mitigar-el-fallo-humano-tras-un-incidente-similar-al-de-urda-en-2024.html
+  : READ (HTTP 200, fetched from a non-preapproved source, so quotes are limited
+  to 125 characters).
+  - Publication date: "Publicado: 29/10/2026 · 14:25 CET". Author: Alba Pérez.
+  - The 2024 incident: a 2024 incident at Cuenca-Fernando Zóbeel station (the
+  page spells it "Cuenca-Fernando Zóbe l"). Per the article, "aquel suceso no
+  provocó consecuencias graves." It involved a Renfe high-speed train that
+  passed a red signal on a section equipped with ERTMS. The article says the
+  section was the Madrid-Sevilla line, where Urda happened. (The page is
+  internally inconsistent on this: it says ERTMS "está sustituyendo al LZB en la
+  línea Madrid-Sevilla" and the 2024 incident is described as ERTMS, so treat
+  that detail with care.)
+  - The CIAF report's key finding: "la única barrera efectiva para mitigar el
+  potencial riesgo de colisión consistió en la comprobación visual por parte del
+  Responsable de Circulación". It adds: "esta barrera es susceptible de fallar,
+  ya que depende completamente del factor humano".
+  - Recommendations listed in the article (paraphrased by the article, not
+  verbatim): improve the design of light signals to reduce confusion; put ERTMS
+  level 2 into service on sections where it is installed but not yet
+  operational; review the procedures for resuming movement after a TRIP
+  activation; transitional signalling configuration while level 2 is not
+  operational; and better information for the traffic manager about the
+  protection system in use.
+  - Whether Adif implemented it: the article says nothing about implementation
+  or Adif's response.
+  - Death toll, as stated in this article: "al menos 69 víctimas mortales" at
+  Urda. The article says initial indications point to a possible IT failure in
+  the LZB traffic management system, and that Adif's Atocha control centre
+  operators "habrían asumido la gestión de la circulación."
+  - Screens and verbal orders: the article does not say what the control-centre
+  screens showed, does not mention a verbal order, and does not describe any
+  automatic check on verbal orders.
+  - Caveat: this page reports the death toll and the Atocha detail only as
+  stated in the article, and I have not verified them against another source.
+
+  3. https://www.articulo14.es/politica/la-caida-del-sistema-lzb-dejo-el-iryo-fu
+  era-del-radar-del-centro-de-control-20261030.html : NOT READ. HTTP 403
+  Forbidden with Retry-After: 30. I retried once as the rules allow, and it
+  failed the same way. Nothing from this page is reported, so the Da
+  Vinci/screen question, the death toll and the verbal-order question remain
+  unanswered from this source.
+
+  Answers to your focus questions, from page 2 only: the article does not say
+  whether the control centre had the stopped Iryo on screen, whether there was a
+  verbal order, or whether verbal orders are checked automatically. It does say
+  the CIAF's 2024 concern was that human checks are the only barrier.
+
+  Final URLs read:
+  https://www.vozpopuli.com/economia/transporte/la-ciaf-pidio-medidas-tecnicas-p
+  ara-mitigar-el-fallo-humano-tras-un-incidente-similar-al-de-urda-en-2024.html
+
+  Blocked URLs (403): https://lapatilla.com/2026/10/31/fallo-centro-control-adif
+  -atocha-accidente-urda/ and https://www.articulo14.es/politica/la-caida-del-si
+  stema-lzb-dejo-el-iryo-fuera-del-radar-del-centro-de-control-20261030.html
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Voy por buen camino: ya he rehecho los números para un Copi que solo va en el
+  centro de control. Ahora actualizo el documento y la nota de la vault.
+
+  Called Claude Docs, ran 1 shell command (ctrl+o to expand)
+
+⏺ Actualizo el resumen y el problema.
+
+  Called Claude Docs 2 times (ctrl+o to expand)
+
+⏺ Ahora el mercado.
+
+  Called Claude Docs 2 times (ctrl+o to expand)
+
+⏺ Ahora competencia y modelo de negocio.
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Ahora el modelo financiero.
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Actualizo el gráfico con los números nuevos.
+
+  Called Claude Docs 3 times (ctrl+o to expand)
+
+⏺ Añado la sección de viabilidad y el coste de la seguridad actual.
+
+  Called Claude Docs 2 times (ctrl+o to expand)
+
+⏺ Añado las fuentes nuevas.
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Ahora guardo todo el contexto en la nota de la vault.
+
+⏺ Write(Copi.md)
+  ⎿  Added 57 lines, removed 17 lines
+      1  ---
+      2  type: project
+      3  status: hackathon en curso
+      4 -org: Hackathon (equipo de 4)                                    
+      4 +org: Imperial AI Hackathon 2026                                 
+      5  created: 2026-11-14
+      6  tags: [project, hackathon]
+      7  aliases: []
+     ...
+      11  
+      12  ## Qué es
+      13  
+      14 -Agente de IA para las torres de control de trenes en España. No
+         - toma decisiones: supervisa en paralelo lo que hacen el control
+         -ador de ADIF y el maquinista, y avisa cuando sus acciones no so
+         -n coherentes entre sí o con el estado de la vía. Es un backup h
+         -umano-IA. Proyecto de hackathon con tres compañeros; mi parte e
+         -s el análisis de mercado y financiero.                         
+      14 +Supervisor de IA para los centros de control ferroviario de ADI
+         +F. Proyecto del [Imperial AI Hackathon 2026](https://claude.ai/
+         +artifact/JndrN4HG4TVKbif7ry9E4W), equipo de 4. Sponsor principa
+         +l del hackathon: Adaption (usamos sus modelos para el fine-tuni
+         +ng).                                                           
+      15  
+      16 +Copi no toma decisiones ni actúa. Está activo en el centro de c
+         +ontrol y supervisa a las dos personas (controlador de ADIF y ma
+         +quinista):                                                     
+      17 +                                                               
+      18 +1. Identifica qué protocolo se debería estar siguiendo dada la 
+         +situación.                                                     
+      19 +2. Determina si se está siguiendo o no. Si no, lo marca al cont
+         +rolador.                                                       
+      20 +                                                               
+      21 +Supuesto de partida: los protocolos son correctos; el fallo est
+         +á en que una persona no los sigue al 100%.                     
+      22 +                                                               
+      23 +## Enfoque (lo que dijo Jaime, 2026-11-14)                     
+      24 +                                                               
+      25 +- **Entradas**: escucha la radio y el resto de medios de comuni
+         +cación entre controlador y maquinista. Usa también la telemetrí
+         +a, los registros de tren y toda la información que llega al cen
+         +tro de control.                                                
+      26 +- **Por qué una IA**: es perfecta siguiendo "cómo se debe actua
+         +r en cada protocolo"; una persona no lo es en tareas rutinarias
+         + y además tiene fatiga. Con Copi supervisando, el controlador t
+         +rabaja con menos estrés porque sabe que si se equivoca, Copi lo
+         + marcará.                                                      
+      27 +- **Qué detecta**: órdenes que contradicen el protocolo, malent
+         +endidos, órdenes contradictorias, cualquier cosa que pueda gene
+         +rar una situación peligrosa. Ejemplo: en una zona el maquinista
+         + debe ir a 40 km/h y el controlador le dice que vaya a 50; Copi
+         + lo marca al controlador.                                      
+      28 +- **Dónde se instala**: solo en el centro de control. No en el 
+         +tren, porque las comunicaciones en vía pueden fallar y no llega
+         +ría la información. El tren no necesita hardware.              
+      29 +- **Cliente**: ADIF y organismos públicos del estilo (Ministeri
+         +o de Transportes). Sin modelo de precios previo; lo propuse yo 
+         +(40.000 € por puesto y año).                                   
+      30 +- **Expansión**: fuera de España, y después aviación (supervisa
+         +r que los controladores aéreos siguen los protocolos).         
+      31 +- **Idea de Jaime para el pitch**: comparar con lo que España s
+         +e ha gastado en sistemas de seguridad ferroviaria.             
+      32 +                                                               
+      33 +## Equipo y reparto                                            
+      34 +                                                               
+      35 +- Jaime: financials, market considerations, feasibility (parte 
+         +de negocio).                                                   
+      36 +- Sobri: implementación del modelo, fine-tuning con modelos de 
+         +Adaption.                                                      
+      37 +- Tomy y Michel: la plataforma.                                
+      38 +                                                               
+      39 +## Entregables del hackathon                                   
+      40 +                                                               
+      41 +- Presentación.                                                
+      42 +- Entregable con simulaciones.                                 
+      43 +- MVP.                                                         
+      44 +                                                               
+      45 +La parte financiera no es lo que más pesa, pero conviene enseña
+         +r que el negocio está pensado.                                 
+      46 +                                                               
+      47  ## Análisis de mercado y financiero
+      48  
+      18 -Documento compartible: [Copi: análisis de mercado y financiero]
+         -(https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W) (Claude Doc
+         -s, 2026-11-14). **La versión buena es el doc**: ahí edita el eq
+         -uipo. Esta nota solo guarda el resumen y se actualiza cuando ca
+         -mbien las cifras clave.                                        
+      49 +Documento compartible: [Copi: análisis de mercado y financiero]
+         +(https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W) (Claude Doc
+         +s). **La versión buena es el doc**: ahí edita el equipo. Esta n
+         +ota solo guarda el resumen y se actualiza cuando cambien las ci
+         +fras clave.                                                    
+      50  
+      20 -Cifras clave (supuestos del equipo salvo donde se cita fuente):
+      21 -- Caso de uso: accidente de Toledo (Urda), 2026-10-28, 64 muert
+         -os (cifra provisional del ministro). Cae el LZB en 63 km y el c
+         -entro de control autoriza al AVE a reanudar con normalidad en v
+         -ez de en marcha a la vista. Otros: Adamuz (2026-01-18, 46 muert
+         -os), Gelida (2026-01-20), Angrois (2013, 80).                  
+      22 -- Alta velocidad: -19,6% de viajeros en enero-abril 2026 tras A
+         -damuz.                                                         
+      23 -- Mercado: ~13 M€/año en España (~240 puestos en ~20 CRC de ADI
+         -F + ~2.000 cabinas), ~170 M€ en Europa.                        
+      24 -- Precio: 30.000 €/puesto/año (ADIF), 3.000 €/cabina/año (opera
+         -dor), piloto pagado de 250-400 k€.                             
+      25 -- P&L: ingresos 0,3 / 2,1 / 4,9 / 10,6 / 16,3 M€ (2027-2031). B
+         -reak-even 2029. EBITDA 2031 8,2 M€ (51%).                      
+      26 -- Caja: mínimo -1,8 M€ en 2028. Ronda de 2,5 M€. Si la licitaci
+         -ón se retrasa un año: 4-6,4 M€.                                
+      27 -- Riesgo principal: homologación (AESF, CSM-RA, CENELEC) y acep
+         -tación sindical (SEMAF).                                       
+      51 +Cifras clave (v2, solo centro de control):                     
+      52 +- Caso de uso: accidente de Urda (Toledo), 2026-10-28, al menos
+         + 69 muertos (el ministro dio 64 el primer día). Cae el LZB en 6
+         +3 km y el centro de Atocha autoriza al AVE a reanudar con norma
+         +lidad en vez de en marcha a la vista.                          
+      53 +- La CIAF ya avisó tras un incidente en 2024 (Cuenca-Fernando Z
+         +óbel) de que la única barrera era la comprobación visual del re
+         +sponsable de circulación, que "depende completamente del factor
+         + humano".                                                      
+      54 +- Mercado: ~10 M€/año en España (~240 puestos en ~20 centros de
+         + ADIF), ~125 M€ en Europa.                                     
+      55 +- P&L: ingresos 0,3 / 1,7 / 4,6 / 9,1 / 12,7 M€ (2027-2031). Br
+         +eak-even 2029. EBITDA 2031 6,7 M€ (52%).                       
+      56 +- Caja: mínimo -1,8 M€ en 2028. Ronda de 2,5 M€. Con licitación
+         + un año tarde: 3,6 a 5,8 M€.                                   
+      57 +- Coste de la seguridad actual: ERTMS Murcia-Almería 214 M€, Ta
+         +layuela-Plasencia 126,5 M€, LZB a ERTMS Madrid-Sevilla 77,55 M€
+         +; mantenimiento ADIF 861 M€ en 2026.                           
+      58  
+      59 +## DaVinci y datos para las simulaciones                       
+      60 +                                                               
+      61 +- DaVinci: plataforma de gestión de tráfico de ADIF en los cent
+         +ros de control. Diseñada por ADIF, desarrollada por Indra; la p
+         +ropiedad intelectual es de ADIF. Integra CTC, GSM-R, señalizaci
+         +ón, energía, ETCS y videovigilancia.                           
+      62 +- Según infoLibre (dato aportado por Jaime): en Urda DaVinci mo
+         +straba la ocupación de la vía, pero no tiene ningún mecanismo p
+         +ara marcar o bloquear una orden verbal errónea.                
+      63 +- No hay API pública de DaVinci. El acceso real sería por contr
+         +ato con ADIF (y probablemente Indra).                          
+      64 +- Fuentes públicas para simular: Reglamento de Circulación Ferr
+         +oviaria (RD 664/2015, en el BOE; el RD 606/2023 reforzó la marc
+         +ha a la vista, art. 1.5.1.4), mapa en tiempo real de limitacion
+         +es de velocidad de ADIF, información de llegadas y salidas de A
+         +DIF, y conversaciones sintéticas generadas por protocolo.      
+      65 +                                                               
+      66  ## Estado
+      67  
+      31 -- 2026-11-14: análisis de mercado y financiero redactado (v1). 
+      68 +- 2026-11-14: análisis v1 (puesto + cabina) y después v2 (solo 
+         +centro de control).                                            
+      69 +- Repo del equipo: https://github.com/TomyCabrer/cacaton. No lo
+         + he podido abrir: parece privado y aquí no está la CLI de GitHu
+         +b.                                                             
+      70  
+      71  ## Siguientes pasos
+      34 -- [ ] Confirmar puestos por CRC y cabinas activas (memorias de 
+         -ADIF y Renfe)                                                  
+      35 -- [ ] Decidir primer cliente: ADIF solo o ADIF + un operador   
+      36 -- [ ] Validar precio por puesto con alguien de ADIF            
+      37 -- [ ] Pasar las cifras clave al pitch deck del equipo          
+      72 +- [ ] Acceso al repo (que Tomy lo haga público o pasarme los ar
+         +chivos)                                                        
+      73 +- [ ] Confirmar puestos por centro de control (memoria de ADIF)
+      74 +- [ ] Elegir el modelo de Adaption y ver si puede correr en loc
+         +al                                                             
+      75 +- [ ] Validar el precio de 40.000 € por puesto                 
+      76 +- [ ] Pasar las cifras clave a la presentación                 
+      77  
+      78  ## Log
+      40 -- 2026-11-14: decidido que el análisis vive solo en Claude Docs
+         - (editable por el equipo); en la vault, resumen y enlace, sin c
+         -opia completa.                                                 
+      79  - 2026-11-14: creado. Precios y despliegue son hipótesis propia
+          s; el modelo está en el doc.
+      80 +- 2026-11-14: decidido que el análisis vive solo en Claude Docs
+         + (editable por el equipo); en la vault, resumen y enlace, sin c
+         +opia completa.                                                 
+      81 +- 2026-11-14: Jaime aclara el enfoque: solo centro de control, 
+         +sin hardware en el tren, cliente ADIF. Doc rehecho: fuera la li
+         +cencia por cabina, precio 40.000 € por puesto, nueva sección de
+         + viabilidad y coste de la seguridad actual.                    
+      82  
+      83  ## Relacionado
+      84  - [[Projects Index]]
+
+⏺ Update(Copi.md)
+  ⎿  Added 1 line, removed 1 line
+      11  
+      12  ## Qué es
+      13  
+      14 -Supervisor de IA para los centros de control ferroviario de ADI
+         -F. Proyecto del [Imperial AI Hackathon 2026](https://claude.ai/
+         -artifact/JndrN4HG4TVKbif7ry9E4W), equipo de 4. Sponsor principa
+         -l del hackathon: Adaption (usamos sus modelos para el fine-tuni
+         -ng).                                                           
+      14 +Supervisor de IA para los centros de control ferroviario de ADI
+         +F. Proyecto del Imperial AI Hackathon 2026, equipo de 4. Sponso
+         +r principal del hackathon: Adaption (usamos sus modelos para el
+         + fine-tuning).                                                 
+      15  
+      16  Copi no toma decisiones ni actúa. Está activo en el centro de c
+          ontrol y supervisa a las dos personas (controlador de ADIF y ma
+          quinista):
+      17  
+⏺ Con lo que me has contado he rehecho el análisis para un Copi que solo va en
+  el centro de control. Ya está todo en el ⧉ documento
+  (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W) y en [[Copi]].
+
+  Lo que ha cambiado en el documento
+  - Sin licencia por cabina: ahora es una licencia de 40.000 € al año por puesto
+    de control y la paga ADIF. El mercado queda en unos 10 M€ al año en España
+    y unos 125 M€ en Europa.
+  - Finanzas nuevas: 12,7 M€ de ingresos y un 52% de margen EBITDA en 2031, con
+    beneficio desde 2029. La ronda sigue siendo de 2,5 M€ y el gráfico de caja
+    está actualizado.
+  - Sección nueva de viabilidad: explica cómo funciona Copi en 6 pasos y qué
+    partes son factibles ya y cuáles no.
+  - Lo que España ya gasta en seguridad, como querías:
+    - Solo el ERTMS de Murcia-Almería costó 214 M€.
+    - Sustituir el LZB por ERTMS en Madrid-Sevilla, la línea de Urda, cuesta
+      77,55 M€ y no estará hasta 2027.
+    - Copi en toda España costaría unos 10 M€ al año.
+  - Un argumento muy bueno para el pitch: en 2024 un AVE se saltó una señal en
+    rojo en Cuenca. La comisión de investigación de accidentes (CIAF) concluyó
+    que la única barrera era la comprobación visual del responsable de
+    circulación, que "depende completamente del factor humano". Pidió medidas
+    técnicas y aun así pasó Urda.
+  - Cifra de Urda: ahora las noticias hablan de al menos 69 muertos. El ministro
+    dio 64 el primer día.
+
+  Tus preguntas sobre DaVinci
+  - ¿Marca un error cuando alguien dice algo mal? Por lo que dices del artículo
+    de infoLibre, no. Muestra la ocupación de la vía, pero no comprueba ni
+    bloquea una orden de voz errónea. Yo no pude leer el artículo porque es de
+    pago, y en lo que sí leí no encontré nada que lo contradiga. Ese es el hueco
+    que cubre Copi.
+  - ¿Tiene una API? No he encontrado ninguna pública. DaVinci lo diseñó ADIF y
+    lo desarrolló Indra, y la propiedad intelectual es de ADIF. Reúne el control
+    centralizado de tráfico, la radio ferroviaria (GSM-R), la señalización, la
+    energía y el ERTMS, pero para acceder a esos datos hay que firmar un
+    contrato con ADIF. Lo he puesto como el principal riesgo técnico.
+  - Para las simulaciones podéis usar fuentes públicas:
+    - El Reglamento de Circulación Ferroviaria (Real Decreto 664/2015, en el
+      BOE). Es la base de los protocolos para el fine-tuning de Sobri, y en 2023
+      se reforzó justo la parte de marcha a la vista.
+    - El mapa en tiempo real de limitaciones de velocidad de ADIF.
+    - Conversaciones sintéticas entre controlador y maquinista, generadas a
+      partir de cada protocolo.
+
+  Repositorio: no he podido abrir TomyCabrer/cacaton. Parece privado y aquí no
+  tengo la herramienta de GitHub (gh) instalada. O Tomy lo hace público o me
+  pasas los archivos y los leo.
+
+✻ Cooked for 4m 35s · done 5:12 PM
+
+※ recap: Para el hackathon estoy haciendo el análisis de mercado y financiero de Copi, ya rehecho para un Copi que solo va en el centro de control y guardado en la vault. Lo siguiente es abrir vuestro repositorio: ¿lo hace Tomy público o me pasas los archivos? (disable recaps in /config)
+
+❯ [Pasted text #2 +156 lines]                                                   
+  cuánto le costó davinci a adif cuando se lo compró a indra                    
+                                                                                
+  estoy entendiendo el entorno (competitivo, de desarrollo, de precios,         
+  regulatorio todo lo q tenemos q consierar, legalidad, responsabilidad)        
+  también el market en el que estaría nuestro sistema etc                       
+
+⏺ Web Search("Indra Adif contrato Da Vinci millones euros adjudicación
+            desarrollo sistema gestión tráfico")
+  ⎿  Did 1 search in 7s
+
+⏺ Web Search("Indra Da Vinci Adif contract value million traffic management high
+            speed maintenance")
+  ⎿  Did 1 search in 8s
+
+  Called Claude Docs 2 times, ran 1 shell command (ctrl+o to expand)
+
+⏺ No he podido leer lo que pegaste: solo me llega el aviso "[Pasted text #2 +156
+  lines]", sin el contenido. ¿Me lo vuelves a pegar?
+
+  Lo que costó DaVinci: no hay una cifra pública de lo que ADIF pagó por
+  desarrollarlo. No fue una compra cerrada: lo diseñó ADIF, lo desarrolló Indra
+  y la propiedad intelectual es de ADIF. Lo que sí es público son los contratos
+  sueltos:
+
+  ┌───────────────────────────────────────────────────────────────┬─────────┐
+  │                           Contrato                            │ Importe │
+  ├───────────────────────────────────────────────────────────────┼─────────┤
+  │ DaVinci en el centro de control de Albacete                   │ 13,16   │
+  │                                                               │ M€      │
+  ├───────────────────────────────────────────────────────────────┼─────────┤
+  │ DaVinci en Feve (2008)                                        │ 13,4 M€ │
+  ├───────────────────────────────────────────────────────────────┼─────────┤
+  │ Ampliación a Pedralba-Ourense                                 │ 0,82 M€ │
+  ├───────────────────────────────────────────────────────────────┼─────────┤
+  │ Mantenimiento del control de tráfico y DaVinci en 6 centros   │ 32,7 M€ │
+  │ de alta velocidad (septiembre de 2026, 4 años)                │         │
+  └───────────────────────────────────────────────────────────────┴─────────┘
+
+  El último contrato es importante para vosotros: Indra fue la única oferta y
+  ADIF lo justificó "por razones técnicas". Eso quiere decir que cualquier
+  conexión con DaVinci pasa por Indra, que puede ser vuestro socio o vuestro
+  competidor. Además os da una referencia de precio: ese mantenimiento son unos
+  8 M€ al año para 6 centros, y Copi costaría unos 0,5 M€ al año por centro.
+
+  Lo que he añadido al documento es una sección de marco legal y
+  responsabilidad:
+  - ¿Quién responde si hay un accidente? Sigue siendo ADIF; Copi no cambia eso.
+    Pero con la nueva directiva europea de productos defectuosos, el software y
+    la IA cuentan como producto. Si Copi no avisa, vosotros podríais responder,
+    así que hace falta limitarlo por contrato y tener un seguro.
+  - Decisión estratégica: Copi puede venderse como ayuda adicional o como
+    barrera de seguridad certificada. Recomiendo empezar como ayuda, porque se
+    despliega antes y la homologación es más ligera.
+  - Grabar el audio de los trabajadores es legal si hay riesgo para la seguridad
+    y es proporcionado, y aquí lo hay. Además, ADIF ya registra las
+    comunicaciones, así que Copi solo procesaría lo que ya existe.
+  - Sindicatos: hay que informar al comité de empresa de los algoritmos que
+    afectan al trabajo. Lo mejor es presentarles Copi antes del piloto.
+  - Ley europea de IA: Copi sería probablemente de alto riesgo, con obligaciones
+    desde agosto de 2027.
+  - Exceso de confianza: que el controlador se relaje porque "Copi lo verá". Os
+    lo puede preguntar el jurado, y lo he dejado como riesgo a medir en el
+    piloto.
+
+  Las normas legales las cito de memoria y no las he comprobado en las fuentes,
+  y así lo pone el documento. Antes de presentarlo, que lo revise alguien que
+  sepa de derecho.
+
+  Los datos de DaVinci y lo legal también están en [[Copi]].
+
+✻ Brewed for 1m 4s · done 5:28 PM
+
+❯                                                                               
+  archive.today                                                                 
+  archivo de páginas web                                                        
+  Guardado desde                                                                
+  https://www.infolibre.es/politica/papel-centro-control-adif-accidente-urda-po 
+  ne-duda-gestion-alta-velocidad_1_2239187.html                                 
+  no hay ninguna otra instantánea de esta url                                   
+  29 Oct. 2026 09:28:23 UTC                                                     
+  Todas las instantáneas    del host www.infolibre.es                           
+  PáginaCaptura de pantalla                                                     
+  compartirdescargar .zipreportar error o abusoInvítame un café                 
+  Publicidad                                                                    
+  infoLibre                                                                     
+  Suscríbete                                                                    
+  Inicia sesión                                                                 
+  Transparencia total                                                          
+                                                                                
+  Política                                                                      
+  Opinión                                                                       
+  Economía                                                                      
+  Cultura                                                                       
+  Igualdad                                                                      
+  Medio ambiente                                                                
+  Mediapart                                                                     
+  TintaLibre                                                                    
+  Club infoLibre                                                                
+  Accidente ferroviario                                                         
+  El papel del centro de control de Adif en el accidente de Urda pone en duda   
+  su gestión de la alta velocidad                                               
+   El puesto de Atocha asumió la circulación tras caer el LZB y autorizó al AVE 
+  a avanzar hasta chocar con el Iryo detenido más adelante                      
+   Exclusivo para socias y socios                                               
+  Luis Pedro Marco, presidente de Adif, y Óscar Puente, ministro de             
+  Transportes, este miércoles en el centro de control de Atocha.                
+  Luis Pedro Marco, presidente de Adif, y Óscar Puente, ministro de             
+  Transportes, este miércoles en el centro de control de Atocha. Borja          
+  Sanchez-Trillo | Efe                                                          
+  Fernando Varela                                                               
+  Fernando Varela                                                               
+  29 de octubre de 2026 -06:01h                                                 
+                                                                                
+  1                                                                             
+  COMENTARIOS                                                                   
+  El centro de control de Adif en Atocha, desde el que este miércoles se        
+  autorizó a un AVE de Renfe a reanudar la marcha con normalidad pese a que un  
+  tren de Iryo estaba detenido más adelante, cerca de la localidad toledana de  
+  Urda, es una de las piezas centrales de la gestión de la alta velocidad en    
+  España.                                                                       
+  El accidente ha puesto el foco en cómo trabaja ese centro cuando fallan los   
+  sistemas automáticos, sobre todo después de que el ministro de Transportes,   
+  Óscar Puente, revelase que uno de sus operarios fue el que ordenó al AVE      
+  circular con normalidad pese a que no debía hacerlo.                          
+  Adif gestiona la circulación desde 19 Centros de Regulación de Circulación    
+  (CRC) repartidos por toda la red. Funcionan 24 horas al día los 365 días del  
+  año. En Madrid hay tres, en Atocha, Delicias y Villaverde.                    
+  Su herramienta principal es el Control de Tráfico Centralizado (CTC). Según   
+  Adif, esa tecnología controla a distancia los enclavamientos —los mecanismos  
+  que garantizan que un tren solo reciba vía libre cuando su ruta está          
+  físicamente preparada y no choca con otro movimiento autorizado— y los        
+  dispositivos que gestionan señales y desvíos y establecen itinerarios seguros 
+  para los trenes.                                                              
+  A él se suma Da Vinci, un programa de Adif que reúne en un solo puesto la     
+  información de varios siste                                                   
+  ──── (22 lines hidden) ────────────────────────────────────────────────────── 
+  rtes, ha relacionado el accidente con la gestión del departamento durante el  
+  mandato de Óscar Puente. “El Ministerio de Transportes lleva meses expulsando 
+  a los técnicos y purgando a los buenos de Adif. No es un problema del         
+  sistema. No es culpa de Iryo o de Ouigo. En este país, hace tres años, se     
+  decidió purgar todo lo técnico. Y así nos va”, escribió en la red social X.   
+  Durante su etapa en el sector, el ministerio estuvo dirigido primero por José 
+  Luis Ábalos y, desde julio de 2021, por Raquel Sánchez Jiménez; en Adif, la   
+  presidenta fue Isabel Pardo de Vera. Uriondo trabajó bajo Pardo de Vera en    
+  Adif y luego como asesor de la Secretaría de Estado de Transportes, que ella  
+  misma pasó a dirigir.                                                         
+  Más sobre este tema                                                           
+  Política                                                                      
+     /                                                                          
+  Accidentes de ferrocarril                                                     
+     /                                                                          
+  Adif                                                                          
+     /                                                                          
+  Ministerio de Transportes, Movilidad y Agenda Urbana                          
+     /                                                                          
+  Óscar Puente                                                                  
+                                                                                
+                                                                               
+                                                                                
+                                                                               
+                                                                                
+                                                                               
+                                                                                
+                                                                               
+                                                                                
+                                                                               
+  Más allá de los titulares está la información que cuenta                      
+  Accede a la actualidad política con un análisis riguroso y de la mano de      
+  firmas de referencia.                                                         
+  En infoLibre, información sin ruido.                                          
+  Apoya un periodismo libre e independiente.                                    
+  Hazte socia/o ahora                                                           
+  Mostrar comentarios 1                                                        
+  Lo más...                                                                     
+  Leído Comentado                                                               
+  La joyería Yanes tasa en un millón de euros las joyas intervenidas a Zapatero 
+  infoLibre                                                                     
+  1                                                                             
+  El papel del centro de control de Adif en el accidente de Urda pone en duda   
+  su gestión de la alta velocidad                                               
+  Fernando Varela                                                               
+  2                                                                             
+  Fallan el LZB, el control y el maquinista: los tres errores detrás de la      
+  ”inexplicable” tragedia ferrovaria de Urda                                    
+  Fernando Varela                                                               
+  3                                                                             
+  La mitad de las personas que viven de alquiler no tendrían ingresos           
+  suficientes si buscaran un piso ahora                                         
+  Selina Bárcena                                                                
+  4                                                                             
+  Perelló y el vocal díscolo de Sumar consolidan el control conservador del     
+  CGPJ y relegan a los progresistas                                             
+  Manuel Altozano                                                               
+  5                                                                             
+  Volver a la portada                                                           
+  logo infoLibre                                                                
+  Suscríbete para que podamos seguir investigando y haciendo periodismo de      
+  calidad                                                                       
+  Hazte socia/o                                                                 
+  Síguenos en las redes                                                         
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+  Contacto                                                                      
+  Nuestro equipo                                                                
+  Trabaja con nosotros                                                          
+  Sociedad de amigos                                                            
+  Aviso legal                                                                   
+  Política de privacidad                                                        
+  Política de cookies                                                           
+  Publicidad                                                                    
+  Financiado por la Unión Europea                                               
+  Ministerio para la Transformación Digital y de la Función Pública             
+  Sociedad Española para la Transformación Tecnológica                          
+  Plan de Recuperación, Transformación y Resiliencia                            
+  Esta empresa es beneficiaria de un préstamo de la Sociedad Española para la   
+  Transformación Tecnológica, financiado por la Unión Europea -                 
+  NextGenerationEU                                                              
+  stats                                                                         
+  0%                                                                            
+                                                                                
+  10%                                                                           
+                                                                                
+  20%                                                                           
+                                                                                
+  30%                                                                           
+                                                                                
+  40%                                                                           
+                                                                                
+  50%                                                                           
+                                                                                
+  60%                                                                           
+                                                                                
+  70%                                                                           
+                                                                                
+  80%                                                                           
+                                                                                
+  90%                                                                           
+                                                                                
+  100%                                                                          
+
+⏺ Este artículo es muy bueno para el pitch: describe el protocolo exacto que se
+  incumplió. Lo meto en el documento.
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ Ahora guardo el protocolo en la vault; os sirve para la simulación.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ He metido el artículo en el ⧉ documento
+  (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W) y en [[Copi]]. Lo más útil
+  para vosotros:
+
+  1. El protocolo que se incumplió. Esto le sirve a Sobri para el fine-tuning y
+  para la demo:
+  - Cuando cae el LZB, el maquinista para y avisa al centro de control.
+  - Para reanudar, el centro solo puede dar una orden con un texto fijo:
+    continuar "con Marcha a la Vista", a 40 km/h como máximo.
+  - Además, una norma interna de ADIF, la consigna COI 01/25, dice que un tren
+    parado delante es un obstáculo. Si hay cualquier duda sobre si la vía está
+    ocupada, se impone marcha a la vista.
+  - En Urda la orden fue "con normalidad". Copi solo tiene que comparar esa
+    orden con el texto obligatorio.
+
+  Os propongo usar exactamente este escenario en la simulación: se cae el LZB,
+  la vía está ocupada, se transcribe la orden y Copi la marca. Lo he dejado
+  escrito paso a paso en la nota.
+
+  2. Más personas no lo arreglan. El operario tenía experiencia, no estaba bajo
+  presión porque los trenes estaban parados, y tenía tres personas al lado. Aun
+  así, el AVE avanzó un cuarto de hora a la vista de todos en los paneles. Esto
+  responde a la pregunta del jurado de por qué no basta con poner otro
+  supervisor.
+
+  3. La fatiga es real. El sindicato CSIF denunció en agosto turnos de 12 horas
+  y hasta cinco noches seguidas. Además, están entrando operadores sin
+  experiencia en circulación. Esto encaja con vuestro argumento de que una
+  persona se cansa y una IA no.
+
+  4. Posible aliado. El Sindicato de Circulación Ferroviaria (SCF) pide que la
+  seguridad no dependa de la discreción de cada responsable de circulación. Es
+  casi vuestro eslogan, y baja el riesgo de que los sindicatos rechacen Copi.
+
+  Otros cambios:
+  - Centros de control: he corregido el número a 19, que es la cifra de ADIF.
+    Los 240 puestos se mantienen (unos 12,5 por centro).
+  - Víctimas de Urda: este artículo dice "al menos 68 muertos". En el documento
+    he dejado "al menos 69", que es lo que dicen otros medios más recientes.
+
+✻ Cogitated for 1m 2s · done 5:32 PM
+
+※ recap: Estamos preparando el análisis de mercado, financiero, legal y de viabilidad de Copi para el hackathon, y ya está actualizado con el protocolo de Urda. El siguiente paso es acceder al repo cacaton, que es privado, o que me pases sus archivos.
+
+❯ vale, todo esto es oro, pon a un agente a recopilar noticias de esto para     
+  tener más info de la narrativa q podemos tener para vender nuestra idea       
+
+⏺ Agent(Recopilar noticias para narrativa Copi)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+⏺ He puesto un agente a recopilar noticias en segundo plano. Las va a dejar en
+  una nota nueva, 30 Projects/Copi/Copi narrativa y noticias.md, enlazada a
+  [[Copi]].
+
+  Busca seis cosas:
+  1. La cronología de Urda, los audios de la torre de control y la investigación
+     de la comisión de accidentes (CIAF) y del juzgado.
+  2. Otros errores humanos en los centros de control de ADIF y fallos previos
+     del LZB.
+  3. Las reacciones y promesas después de Urda: Gobierno, ADIF, sindicatos,
+     nuevas inversiones y si alguien ha hablado de IA.
+  4. La fatiga, la falta de plantilla y la formación del personal de
+     circulación.
+  5. Precedentes de fuera: IA que supervise comunicaciones en control
+     ferroviario o aéreo.
+  6. La opinión pública y el coste económico de los accidentes.
+
+  Arriba de la nota pondrá los 5 mejores argumentos para el pitch, cada uno con
+  su dato, su fecha y su fuente. Al final, las cifras que no cuadran entre
+  medios.
+
+  Cuando termine, te paso el resumen y meto lo mejor en el documento.
+
+✻ Crunched for 25s · done 6:01 PM
+
+❯ vale, pensando en la presentación, ahora mismo                                
+  queremos hacer                                                                
+  - accidente -> intro de la necesidad                                          
+  - human & AI collab                                                           
+  - financial slide -> lo q estoy haciendo yo, de mercado, entorno regulatorio, 
+  competitivo, legal etc                                                        
+  - ejemplo tomy y michel (tomy es el controlador y michel es el maquinista) y  
+  distintos casos de uso de COPI                                                
+  - Legal slide: articulo boe de antes                                          
+  (https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042), Reglamento de la      
+  inteligencia artificial, General Data Protection Regulation (GDPR) marco      
+  legal de esto, responsabilidad                                                
+                                                                                
+  como hacerla ?                                                                
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Vuestro orden funciona. Yo haría tres cambios: poner la demo justo después de
+  la idea, porque el jurado quiere ver el producto antes que los números; añadir
+  una diapositiva sobre el hueco que deja el sistema actual; y llevar todo lo
+  regulatorio a la diapositiva legal, para que no se repita en la tuya.
+
+  Estructura propuesta (los tiempos son para un pitch de unos 5 minutos;
+  ajústalos al que os den)
+
+  #: 1
+  Diapositiva: Urda
+  Quién: Cualquiera
+  Mensaje en una frase: "El 28 de octubre, 69 personas murieron por una orden
+  mal
+    dada, con cuatro personas mirando." Foto y una cifra, nada más.
+  Tiempo: 30 s
+  ────────────────────────────────────────
+  #: 2
+  Diapositiva: El hueco
+  Quién: Cualquiera
+  Mensaje en una frase: Los sistemas automáticos (LZB, ERTMS) protegen al tren,
+    pero nadie comprueba la orden de voz del controlador. Dad el dato de la CIAF
+
+    de 2024: la única barrera "depende completamente del factor humano".
+  Tiempo: 30 s
+  ────────────────────────────────────────
+  #: 3
+  Diapositiva: Copi: humano + IA
+  Quién: Sobri
+  Mensaje en una frase: Hace dos cosas: identifica el protocolo que toca y
+    comprueba si se sigue. No decide nada; avisa. El humano manda y la IA hace
+  de
+     red de seguridad, sin fatiga.
+  Tiempo: 45 s
+  ────────────────────────────────────────
+  #: 4
+  Diapositiva: Demo
+  Quién: Tomy y Michel
+  Mensaje en una frase: En directo, tres casos (ver abajo).
+  Tiempo: 90 s
+  ────────────────────────────────────────
+  #: 5
+  Diapositiva: Negocio
+  Quién: Tú
+  Mensaje en una frase: Mercado, precio, competencia y números.
+  Tiempo: 45 s
+  ────────────────────────────────────────
+  #: 6
+  Diapositiva: Legal
+  Quién: Tú u otro
+  Mensaje en una frase: El marco legal es parte del producto.
+  Tiempo: 30 s
+  ────────────────────────────────────────
+  #: 7
+  Diapositiva: Cierre
+  Quién: Cualquiera
+  Mensaje en una frase: Piloto en un centro de control, siguientes pasos y luego
+
+    control aéreo.
+  Tiempo: 15 s
+
+  La demo, con tres casos de menos a más impacto
+  1. Velocidad: Tomy dice "vaya a 50" en un tramo limitado a 40 y Copi lo marca.
+  2. Malentendido: Michel repite mal la orden (dice 60 cuando era 40) y Copi
+     detecta que no coincide.
+  3. Urda reproducido: se cae el LZB y la vía está ocupada. Tomy dice "reanude
+     con normalidad" y Copi avisa de que la orden obligatoria es "con Marcha a
+     la Vista". Terminad con esta frase: "En Urda esto habría dado un cuarto de
+     hora de margen".
+
+  Tu diapositiva de negocio
+  Si cabe todo en una diapositiva, mejor. Si no, dos:
+  - Izquierda, el mercado: unos 10 M€ en España, unos 125 M€ en Europa y después
+    aviación.
+  - Centro, el precio comparado con lo que ya se gasta: 40.000 € por puesto al
+    año. Copi en toda España cuesta unos 10 M€ al año; un solo contrato de
+    ERTMS, el de Murcia-Almería, son 214 M€.
+  - Derecha, la competencia: nadie comprueba las órdenes de voz. Indra puede ser
+    socio.
+  - Abajo, una línea con el beneficio desde 2029 y la ronda de 2,5 M€.
+
+  La diapositiva legal, planteada como ventaja y no como riesgo:
+  - Reglamento de Circulación Ferroviaria (BOE-A-2015-8042) 
+    (https://www.boe.es/buscar/act.php?id=BOE-A-2015-8042): es la fuente de los
+    protocolos. Copi convierte el reglamento en reglas que se pueden comprobar.
+    Este es vuestro mejor argumento legal.
+  - Reglamento europeo de IA: Copi sería probablemente de alto riesgo, así que
+    lleva registro de cada aviso, supervisión humana y documentación desde el
+    diseño.
+  - RGPD y ley española de protección de datos (artículo 89): grabar audio en el
+    trabajo es legal si hay riesgo para la seguridad y es proporcionado.
+    Además, ADIF ya graba las comunicaciones.
+  - Responsabilidad: ADIF sigue siendo responsable, Copi solo avisa, y queda un
+    registro de cada alerta para la investigación.
+
+  Dos dudas que cambian el diseño:
+  - ¿Cuánto dura el pitch y cuándo es?
+  - ¿Hacemos las diapositivas aquí, como presentación que se descarga en
+    PowerPoint o PDF, o las montáis vosotros en Canva o Google Slides? Si es
+    aquí, empiezo por las mías (negocio y legal) y dejo huecos para las del
+    resto.
+
+  He guardado esta estructura en [[Copi]].
+
+✻ Brewed for 29s · done 6:10 PM
+
+› Message from general-purpose
+  He escrito la nota en /Users/jaimerama/Documents/Vault/30 Projects/Copi/Copi
+  narrativa y noticias.md. Hice 22 búsquedas y abrí 41 páginas con contenido.
+  Otras 8 dieron 403: Artículo14, La Patilla, elEconomista, FRA, el PDF de la
+  CIAF, Contracts Finder, La Jornada y Southeast Missourian.
+
+  Los 5 mejores argumentos:
+  1. Otro maquinista corrigió al centro: "No puede ser marcha normal; tiene que
+  ser marcha a la vista" (Qué!, 2026-10-29).
+  2. Hubo unos 17 minutos y los dos trenes salían en pantalla en el mismo
+  cantón. Según Puente, tras el aviso del Iryo de las 8:48 el centro "no tomó
+  ninguna acción" (Aquí Madrid, 2026-10-31).
+  3. El plan del Gobierno del 2026-11-03 ya incluye un agente de IA que vigile
+  las conversaciones entre maquinista y controlador. Aún no hay empresa, coste
+  ni alcance (Infobae; Vozpópuli, 2026-11-06).
+  4. La CIAF ya había escrito sobre Cuenca: "depende completamente del factor
+  humano". Contó 15 incidentes parecidos entre 2023 y 2025.
+  5. Un responsable de circulación llegó a "hasta 104 telefonemas" en un turno.
+  La confianza en el AVE cayó del 67 % al 35 % (YouGov).
+
+  Lo que contradice o amplía el contexto:
+  - La AITAT sustituyó a la CIAF en agosto de 2024 y es quien investiga Urda.
+  - Puente dimitió el 2026-11-03.
+  - La denuncia de CSIF que abrí es del 2026-09-04, no de agosto.
+  - Hay 68, 69 o 74 muertos según el medio.
+  - Para Adamuz, Vozpópuli da 45 muertos.
+  - La consigna COI 01/25 e Indra no aparecen en ninguna página abierta.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Agent "Recopilar noticias para narrativa Copi" finished · 12m 10s
+
+⏺ El 3 de noviembre el Gobierno anunció un plan con un agente de IA para vigilar
+  las conversaciones entre maquinista y controlador, así que lo incluyo en el
+  documento. · summary
+
+  Called Claude Docs 3 times, ran 1 shell command (ctrl+o to expand)
+
+⏺ El agente ha terminado. Ha abierto 41 páginas y ha guardado todo en [[Copi
+  narrativa y noticias]], con los 5 mejores argumentos arriba y cada dato con su
+  fecha y su enlace. Lo mejor ya está en el ⧉ documento
+  (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W).
+
+  Lo más fuerte para el pitch
+
+  1. El Gobierno ya pide Copi. El plan de seguridad del 3 de noviembre incluye
+     un agente de IA que vigile las conversaciones entre maquinista y
+     controlador. El 6 de noviembre todavía no tenía empresa, coste, plazo ni
+     definición de si la IA solo recomendará. Es el mejor "por qué ahora"
+     posible, y además Copi responde justo a esa duda: recomienda y no actúa.
+  2. Una persona vio el error y el centro de control no. Otro maquinista
+     corrigió por radio al centro: "No puede ser marcha normal; tiene que ser
+     marcha a la vista". Copi hace en tiempo real lo que hizo ese maquinista.
+  3. Hubo unos 17 minutos de margen. La orden se dio a las 8:36. El Iryo avisó a
+     las 8:41 y a las 8:48 de que seguía parado, y el choque fue hacia las
+     8:53. Los dos trenes aparecían en pantalla en el mismo tramo de vía.
+  4. No es un caso aislado. La CIAF contó 15 incidentes parecidos entre 2023
+     y 2025. La agencia de seguridad ferroviaria (AESF) envió siete advertencias
+     a ADIF. Y en Alemania, el accidente de Bad Aibling (2016, 11 muertos)
+     también vino de una orden errónea del controlador.
+  5. Nadie puede revisar esto a mano. Un responsable de circulación llegó a
+     gestionar "hasta 104 telefonemas" en un turno. Y la confianza en el AVE ha
+     caído del 67% al 35%: solo el 18% cree que la red está bien supervisada.
+
+  Lo que cambia en el análisis
+  - Competencia: el plan del Gobierno es vuestro mejor aliado, pero también
+    vuestro competidor más probable. Si ADIF lo encarga como una parte más de
+    DaVinci, Indra parte con ventaja. Hay que llegar antes con un piloto.
+  - Precedente: un proyecto europeo de control aéreo (HAAWAII) ya hizo algo
+    parecido. Detectó el 82% de las órdenes mal repetidas, pero con un 67% de
+    falsas alarmas. La idea funciona y el reto es la precisión. Copi tiene
+    ventaja porque cruza la voz con la telemetría.
+  - Precio: un operador cobra 53.000 € brutos al año, así que Copi cuesta en
+    torno al 12-15% de lo que cuesta cubrir un puesto las 24 horas.
+
+  Correcciones al contexto
+  - Óscar Puente dimitió el 3 de noviembre, así que en el pitch no habléis de él
+    como ministro actual.
+  - Urda no la investiga la CIAF: desde agosto de 2024 es la AITAT, que la
+    sustituyó.
+  - Las cifras de muertos varían según el medio: 68, 69 o 74. En el pitch yo
+    diría "casi 70".
+
+  ¿Seguimos con las diapositivas?
+✻ Churned for 13m 35s · done 6:14 PM
+
+※ recap: Estamos preparando la parte de negocio de Copi para el hackathon, y el análisis de mercado, legal y noticias ya está en el documento y en la vault. Lo siguiente es decidir dónde hacemos las diapositivas y cuánto dura el pitch.
+
+❯ mandame la fuente de la q has sacado lo de q el gobierno lo pide              
+
+⏺ web-fetch(Verify government AI plan source)
+  ⎿  Received 148 bytes
+
+› Message from web-fetch
+  Both pages were read in full (neither fetch reported a cut). Both are
+  non-preapproved sources, so quotes are kept short.
+
+  **1. Infobae** (https://www.infobae.com/espana/2026/11/03/oscar-puente-anuncia
+  -un-plan-de-seguridad-ferroviaria-con-inteligencia-artificial-doble-validacion
+  -de-ordenes-y-mejora-de-condiciones-laborales-tras-el-accidente-de-urda/)
+  - Date: 03 Nov 2026 (article timestamp 08:45 a.m. EST). Author: Fede Sáenz.
+  - Announced by: Óscar Puente, ministro de Transportes y Movilidad Sostenible,
+  at a press conference after the Consejo de Ministros.
+  - AI monitoring: mentioned. Under the heading "Un agente de inteligencia
+  artificial y un gemelo digital de la red", the article says the AI agent and
+  digital twin will "supervisar el funcionamiento del sistema, anticipar
+  escenarios, detectar anomalías y monitorizar las conversaciones entre
+  maquinistas y controladores." The short quote is "monitorizar las
+  conversaciones entre maquinistas y controladores".
+  - Puente is also quoted: "Nos adentramos en un sistema ignoto".
+  - Double validation: "deberán ser validadas por, al menos, un segundo
+  controlador humano". This applies only in degraded circulation, when LZB/ERTMS
+  are not available. The article says the orders "serán firmadas conjuntamente
+  por dos" in that situation.
+  - Other measures: new control-centre software with automatic alerts, and a
+  review of rest periods for controllers.
+  - The article does not say whether the AI only recommends, which company
+  builds it, its cost, or its timing.
+
+  **2. Vozpopuli** (https://www.vozpopuli.com/espana/politica/un-informe-europeo
+  -desmonta-el-plan-de-ferroviario-del-gobierno-los-gemelos-digitales-no-predice
+  n-fallos-en-tiempo-real.html)
+  - Title: "Un informe europeo desmonta el plan de ferroviario del Gobierno: los
+  'gemelos digitales' no predicen fallos en tiempo real". Published 06/11/2026,
+  04:45 CET. Author: Beatriz Jiménez Pérez.
+  - Announced by: Óscar Puente, "este martes", after the Urda accident. The
+  article does not give the date itself. 3 Nov 2026 is inferred from the Infobae
+  article.
+  - AI monitoring: mentioned. The article says the plan involves "la creación de
+  un agente de inteligencia artificial y un gemelo digital de la red" and
+  describes it as able to "monitorizar las conversaciones entre maquinistas y
+  controladores".
+  - The report it discusses is the ERRAC "Agenda Estratégica de Investigación e
+  Innovación Ferroviaria de 2020". The article says that predictive capability
+  "sigue siendo uno de los grandes retos del sector".
+  - Still unknown, according to the article:
+    - Company: "el Ministerio no ha detallado todavía qué empresa desarrollará
+  el sistema, cuánto costará".
+    - Cost: same sentence as above.
+    - Timing and capability: "cuándo estará operativo ni qué capacidad tendrá
+  para intervenir ante una situación de riesgo".
+    - Recommend only or act: "Tampoco ha aclarado si la inteligencia artificial
+  se limitará a emitir recomendaciones y advertencias".
+  - The article also says the AI is not announced as able to "autorizar o
+  detener por sí mismo la circulación de los trenes", and that the human double
+  validation is a separate measure from the AI agent.
+
+  Summary: both pages say the AI agent monitors maquinista-controlador
+  conversations, and both are from the Puente announcement of 3 Nov 2026. Only
+  the Vozpopuli article raises the open questions about company, cost, timing,
+  and recommend-only versus intervene. Infobae does not mention these unknowns.
+
+⏺ Son dos fuentes, y he vuelto a abrir las dos para comprobarlo:
+
+  1. Infobae, 3 de noviembre de 2026 
+  (https://www.infobae.com/espana/2026/11/03/oscar-puente-anuncia-un-plan-de-seg
+  uridad-ferroviaria-con-inteligencia-artificial-doble-validacion-de-ordenes-y-m
+  ejora-de-condiciones-laborales-tras-el-accidente-de-urda/)
+  Óscar Puente lo anunció en la rueda de prensa del Consejo de Ministros. El
+  artículo tiene un apartado titulado "Un agente de inteligencia artificial y un
+  gemelo digital de la red". Dice que servirán para "supervisar el
+  funcionamiento del sistema, anticipar escenarios, detectar anomalías y
+  monitorizar las conversaciones entre maquinistas y controladores".
+
+  2. Vozpópuli, 6 de noviembre de 2026 (https://www.vozpopuli.com/espana/politic
+  a/un-informe-europeo-desmonta-el-plan-de-ferroviario-del-gobierno-los-gemelos-
+  digitales-no-predicen-fallos-en-tiempo-real.html)
+  Esta es la que dice que todo sigue abierto:
+  - "el Ministerio no ha detallado todavía qué empresa desarrollará el sistema,
+    cuánto costará"
+  - "cuándo estará operativo ni qué capacidad tendrá para intervenir ante una
+    situación de riesgo"
+  - "Tampoco ha aclarado si la inteligencia artificial se limitará a emitir
+    recomendaciones y advertencias"
+
+  Hay un matiz que os sirve para el pitch. El plan tiene además otra medida
+  aparte de la IA: cuando no funcionen el LZB ni el ERTMS, las órdenes "deberán
+  ser validadas por, al menos, un segundo controlador humano". O sea, la
+  respuesta del Gobierno es sobre todo poner otra persona más. En Urda ya había
+  tres personas al lado del operario y no sirvió. Copi es la pieza de IA del
+  plan que todavía no tiene dueño.
+
+✻ Sautéed for 30s · done 6:40 PM
+
+❯ como le mando a Don Juan esta conversación                                    
+
+  Called Claude Docs (ctrl+o to expand)
+
+⏺ No sé quién es Don Juan. Si me dices quién es, lo apunto en la vault.
+
+  Lo más útil es mandarle el documento y no el chat entero, porque tiene todo lo
+  importante y con fuentes. Tienes tres opciones:
+
+  1. Compartir el documento (lo que te recomiendo): abre ⧉ Copi: análisis de
+     mercado y financiero (https://claude.ai/artifact/JndrN4HG4TVKbif7ry9E4W) y
+     pulsa Share arriba. Puedes añadirle para que lo vea, lo comente o lo edite.
+     Si no es de tu organización, mira si ahí te deja crear un enlace público.
+     Si no te deja, pulsa el nombre del documento, luego Export, descárgalo en
+     PDF o Word y se lo mandas.
+  2. Mandarle el chat tal cual: escribe /export aquí en Claude Code. Te guarda
+     la conversación en un archivo o te la copia al portapapeles, y se la mandas
+     por WhatsApp o por correo. Ten en cuenta que es muy largo y lleva mucho
+     ruido técnico.
+  3. Las notas de la vault: [[Copi]] y [[Copi narrativa y noticias]] son
+     archivos .md en 30 Projects/Copi/. Se los puedes pasar tal cual.
+
+  Si quieres, te dejo preparado un borrador en Gmail para Don Juan con el enlace
+  y un resumen de 5 líneas. Necesito su correo, y el mensaje no se envía hasta
+  que tú lo revises.
+
+✻ Sautéed for 12s · done 6:41 PM
