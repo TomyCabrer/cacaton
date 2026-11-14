@@ -28,11 +28,33 @@ All five misses are R2 rows ("driver never reports location") that the model cal
 ("marcha normal"). The Urda log is outside the training templates and has no location report, so R2 is arguably also true
 there. The training data allows one rule per row, so the model picks one.
 
+### Baseline: untuned Qwen3.5-4B with the rules in the prompt
+
+Same 200 rows, `eval.py --no-adapter --with-rules` (float16 on a Colab T4).
+
+| Metric | Untuned + rules | Fine-tuned |
+|---|---|---|
+| Verdict accuracy | 60% (120/200) | **86%** (172/200) |
+| Verdict and rules exactly right | 11% | **86%** |
+| Violation recall | 100% | 95% |
+| Precision | 56% | **81%** |
+| False alarms (of 97 compliant) | 80 | **23** |
+| R2 recall | 0/12 | 7/12 |
+| Urda demo case | VIOLATION, R3 + R6 | VIOLATION, R2 (wrong rule) |
+
+The untuned model is close to "always say VIOLATION" (80 of 97 compliant logs flagged; precision barely above the 51.5%
+base rate). Fine-tuning gives a 26-point accuracy gain, well outside the roughly 5-point noise at n=200. On the single
+realistic case (Urda) the untuned model did better. The tuned run used bfloat16 and the baseline float16. One prompt only;
+a frontier model with the same rules has **not** been run.
+
+Score any saved results file offline (no GPU): `python score_file.py results_tuned.jsonl results_base_rules.jsonl`.
+
 ### What this does and does not show
 
 - It learned the task and format, and detects violations in logs phrased differently from training.
 - The data is **synthetic and templated**. The score is optimistic and says little about real transcripts.
-- **No baseline yet.** We have not shown fine-tuning beats a prompted model. `eval.py --no-adapter --with-rules` does that.
+- Fine-tuning beats the untuned 4B model with the rules in its prompt (table above). We have **not** compared against a
+  frontier model with the same rules, which may score high on templated data.
 - Adaption's own `best_win_rate` (0.42) is a pairwise-preference score on their evals, **not** accuracy. Ignore it.
 - Do not claim it would have prevented Urda.
 
@@ -51,6 +73,7 @@ with no km/h figure; 40 comes from press and Renfe's proposed rule (not approved
 | `run.py` | Launches the AutoScientist run (Qwen3.5-4B, SFT, 2 iterations) |
 | `wait_run.py` | Polls the run |
 | `list_models.py` | Lists Adaption base models |
+| `score_file.py` | Scores saved `results*.jsonl` files against `data/test.jsonl` offline (no GPU) |
 | `eval.py` | Scores the adapter; `--no-adapter [--with-rules]` for baselines; `--dry-run` self-tests the scorer |
 | `data/dataset_id.txt`, `data/run_id.txt` | Adaption dataset and run IDs (tied to one account) |
 
@@ -103,7 +126,7 @@ Gotchas found the hard way:
 
 ## Next steps
 
-1. Run the baselines and read the errors (23 false alarms, R2 misses, Spanish).
+1. Run a frontier-model baseline with the same rules prompt, and read the errors (23 false alarms, R2 misses, Spanish).
 2. Data v2: more realistic and varied logs (more Spanish, "missing action" cases for R2, multiple violations per row),
    keeping the exact Urda log held out.
 3. Longer term: a state-machine simulator as the label source, a verifier tool the model calls, and an operator-facing
