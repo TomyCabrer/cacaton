@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copi · Tower</title>
+  <link rel="stylesheet" href="/static/drill/drill.css">
+</head>
+<body class="tower">
+  <header class="top">
+    <span class="brand">Copi</span>
+    <span class="case" id="case">Control tower</span>
+    <span class="clock" id="clock">--:--:--</span>
+    <button class="solid" id="btn-main">Start</button>
+  </header>
+
+  <div id="banner"></div>
+
+  <section class="diagram" id="diagram">
+    <svg id="line" viewBox="0 0 1200 190" aria-label="Line diagram: two tracks and the trains"></svg>
+  </section>
+
+  <main class="work">
+    <section>
+      <div class="label">Protocol</div>
+      <div id="protocol"></div>
+    </section>
+    <section>
+      <div class="label">Copi</div>
+      <div id="copi"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span id="pilot"><span class="dot" id="dot"></span><span id="pilot-text">Pilot not connected</span></span>
+    <span class="link" id="link"></span>
+    <span class="talk"><span id="radio-state"></span><button id="btn-radio">Hold to talk <kbd>T</kbd></button></span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/livekit-client@2.23.0/dist/livekit-client.umd.js"></script>
+  <script src="/static/drill/common.js"></script>
+  <script src="/static/drill/comms.js"></script>
+  <script src="/static/drill/control.js"></script>
+</body>
+</html>

@@ -1,0 +1,2029 @@
+{
+ "asks": {},
+ "briefings": {
+  "0|I0": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "Normal running: ALVIA 2384 on vía 2 approaching S613 Adamuz, no incident reported",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I0"
+     ],
+     "statement": "Normal running; ALVIA 2384 is passing Adamuz as planned (inference, no abnormality reported)"
+    }
+   ],
+   "recommendations": [],
+   "situation": "Train describer shows ALVIA 2384 on vía 2, PK 317–319, approaching signal S613 (Adamuz) (I0). No alarms, reports or contradictions have been received. The snapshot also shows IRYO 6189 on vía 1 near PK 320.9 and AVLO 2181 on vía 2 near PK 307.4, but no events report any abnormality.",
+   "unknowns": [
+    "Aspect of signal S613 and the route set for ALVIA 2384",
+    "Any track or infrastructure condition between PK 316 and 321 on either vía",
+    "Separation margin between AVLO 2181 and ALVIA 2384 on vía 2"
+   ]
+  },
+  "0|I4": {
+   "driver_message": "IRYO 6189, emergency: stop your train now. Possible obstruction at Adamuz points, PK 318. Report anything seen on vía 2.",
+   "driver_train": "IRYO 6189",
+   "headline": "S613 dropped to STOP with ALVIA 2384 too close to stop: automatic protection governs",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I0",
+      "I4"
+     ],
+     "statement": "ALVIA 2384 will pass S613 and the affected points before it can stop. This is seconds-critical, and automatic train protection is the relevant layer, not the operator."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4"
+     ],
+     "statement": "Loss of detection may mean a track or points defect, such as a broken rail or displaced switch, at Adamuz near PK 318.45 (unconfirmed)."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "I4"
+     ],
+     "statement": "If ALVIA 2384 derails, the adjacent vía 1 may be fouled where IRYO 6189 is running (unconfirmed)."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "STOP_TRAFFIC",
+     "cost_if_wrong": "If unnecessary: minutes of delay. If omitted: a possible collision with a fouled vía and hundreds on board.",
+     "evidence_ids": [
+      "I0",
+      "I4"
+     ],
+     "rationale": "Point detection was lost under an approaching train at 209 km/h. IRYO 6189 is on the adjacent vía 1 and AVLO 2181 is following on vía 2. A possible derailment could foul both vías.",
+     "target": "Both vías at Adamuz, PK 317–320, including IRYO 6189 and AVLO 2181",
+     "title": "Stop all traffic through the Adamuz points area",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "S613 (vía 2, PK 318.45) dropped to STOP at 19:43:37 on loss of point detection (I4). ALVIA 2384 is about 0.14 km from it at ~209 km/h, and its stopping distance is over 2 km, so it cannot stop before the signal (I0, I4). IRYO 6189 is on vía 1 at PK 318.6 near the same points, and AVLO 2181 is following on vía 2 at PK 308.7. The cause of the detection loss is unconfirmed.",
+   "unknowns": [
+    "Cause of the point detection loss: points moved, broken or obstructed (unconfirmed)",
+    "Whether ALVIA 2384 passes the points safely or derails",
+    "Whether IRYO 6189 on vía 1 could be fouled by any obstruction or derailment",
+    "Whether onboard ATP / ASFA braking has already triggered on ALVIA 2384"
+   ]
+  },
+  "0|R0": {
+   "driver_message": "AVLO 2181, remain stopped at PK 309. Do not proceed toward Adamuz. Possible incident ahead on both vías. Await CTC instructions.",
+   "driver_train": "AVLO 2181",
+   "headline": "Possible collision/derailment at Adamuz PK 318.4: approve pending stops, calls and emergency dispatch now",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R0"
+     ],
+     "statement": "A train fouled the points at PK ~318.4, causing the detection loss and the catenary damage; inferred, unconfirmed"
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I0",
+      "I4"
+     ],
+     "statement": "ALVIA 2384 could not stop before S613 and ran through a disturbed points area; automatic protection, not the operator, was the only layer that could act in those seconds"
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4",
+      "R0"
+     ],
+     "statement": "IRYO 6189 on vía 1 may be involved in a side collision or struck by debris; unconfirmed"
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "NOTIFY_112",
+     "cost_if_wrong": "A false alarm costs only mobilisation. A delay could cost lives if people are injured.",
+     "evidence_ids": [
+      "I4",
+      "R0"
+     ],
+     "rationale": "Point detection was lost under a fast train, followed seconds later by a catenary drop. This pattern points to a possible major accident. Early 112 alerting speeds up the regional response alongside REC-005.",
+     "target": "112 Andalucía, Adamuz PK 318.2–318.9",
+     "title": "Notify 112 of a possible two-train accident at Adamuz, up to 478 people",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "S613 dropped to STOP on loss of point detection with ALVIA 2384 about 0.14 km away at ~209 km/h, and a catenary voltage drop followed 8 seconds later (I4, R0). ALVIA 2384 has passed S613 on vía 2 and IRYO 6189 is at PK 318.48 on vía 1, side by side in the points area (I0, I4). The status of both trains is unconfirmed: 478 people on board, and no voice contact yet.",
+   "unknowns": [
+    "Whether either train derailed or fouled the other vía",
+    "Condition of passengers and crews on IRYO 6189 and ALVIA 2384",
+    "Whether AVLO 2181 at PK 309 vía 2 is held, and whether any train is approaching on vía 1",
+    "Cause of the point detection loss (broken rail, points damage, obstruction)"
+   ]
+  },
+  "0|R1": {
+   "driver_message": "CTC to ALVIA 2384: remain stopped. Report your status, injuries, derailment, and whether vía 1 is obstructed. Do not evacuate until catenary confirmed safe.",
+   "driver_train": "ALVIA 2384",
+   "headline": "Possible two-train accident at Adamuz PK 318.4: approve pending stop, calls and 112 now",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I0",
+      "I4",
+      "R1"
+     ],
+     "statement": "ALVIA 2384 ran onto or near the points behind S613 and stopped inside the incident zone; derailment possible (unconfirmed)."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R0"
+     ],
+     "statement": "An infrastructure or derailment event at the Adamuz points broke point detection and caused the power loss within seconds."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4",
+      "R0"
+     ],
+     "statement": "IRYO 6189 on vía 1 was involved, e.g. struck by or fouled by ALVIA 2384 (unconfirmed)."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "CONFIRM_STATUS",
+     "cost_if_wrong": "Requesting confirmation costs a call; skipping it risks electrocution of evacuees or rescuers.",
+     "evidence_ids": [
+      "R0",
+      "R1"
+     ],
+     "rationale": "Voltage drop recorded (R0) but no confirmation that the section is safely isolated; passengers or rescuers may reach the vía.",
+     "target": "CRC Energy, Adamuz power section",
+     "title": "Confirm catenary de-energised and earthed before anyone approaches the site",
+     "urgency": "high"
+    }
+   ],
+   "situation": "ALVIA 2384 (184 on board) has been stationary on vía 2 at PK 318.4–319.0 for 55 s, unscheduled, after S613 dropped to STOP on loss of point detection and a catenary voltage drop followed 8 s later (I4, R0, R1). IRYO 6189 (294 on board) shows stopped on vía 1 near PK 318.2, but its involvement is unconfirmed. No crew contact yet, so a collision or derailment is inferred, not confirmed.",
+   "unknowns": [
+    "Whether either train derailed or fouls the other vía",
+    "Condition of crews and passengers on IRYO 6189 and ALVIA 2384",
+    "Whether catenary is down or still energised at the site",
+    "Whether AVLO 2181 at PK 309 is held and protected"
+   ]
+  },
+  "0|R10": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "ALVIA 2384 still unconfirmed after 18 minutes: likely second crashed train, no help sent",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R5",
+      "R6",
+      "R7"
+     ],
+     "statement": "ALVIA 2384 collided with IRYO 6189 coaches fouling vía 2 and is itself derailed or damaged; crew may be incapacitated (unconfirmed)"
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R8",
+      "R10"
+     ],
+     "statement": "Responders on site are focused on the Iryo only and may not know a second train is ~0.5 km along vía 2"
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R0",
+      "R3",
+      "R7"
+     ],
+     "statement": "The catenary voltage drop was caused by the derailment and the collision, not by a separate power fault"
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "CONFIRM_STATUS",
+     "cost_if_wrong": "",
+     "evidence_ids": [
+      "R10",
+      "R1",
+      "R5",
+      "R6",
+      "R7"
+     ],
+     "rationale": "Responders are on site now (R10) and are the fastest eyes on ALVIA 2384, which is silent after 2 calls (R5, R6) and stationary in the incident zone (R1). The calls and dispatch in REC-009/010/011 are still pending after 13+ minutes.",
+     "target": "First medical unit on scene at IRYO 6189",
+     "title": "Ask the responders on site to check vía 2 towards PK 318.85 for ALVIA 2384",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "IRYO 6189 derailed on vía 1 fouling vía 2, with fire and injuries reported; first medical unit reached it at 20:02 (R7, R10). ALVIA 2384 (184 on board) has been stationary on vía 2 at PK ~318.4–319.0 since the alarms, and two calls to its driver went unanswered (R1, R5, R6). Its involvement is inferred, not confirmed: no emergency dispatch to it is confirmed (R8 covers the Iryo only).",
+   "unknowns": [
+    "Condition of ALVIA 2384, its crew and 184 passengers",
+    "Whether ALVIA 2384 struck the IRYO 6189 coaches fouling vía 2",
+    "Whether both vías are formally blocked to all traffic (REC-001/002 still pending)",
+    "Whether the catenary is confirmed de-energised and earthed for responders"
+   ]
+  },
+  "0|R11": {
+   "driver_message": "Confirmed: emergency services are being sent to the Alvia on vía 2. Tell responders with you its position, PK 318.85, and how many casualties you can see. ",
+   "driver_train": "IRYO 6189",
+   "headline": "ALVIA 2384 now reported derailed: 184 people, no confirmed emergency dispatch to it",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R5",
+      "R6",
+      "R11"
+     ],
+     "statement": "ALVIA 2384 derailed at the Adamuz points at about 19:43 and its crew cannot respond."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R7",
+      "R11"
+     ],
+     "statement": "This is a two-train accident. IRYO 6189 fouled vía 2, and ALVIA 2384 was already in the section."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R8",
+      "R10",
+      "R11"
+     ],
+     "statement": "ALVIA casualties may have gone without help for over 20 minutes because responders went only to the Iryo."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed on vía 1 near PK 318.2 with fire, injuries and one reported death. Medical help is on scene there (R7, R10, R11). ALVIA 2384 is reported derailed by the IRYO driver, second-hand and unconfirmed (R11). It has been stationary on vía 2 near PK 318.85 since 19:44, with no answer to calls (R1, R5, R6), and no emergency dispatch to it is confirmed.",
+   "unknowns": [
+    "Condition of ALVIA 2384 and its 184 on board: casualties, fire, exact position",
+    "Whether any emergency unit has been sent to ALVIA 2384 on vía 2",
+    "Whether traffic is formally stopped on both vías and the catenary is earthed",
+    "Whether the ALVIA crew is incapacitated or only out of GSM-R contact"
+   ]
+  },
+  "0|R12": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "ALVIA 2384 likely derailed, 184 on board; Adif CPS's 'not derailed' report to 112 is unverified",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R5",
+      "R6",
+      "R7",
+      "R11"
+     ],
+     "statement": "ALVIA 2384 was struck by or ran into the fouling IRYO and derailed; casualties are likely and unattended."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "R12"
+     ],
+     "statement": "The ALVIA only braked hard and is intact, as Adif CPS reports. This conflicts with the silent crew and 20+ minutes without movement."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed on vía 1 near PK 318.2, fouling vía 2, with fire and at least one death; responders are on site there (R7, R10, R11). ALVIA 2384 has been stationary on vía 2 at PK ~318.85 since the alarms, has not answered two calls, and the IRYO driver reports it derailed (I4, R1, R5, R6, R11). Adif CPS's message to 112 that the Alvia did not derail (R12) contradicts this record and is unconfirmed; no emergency dispatch to the Alvia is confirmed.",
+   "unknowns": [
+    "First-hand condition of ALVIA 2384 and its 184 people",
+    "Source of the Adif CPS 'not derailed' claim",
+    "Whether any emergency unit has gone to vía 2 at PK ~318.85",
+    "Whether the catenary is confirmed de-energised and earthed"
+   ]
+  },
+  "0|R13": {
+   "driver_message": "Interventor: help is being sent to you. Report the number of injured, the driver's condition and the accessible side. Stay off vía 1. Do not touch the catenary.\"}",
+   "driver_train": "ALVIA 2384",
+   "headline": "ALVIA 2384 confirmed derailed, half overturned: correct 112 now, send help to vía 2.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R7",
+      "R11",
+      "R13"
+     ],
+     "statement": "Two-train accident: IRYO 6189 derailed and fouled vía 2, and ALVIA 2384 derailed in the same zone."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "R8",
+      "R10",
+      "R12",
+      "R13"
+     ],
+     "statement": "ALVIA 2384 casualties are waiting without help because responders were sent to the Iryo only and 112 was told the Alvia was fine. This is inference."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R5",
+      "R6",
+      "R13"
+     ],
+     "statement": "The ALVIA driver may be incapacitated. Unconfirmed."
+    }
+   ],
+   "recommendations": [],
+   "situation": "ALVIA 2384's train manager reports half the train overturned on vía 2, PK ~318.85 (R13), 184 on board. This is first-hand and contradicts Adif CPS's message to 112 that the Alvia did not derail (R12). IRYO 6189 derailed on vía 1 with fire and a confirmed death (R7, R11); emergency services are confirmed only for the Iryo (R8, R10).",
+   "unknowns": [
+    "Number and condition of injured on ALVIA 2384; status of its driver (no answer to R5, R6)",
+    "Whether 112 has received the correction to the 'not derailed' message (R12)",
+    "Whether any responders are yet heading to the Alvia site on vía 2",
+    "Whether the catenary is confirmed de-energised and earthed (R0, R4)"
+   ]
+  },
+  "0|R14": {
+   "driver_message": "Interventor: emergency services are being sent to you. Keep passengers clear of vía 1 and the catenary. Report injured count when possible.",
+   "driver_train": "ALVIA 2384",
+   "headline": "Two trains derailed at Adamuz; ALVIA 2384 has no confirmed emergency dispatch yet.",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R7",
+      "R13"
+     ],
+     "statement": "Loss of point detection at S613 marks a track or points failure that derailed IRYO 6189, which fouled vía 2 and was struck by or derailed ALVIA 2384. Cause unconfirmed."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "R8",
+      "R10",
+      "R12",
+      "R13",
+      "R14"
+     ],
+     "statement": "ALVIA 2384 casualties are likely severe and may be unattended, since responders went to the Iryo and 112 received the false all-clear."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "NOTIFY_112",
+     "cost_if_wrong": "A redundant call costs seconds. Leaving 112 uncorrected leaves up to 184 people without rescue resources.",
+     "evidence_ids": [
+      "R12",
+      "R13",
+      "R14"
+     ],
+     "rationale": "R12 told 112 the Alvia did not derail. R13 (train manager, first-hand) and R14 (Adif Sevilla) contradict it. The existing NOTIFY_112 (REC-006) predates R12 and does not cover the correction.",
+     "target": "112 Madrid and 112 Andalucía",
+     "title": "Correct 112 now: ALVIA 2384 has derailed, half overturned, 184 on board",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "Confirmed: IRYO 6189 derailed on vía 1 with fire, injuries and one death reported (R7, R11). ALVIA 2384 derailed on vía 2, half the train overturned (R13), confirmed by Adif Sevilla (R14). Emergency services were mobilised for the Iryo only (R8, R10), and 112 Madrid was wrongly told at 20:09 that the Alvia did not derail (R12).",
+   "unknowns": [
+    "Whether any emergency unit has been sent to ALVIA 2384 at PK ~318.85, 184 on board",
+    "Whether 112 has been corrected about the Alvia derailment",
+    "Casualty count and condition of the ALVIA 2384 driver (no answer to R5, R6)",
+    "Whether the catenary is confirmed de-energised and earthed for responders"
+   ]
+  },
+  "0|R15": {
+   "driver_message": "AVLO 2181: remain stopped at your position. Two trains derailed at Adamuz, vía 2 obstructed. Do not move without CTC authorisation.  ",
+   "driver_train": "AVLO 2181",
+   "headline": "Two trains derailed at Adamuz; medical teams now on scene at both trains.",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R1",
+      "R7",
+      "R13",
+      "R14"
+     ],
+     "statement": "IRYO 6189 derailed at the Adamuz points and fouled vía 2; ALVIA 2384 then struck the obstruction seconds later, causing the point-detection loss and power drop. Sequence is inference, not confirmed."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R5",
+      "R6",
+      "R13",
+      "R15"
+     ],
+     "statement": "Alvia casualties may be severe given overturned coaches and delayed medical arrival; ALVIA driver unresponsive (R5, R6) and possibly injured, unconfirmed."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed on vía 1 fouling vía 2, with fire, injuries and at least one death reported (R7, R11). ALVIA 2384 derailed on vía 2 with half the train overturned, confirmed by its train manager and Adif Sevilla (R13, R14). First medical team reached the Alvia at 20:35, about 52 minutes after the alarms (R15); earlier 112 Madrid was told the Alvia had not derailed (R12), and no correction to 112 is yet recorded.",
+   "unknowns": [
+    "Whether 112 Madrid/Andalucía have been corrected that ALVIA 2384 derailed (REC-014 still pending)",
+    "Casualty count and medical resources adequate for 184 on the Alvia plus 294 on the Iryo",
+    "Whether catenary is confirmed de-energised and earthed for responders (only voltage drop R0 known)",
+    "Whether traffic stop on both vías is formally in force (REC-001/002 pending; AVLO 2181 stationary at PK 309 on vía 2)"
+   ]
+  },
+  "0|R3": {
+   "driver_message": "Maquinista: are all your coaches on the rails? Is vía 2 clear? Any injured? Keep pantographs down and stay on the line.\n",
+   "driver_train": "IRYO 6189",
+   "headline": "Possible two-train accident at Adamuz PK 318.4: IRYO driver on line now, ask about derailment",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R1",
+      "R3"
+     ],
+     "statement": "IRYO 6189 derailed at the Adamuz points and fouled vía 2; ALVIA 2384 may have struck it. Unconfirmed."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1"
+     ],
+     "statement": "ALVIA 2384 is involved: stopped inside the incident zone and has not moved."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "R0",
+      "R3"
+     ],
+     "statement": "Only a catenary fault occurred and both trains are intact. This does not fit the loss of point detection."
+    }
+   ],
+   "recommendations": [],
+   "situation": "ALVIA 2384 (184 on board) has been stopped on vía 2 at PK 318.4–319.0 since S613 lost point detection, with a catenary voltage drop seconds later (I0, I4, R0, R1). IRYO 6189 (294 on board, vía 1) driver reports a 'snag' he thinks is catenary and says the train is blocked (R3). A catenary snag alone does not explain the loss of point detection on vía 2, so a derailment fouling the adjacent track is possible but unconfirmed.",
+   "unknowns": [
+    "Whether IRYO 6189 coaches derailed and are fouling vía 2",
+    "Status of ALVIA 2384: no contact from its crew yet",
+    "Injuries on either train",
+    "Whether the catenary is de-energised and earthed"
+   ]
+  },
+  "0|R5": {
+   "driver_message": "Maquinista, CTC here. Are all coaches on the rails and is vía 2 clear? Any injuries? Send the interventor to check the train now.",
+   "driver_train": "IRYO 6189",
+   "headline": "Probable two-train accident at Adamuz PK 318; ALVIA 2384 silent, eight critical actions pending",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R3",
+      "R1",
+      "R5"
+     ],
+     "statement": "IRYO 6189 derailed at the Adamuz points and fouled vía 2, and ALVIA 2384 collided with it. Inference, unconfirmed."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R5"
+     ],
+     "statement": "ALVIA 2384 is involved and its driver is incapacitated or the cab is damaged. Inference from no movement and no answer."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "R3",
+      "R0"
+     ],
+     "statement": "The fault is only a catenary snag with no derailment. Unlikely: it does not explain the loss of point detection."
+    }
+   ],
+   "recommendations": [],
+   "situation": "ALVIA 2384 has been stopped on vía 2 at PK 318.4–319.0 since S613 dropped to STOP with loss of point detection and power was lost seconds later (I4, R0, R1). The driver does not answer (R5). IRYO 6189 on vía 1 reports a 'snag' and says the train is blocked; its coaches' position is unconfirmed, and its call was left on hold (R3).",
+   "unknowns": [
+    "Whether IRYO 6189 derailed and is fouling vía 2, or whether ALVIA 2384 struck it",
+    "Condition of the ALVIA 2384 crew and its 184 passengers",
+    "Injuries on either train: up to 478 people on board",
+    "Whether the catenary is confirmed de-energised and earthed"
+   ]
+  },
+  "0|R6": {
+   "driver_message": "IRYO 6189, CTC. Are any coaches off the rails or fouling vía 2? Any injured? Do not let passengers onto the tracks.'",
+   "driver_train": "IRYO 6189",
+   "headline": "Probable two-train accident at Adamuz: ALVIA 2384 silent, all recommendations still pending",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R3",
+      "R1"
+     ],
+     "statement": "IRYO 6189 derailed at the Adamuz points and fouled track 2; ALVIA 2384 struck it. Inferred, unconfirmed."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R5",
+      "R6"
+     ],
+     "statement": "ALVIA 2384 is involved and its driver is incapacitated or unable to communicate."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "R3",
+      "I4"
+     ],
+     "statement": "The IRYO 6189 'snag' is a catenary fault only. This does not explain the loss of point detection."
+    }
+   ],
+   "recommendations": [],
+   "situation": "S613 lost point detection and catenary power dropped within seconds (I4, R0); ALVIA 2384 has been stationary at PK 318.4–319.0 since then and has not answered two calls (R1, R5, R6). IRYO 6189 driver reported a 'snag' and a blocked train, call left on hold (R3); AVLO 2181 stopped without voltage on track 2 (R4). Derailment or collision is inferred, not confirmed, and no one has yet reported injuries or fouling.",
+   "unknowns": [
+    "Whether IRYO 6189 is derailed and fouling track 2, or was struck by ALVIA 2384",
+    "Condition of ALVIA 2384 crew and 184 passengers",
+    "Whether 112 and emergency services have actually been alerted",
+    "Whether catenary is confirmed de-energised and earthed"
+   ]
+  },
+  "0|R7": {
+   "driver_message": "Maquinista: firefighters and ambulances requested. A train, ALVIA 2384, may be involved on the adjacent vía. Tell us anything you see of it. ",
+   "driver_train": "IRYO 6189",
+   "headline": "IRYO 6189 derailed with fire; ALVIA 2384 silent on fouled vía 2, likely hit",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R5",
+      "R6",
+      "R7"
+     ],
+     "statement": "ALVIA 2384 collided with the derailed IRYO 6189 fouling vía 2. Two-train accident; unconfirmed."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R3",
+      "R7"
+     ],
+     "statement": "IRYO 6189 derailed at the Adamuz points, causing S613 loss of point detection and the catenary drop."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R5",
+      "R6"
+     ],
+     "statement": "ALVIA 2384 crew is incapacitated or unable to reach the radio."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailment, fouling of the adjacent track, fire and requests for firefighters and ambulances are confirmed by its driver (R7). ALVIA 2384 has been stationary on vía 2 at PK 318.4–319.0 since the alarms and has not answered two calls (R1, R5, R6); its involvement is unconfirmed but highly likely. The CTC statement 'no train is coming' did not account for ALVIA 2384, which was already in the section (I4, R1).",
+   "unknowns": [
+    "Condition of ALVIA 2384, its crew and its 184 passengers",
+    "Whether ALVIA 2384 struck the fouling IRYO 6189",
+    "Extent of the fire and number of injured on IRYO 6189 (294 on board)",
+    "Whether the catenary is confirmed de-energised and earthed for responders"
+   ]
+  },
+  "0|R8": {
+   "driver_message": "Correction: ALVIA 2384 is stopped on vía 2 near you and not answering. If safe, tell responders and check it for injured.\"",
+   "driver_train": "IRYO 6189",
+   "headline": "ALVIA 2384 likely hit by derailed IRYO 6189; no rescue sent to it yet",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R1",
+      "R5",
+      "R6",
+      "R7"
+     ],
+     "statement": "ALVIA 2384 collided with or was struck by the derailed IRYO 6189 fouling vía 2; crew incapacitated or out of reach."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "R0",
+      "R3",
+      "R7"
+     ],
+     "statement": "IRYO 6189 derailed at the Adamuz points, causing the loss of point detection at S613 and the catenary drop."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R8",
+      "R5",
+      "R6"
+     ],
+     "statement": "The emergency response is sized for one train only, so ALVIA 2384 victims may not be reached in time."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 is confirmed derailed on vía 1, fouling vía 2, with fire and injuries; emergency services are mobilised for IRYO only (R7, R8). ALVIA 2384 (184 on board) has been stationary on vía 2 at PK ~318.85 since the alarms and has not answered two calls; its involvement is unconfirmed but highly likely (I4, R1, R5, R6). The CTC told the IRYO driver 'no train is coming', but ALVIA 2384 was already in the section.",
+   "unknowns": [
+    "Condition of ALVIA 2384 and its 184 on board: derailed, struck, injured?",
+    "Whether emergency services know there is a second train at PK ~318.85",
+    "Whether the catenary is de-energised and earthed for responders",
+    "Whether all traffic, including AVLO 2181 on vía 2 at PK 309, is held from entering the area"
+   ]
+  },
+  "1|I0": {
+   "driver_message": "Emergencia: frene ya. Posible rotura de carril vía 1, PK 318.68. No pase el punto. Confirme parada.",
+   "driver_train": "IRYO 6189",
+   "headline": "IRYO 6189 at 255 km/h on track 1 near suspected rail break; stop now.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "There is a rail discontinuity on track 1 near PK 318.68 that is worsening with each passing train. Unconfirmed."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I0",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "If IRYO 6189 derails at the suspect point, the coaches could foul track 2 while ALVIA 2384 is in PK 317–319. This is inferred, not observed."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P1",
+      "P2"
+     ],
+     "statement": "The long-standing wear in the Adamuz area is the background cause. This is low-specificity context."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "STOP_TRAFFIC",
+     "cost_if_wrong": "If the track is sound, the cost is a short delay to two trains. If it is broken and they run on, the result is a derailment and a possible collision with about 478 people on board.",
+     "evidence_ids": [
+      "P5",
+      "P6",
+      "P7",
+      "I0"
+     ],
+     "rationale": "Three consecutive wheel impacts at PK 318.68 (P5–P7) and a train still running at line speed on track 1 make this seconds-critical. ALVIA 2384 is entering the same section on track 2 (I0), so a derailment on track 1 could cause a secondary collision. At these speeds, automatic protection (ERTMS/LZB) is the effective layer; the operator can only trigger it or call by radio. The REC-003 restriction is too slow for these two trains.",
+     "target": "Track 1 and track 2, PK 317–321 (IRYO 6189, ALVIA 2384)",
+     "title": "Emergency stop both trains near PK 318.68 now",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "Three trains logged wheel impacts at the same point, PK 318.68 on track 1 (P5–P7). With weaker signals P1–P4, the rule engine rates a rail discontinuity at PK 318.4–319.0 as likely, but it is unconfirmed and no inspection has been made. The train describer shows IRYO 6189 on track 1 at PK 320.947 doing 255 km/h, and ALVIA 2384 on track 2 at PK 316.16 doing 209 km/h, entering PK 317–319 (I0).",
+   "unknowns": [
+    "Whether the rail at PK 318.68 is actually broken or only degraded.",
+    "The direction of travel of IRYO 6189 relative to the suspect point, which is not given in the snapshot.",
+    "Whether a derailment on track 1 would foul track 2 where ALVIA 2384 is passing.",
+    "The condition of the wheelsets on the three trains that registered impacts (P5–P7)."
+   ]
+  },
+  "1|I2": {
+   "driver_message": "ALVIA 2384, emergency brake now. Derailed train ahead at PK 318.69, vía 2 may be fouled. Stop and report.",
+   "driver_train": "ALVIA 2384",
+   "headline": "IRYO 6189 derailed at PK 318.69; ALVIA 2384 seconds away on possibly fouled vía 2",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "Rail discontinuity on track 1 near PK 318.68 caused the derailment; earlier wheel impacts were precursors."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I2",
+      "I0"
+     ],
+     "statement": "Derailed coaches foul track 2, putting ALVIA 2384 at collision risk."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "DISPATCH_EMERGENCY",
+     "cost_if_wrong": "x",
+     "evidence_ids": [
+      "I2",
+      "I0"
+     ],
+     "rationale": "Derailment confirmed by onboard detector at ~218 km/h; casualties likely; possible secondary collision with ALVIA 2384. Notify 112 in the same action.",
+     "target": "PK 318.69, Adamuz, IRYO 6189 (294 on board) and possibly ALVIA 2384 (184 on board)",
+     "title": "Dispatch emergency services and notify 112 now",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "Onboard detector confirms IRYO 6189 coaches 6–8 derailed on track 1 at PK 318.69 (I2). ALVIA 2384 is on track 2 at ~PK 318.1, ~209 km/h, about 0.55 km away (I0); track 2 may be fouled (inference, unconfirmed). This is seconds-critical: automatic protection (ATP/ERTMS) and the maquinista's emergency brake are the relevant layer, not the operator.",
+   "unknowns": [
+    "Whether derailed coaches of IRYO 6189 are fouling track 2 (unconfirmed)",
+    "Whether ALVIA 2384 has braked or received emergency stop",
+    "Injuries and passenger condition on IRYO 6189 (294 on board)",
+    "Whether AVLO 2181 on track 2 has been held"
+   ]
+  },
+  "1|I3": {
+   "driver_message": "ALVIA 2384, emergency stop now. Derailed train on track 1 at PK 318.69, track 2 may be fouled. Brake immediately.",
+   "driver_train": "ALVIA 2384",
+   "headline": "IRYO 6189 derailed on track 1; ALVIA 2384 at 209 km/h approaching on track 2",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "Rail discontinuity on track 1 near PK 318.68 caused the derailment, matching prior wheel-impact and track-circuit signals."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I2",
+      "I0"
+     ],
+     "statement": "Derailed coaches 7–8 may foul track 2 in the path of ALVIA 2384."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "STOP_TRAFFIC",
+     "cost_if_wrong": "Minutes of delay if track 2 is clear, versus a second train striking wreckage if fouled.",
+     "evidence_ids": [
+      "I2",
+      "I3",
+      "I0"
+     ],
+     "rationale": "Derailment at PK 318.69 may foul track 2 (I2, I3); AVLO 2181 is next on track 2. REC-007 covers only IRYO 6189 and ALVIA 2384.",
+     "target": "AVLO 2181, track 2, PK 308.68 and any following trains approaching PK 317–321",
+     "title": "Hold AVLO 2181 and all further trains short of Adamuz on both tracks",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "Confirmed: IRYO 6189 coaches 6–8 derailed at PK 318.69 track 1 and is emergency braking (I2, I3). ALVIA 2384 is on track 2 at PK 318.25, 209 km/h, about 0.4 km from the derailment; whether track 2 is fouled is unconfirmed. This is seconds-critical: automatic protection (ERTMS/track-circuit occupancy) is the relevant layer, but an immediate radio stop to ALVIA 2384 costs nothing if wrong.",
+   "unknowns": [
+    "Whether derailed coaches foul track 2 (unconfirmed)",
+    "Whether ALVIA 2384 has received an automatic stop or is braking",
+    "Number and severity of injured on IRYO 6189",
+    "Whether AVLO 2181 on track 2 at PK 308.68 must also be held"
+   ]
+  },
+  "1|I4": {
+   "driver_message": "Emergency brake now. Track 2 at PK 318.6 possibly obstructed by derailed train. Report status immediately.\n",
+   "driver_train": "ALVIA 2384",
+   "headline": "ALVIA 2384 at 209 km/h about 140 m from STOP S613 — track 2 may be fouled",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "A rail discontinuity on track 1 near PK 318.68 caused the IRYO 6189 derailment. It was signalled beforehand by repeated wheel impacts, a voltage drop on the track circuit and a driver report."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4"
+     ],
+     "statement": "Derailed coaches of IRYO 6189 have fouled track 2, which caused the loss of point detection at S613 (unconfirmed)."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I0",
+      "I4"
+     ],
+     "statement": "ALVIA 2384 cannot stop before the fouled zone and may strike the derailed coaches (unconfirmed)."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed at 19:43:34 (coaches 6–8, track 1 PK 318.69, onboard detector, confirmed) and is braking. S613 on track 2 dropped to STOP for loss of point detection while ALVIA 2384 (184 on board) is about 140 m from it at 209 km/h. Its stopping distance is over 2 km, so the operator cannot stop it in time: automatic protection and the maquinista's emergency brake are the only relevant layer now.",
+   "unknowns": [
+    "Whether derailed IRYO 6189 coaches are fouling track 2 at the ALVIA 2384 passing point (inferred, unconfirmed)",
+    "Whether ALVIA 2384 has received the STOP and applied emergency braking",
+    "Casualties and condition on board IRYO 6189 (294 on board)",
+    "Whether AVLO 2181 and other following trains are being held"
+   ]
+  },
+  "1|I6": {
+   "driver_message": "CTC to IRYO 6189: emergency services are on the way. Protect the line, do not evacuate onto vía 2, report injuries and ALVIA 2384 status.",
+   "driver_train": "IRYO 6189",
+   "headline": "ALVIA 2384 likely struck derailed IRYO 6189 coaches on vía 2; assume collision.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "Rail discontinuity on vía 1 near PK 318.68 caused the IRYO 6189 derailment."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6"
+     ],
+     "statement": "Derailed IRYO coaches fouled vía 2 and ALVIA 2384 hit them at high speed (unconfirmed)."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "I6"
+     ],
+     "statement": "ALVIA 2384 telemetry loss is only a recorder power failure and the train stopped safely (unconfirmed, unlikely given speed)."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "CONFIRM_STATUS",
+     "cost_if_wrong": "One radio call wasted if train is fine; if skipped, rescue may be misdirected or under-scaled for a second train.",
+     "evidence_ids": [
+      "I4",
+      "I6",
+      "I0"
+     ],
+     "rationale": "Telemetry lost at PK 318.60 while braking from ~209 km/h inside the incident zone; only voice contact can confirm its state and guide rescue. Does not replace REC-008, which should be approved now.",
+     "target": "ALVIA 2384 crew (maquinista, interventor)",
+     "title": "Contact ALVIA 2384 by radio/phone to confirm collision and casualties",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "IRYO 6189 derailed coaches 6–8 at PK 318.69 vía 1 (I2, I3); vía 2 likely fouled (inference). ALVIA 2384 was at ~209 km/h, far inside stopping distance when S613 dropped, and its telemetry died in the zone (I4, I6): collision probable but unconfirmed. This was seconds-critical: only automatic protection could act; the operator's role now is rescue and protecting other trains.",
+   "unknowns": [
+    "Whether ALVIA 2384 collided with or derailed on the fouling coaches",
+    "Casualties on IRYO 6189 (294 on board) and ALVIA 2384 (184 on board)",
+    "Exact position and state of ALVIA 2384 since telemetry loss",
+    "Whether any other train is still approaching PK 317–321 on either vía"
+   ]
+  },
+  "1|P1": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "Union warning of track wear near Adamuz: low-specificity, no active incident",
+   "hypotheses": [
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P1"
+     ],
+     "statement": "Track geometry or component wear exists in the Adamuz area causing vibrations felt by drivers (unconfirmed)."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "INSPECT_TRACK",
+     "cost_if_wrong": "If unneeded: one inspection slot used. If skipped and wear is real: a developing defect goes unchecked on a high-speed line.",
+     "evidence_ids": [
+      "P1"
+     ],
+     "rationale": "Written union warning of wear and vibrations (P1). Low specificity, so not grounds for restrictions, but a scheduled inspection or review of recent geometry data resolves it cheaply.",
+     "target": "Madrid–Sevilla line, Adamuz area (approx. PK 318.8 ±5 km)",
+     "title": "Request maintenance check of track in Adamuz area",
+     "urgency": "medium"
+    }
+   ],
+   "situation": "SEMAF has warned Adif in writing about wear and vibrations on the Madrid–Sevilla line, including the Adamuz area (P1). This is an area-level warning only; no specific PK, defect or train report confirms it. No incident is in progress and no trains are reported affected.",
+   "unknowns": [
+    "Exact location and nature of the reported wear or vibrations (only area-level, approx. PK 318.8 ±5 km per rule engine)",
+    "Whether any maquinista has reported rough riding or vibrations there recently",
+    "Date and findings of the last track inspection or geometry recording in the Adamuz area",
+    "Whether maintenance already has this section on its work plan"
+   ]
+  },
+  "1|P2": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "Two weak, independent signals point at vía 1 PK 318.4–319.0; inspection still pending.",
+   "hypotheses": [
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P1",
+      "P2"
+     ],
+     "statement": "Developing track geometry or rail defect on vía 1 around PK 318.4–319.0, currently below limits."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "P1",
+      "P2"
+     ],
+     "statement": "Benign isolated reading; the union letter concerns general line wear, not this spot."
+    }
+   ],
+   "recommendations": [],
+   "situation": "A SEMAF letter (P1) warned of wear and vibrations around Adamuz, and today's inspection (P2) recorded a small vertical acceleration near the same location, below intervention limits. Each signal alone is weak. Their agreement on location is an inference and remains unconfirmed as a defect.",
+   "unknowns": [
+    "Whether the acceleration in P2 is trending upward compared with earlier inspection runs",
+    "Whether drivers have reported vibrations at this specific PK recently",
+    "Status and timing of the pending maintenance check REC-001",
+    "Exact nature of the wear SEMAF referred to"
+   ]
+  },
+  "1|P3": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "Three weak signals converge on track 1, PK 318.4–319.0: possible track defect, unconfirmed.",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "P1",
+      "P2",
+      "P3"
+     ],
+     "statement": "An emerging rail or weld defect on track 1 around PK 318.5 is degrading track-circuit continuity."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P3"
+     ],
+     "statement": "The voltage drop is ballast or insulation leakage (for example weather-related), not a rail defect."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "SPEED_RESTRICTION",
+     "cost_if_wrong": "If unnecessary: minutes of delay per train on one section. If omitted and a defect exists: risk of derailment at high speed.",
+     "evidence_ids": [
+      "P1",
+      "P2",
+      "P3"
+     ],
+     "rationale": "Three independent signals converge on the same 600 m and the inspection is only scheduled for a maintenance window. A precautionary restriction lowers the forces on a possible defect and reduces the consequences if the rail fails. This is inference from sub-threshold signals, not confirmed evidence.",
+     "target": "track 1, PK 318.4–319.0",
+     "title": "Consider a temporary speed restriction on track 1, PK 318.4–319.0 until inspected",
+     "urgency": "medium"
+    }
+   ],
+   "situation": "Three independent sub-threshold signals point to the same spot: a union warning about wear and vibrations (P1), a small vertical acceleration at inspection (P2), and a 25% voltage drop on TC-318-V1 (P3). None crosses its own alarm threshold, so the defect is unconfirmed. Two inspection requests are already pending (REC-001, REC-002).",
+   "unknowns": [
+    "Whether the TC-318-V1 voltage keeps falling or stabilises.",
+    "The physical state of the rail at PK 318.4–319.0 (no ultrasonic or visual check yet).",
+    "When the next maintenance window is, and how many trains will run over the section before then.",
+    "Whether drivers have reported vibrations at this specific PK recently."
+   ]
+  },
+  "1|P4": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "Four weak signals converge on track 1, PK 318.4–319.0: decide pending restriction and inspection.",
+   "hypotheses": [
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "P2",
+      "P3",
+      "P4"
+     ],
+     "statement": "Developing track defect (e.g. rail or weld fault) on track 1 around PK 318.7; unconfirmed."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P3",
+      "P4"
+     ],
+     "statement": "Track-circuit voltage drop is an electrical or ballast issue unrelated to rail integrity; the vibration report is coincidental."
+    }
+   ],
+   "recommendations": [],
+   "situation": "Four independent sub-threshold signals point at track 1 near PK 318.7: union warning (P1), minor inspection reading (P2), track-circuit voltage drop of 25% (P3), and a driver's 'ligera vibración' report this morning (P4). None crosses its own alarm limit, so a defect is inferred, not confirmed. Inspection (REC-002) and a precautionary speed restriction (REC-003) are still pending.",
+   "unknowns": [
+    "Physical condition of track 1 at PK 318.4–319.0 (no inspection since P2)",
+    "Whether the TC-318-V1 voltage has dropped further since P3",
+    "Which trains are scheduled over track 1 at this location in the next hours",
+    "Whether other drivers have felt vibration at the same point"
+   ]
+  },
+  "1|P5": {
+   "driver_message": "CTC: your train registered a wheel impact at PK 318.68. Report any abnormal vibration or noise. Be prepared to reduce speed if instructed.\n",
+   "driver_train": "Iryo 109-012",
+   "headline": "Likely rail defect track 1 PK 318.4–319.0; trains still running at line speed",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P2",
+      "P3",
+      "P4",
+      "P5"
+     ],
+     "statement": "Rail discontinuity or failing weld on track 1 around PK 318.7, worsening over time"
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P1",
+      "P2"
+     ],
+     "statement": "Long-standing wear in the Adamuz area is the underlying cause"
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P5"
+     ],
+     "statement": "Impact signal comes from the Iryo wheelset (wheel flat), not the track"
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "CALL_TRAIN",
+     "cost_if_wrong": "A short radio call and possibly a slower run, set against a damaged wheelset running at high speed.",
+     "evidence_ids": [
+      "P5",
+      "P4"
+     ],
+     "rationale": "P5 recorded an impact peak on its wheelsets at PK 318.68. The crew can confirm what they felt, and the call checks whether the train itself is damaged. It does not replace deciding REC-003 now.",
+     "target": "Iryo trainset 109-012",
+     "title": "Call Iryo 109-012 crew to check for abnormal running and wheelset condition",
+     "urgency": "high"
+    }
+   ],
+   "situation": "Five weak signals from four independent sources converge on track 1 near PK 318.7, each below its own alarm threshold (P1–P5). The latest, a wheel-impact peak from Iryo 109-012 at PK 318.68 (P5), is the most specific. The defect is unconfirmed, but the inspection and speed-restriction recommendations (REC-002, REC-003) are still pending while traffic continues at line speed.",
+   "unknowns": [
+    "Physical state of the rail at PK 318.68: crack, broken weld or discontinuity (unconfirmed)",
+    "Which trains are approaching track 1 PK 318.4–319.0 now; no train describer data",
+    "Whether Iryo 109-012 suffered wheelset damage from the impact",
+    "Whether track circuit TC-318-V1 voltage has fallen further since P3"
+   ]
+  },
+  "1|P6": {
+   "driver_message": "CTC: you registered a wheel impact at PK 318.68 vía 1. Report anything abnormal felt and check running. Reduce speed if in doubt.",
+   "driver_train": "Iryo trainset 109-003",
+   "headline": "Probable rail defect track 1 PK 318.4–319.0; second impact, track still open at line speed",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6"
+     ],
+     "statement": "Rail discontinuity (crack, broken weld or joint defect) on track 1 near PK 318.68, worsening over ~22 hours"
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P1",
+      "P2"
+     ],
+     "statement": "Long-standing track wear in the Adamuz area is the underlying cause"
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P5",
+      "P6"
+     ],
+     "statement": "Impacts caused by train wheel flats rather than track (less likely: two different trainsets, same PK)"
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "CALL_TRAIN",
+     "cost_if_wrong": "A few minutes of crew time if nothing abnormal; missing wheelset damage if skipped.",
+     "evidence_ids": [
+      "P5",
+      "P6"
+     ],
+     "rationale": "Second wheel impact at PK 318.68 (P6) confirms a fixed track-side point, not one train's defect; the crew can describe what they felt and the train may need inspection. Complements pending REC-004 for 109-012.",
+     "target": "Iryo trainset 109-003",
+     "title": "Call Iryo 109-003 crew to check for abnormal running and wheelset condition",
+     "urgency": "high"
+    }
+   ],
+   "situation": "Two Iryo trainsets (P5, P6) registered wheel impacts at the same point, PK 318.68 track 1, 100 minutes apart; earlier sub-threshold signals (P3 track-circuit drop, P4 driver vibration report, P2 inspection) point to the same spot. Each signal alone is below alarm thresholds, but four independent families converge; a rail break is unconfirmed but likely. Speed restriction and inspection (REC-002, REC-003) are still pending while trains keep crossing.",
+   "unknowns": [
+    "Whether the rail is cracked or broken at PK 318.68 (no inspection yet)",
+    "Next trains scheduled over track 1 at this point and their timing",
+    "Condition of wheelsets on 109-012 and 109-003 after the impacts",
+    "Whether the track circuit TC-318-V1 voltage is still falling"
+   ]
+  },
+  "1|P7": {
+   "driver_message": "CTC: you registered a wheel impact at PK 318.68, vía 1. Report any abnormal running. Reduce speed and check wheelsets at your next stop.",
+   "driver_train": "Renfe Series 130",
+   "headline": "Three trains hit the same impact point at PK 318.68 vía 1 — restrict now",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "Rail discontinuity (broken rail or failed weld) on track 1 near PK 318.68 is developing under traffic. Unconfirmed."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "P1",
+      "P2"
+     ],
+     "statement": "Long-standing wear in the Adamuz area is a precursor to the current defect."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "Trainsets 109-012, 109-003 and the Series 130 may have sustained wheelset damage from the impacts."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "CALL_TRAIN",
+     "cost_if_wrong": "If wrong: one radio call. If skipped: we lose the freshest eyewitness and may leave a damaged train running at speed.",
+     "evidence_ids": [
+      "P7"
+     ],
+     "rationale": "This is the latest train to register an impact at the same point (P7). Its crew is the freshest first-hand witness, and the train may itself be damaged.",
+     "target": "Renfe Series 130 (passed PK 318.68 at 19:09)",
+     "title": "Call Series 130 crew about running at PK 318.68 and wheelset condition",
+     "urgency": "high"
+    }
+   ],
+   "situation": "Three trains (P5, P6, P7) registered wheel impact peaks at PK 318.68 on track 1 within two hours, consistent with a driver vibration report (P4) and a track-circuit voltage drop (P3). Each signal is below its own alarm threshold, but together they point to a likely rail discontinuity (inference, unconfirmed by inspection). Track 1 is still open at line speed, and the critical restriction and inspection (REC-002, REC-003) are still pending.",
+   "unknowns": [
+    "Physical state of the rail at PK 318.68: no inspection has confirmed or ruled out a break or weld failure",
+    "Which trains are next scheduled over track 1 at the suspect point (train describer is empty)",
+    "Whether the Renfe Series 130 crew (P7) noticed abnormal running or wheelset damage",
+    "Whether the impacts are getting worse with each passage"
+   ]
+  },
+  "1|R0": {
+   "driver_message": "AVLO 2181: remain stopped. Major incident ahead at Adamuz PK 318.7, both tracks blocked. Do not proceed until CTC authorises.",
+   "driver_train": "AVLO 2181",
+   "headline": "Major incident at Adamuz PK 318.7: IRYO 6189 derailed, ALVIA 2384 likely struck, both tracks.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "Rail discontinuity on track 1 near PK 318.68 caused the IRYO 6189 derailment; weak precursor signals were each below their own threshold."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R0"
+     ],
+     "statement": "Derailed IRYO coaches fouled track 2 and ALVIA 2384 hit them at speed; loss of point detection and power are consistent with this but unconfirmed."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I2",
+      "I3",
+      "I6"
+     ],
+     "statement": "Both trains have casualties needing immediate emergency response."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailment is confirmed by its onboard detector (coaches 6–8, track 1, PK ~318.69), with emergency brake applied (I2, I3). Seconds later S613 on track 2 dropped to STOP and ALVIA 2384, approaching at ~209 km/h, lost telemetry inside the zone, with a catenary voltage drop (I4, I6, R0). A collision with ALVIA 2384 is inferred, not confirmed. Up to 478 people may be affected, and the impact phase was seconds-critical, so automatic protection was the relevant layer there, not the operator.",
+   "unknowns": [
+    "Whether ALVIA 2384 struck the derailed IRYO coaches or itself derailed, and its crew status.",
+    "Casualties on either train (294 + 184 on board).",
+    "Exact extent of fouling of track 2 and the catenary state.",
+    "Whether any other train besides AVLO 2181 is approaching the zone."
+   ]
+  },
+  "1|R1": {
+   "driver_message": "AVLO 2181: remain stopped at PK 309, vía 2. Major incident ahead at Adamuz. Do not proceed without CTC authority.\"",
+   "driver_train": "AVLO 2181",
+   "headline": "Two trains likely involved at Adamuz PK 318.7: up to 478 people. Approve emergency dispatch now.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "Rail discontinuity on vía 1 near PK 318.68 caused IRYO 6189's derailment; precursor signals were each below threshold."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1"
+     ],
+     "statement": "IRYO 6189's derailed coaches fouled vía 2 and ALVIA 2384 collided with them; stopping distance was too long to avoid it."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R0",
+      "I3"
+     ],
+     "statement": "Power loss in the Adamuz section is a consequence of the derailment damaging catenary, not a separate fault."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed coaches 6–8 on vía 1 at PK ~318.69 (onboard detector, I2); S613 on vía 2 dropped to STOP and catenary power was lost seconds later (I4, R0). ALVIA 2384 was approaching on vía 2 at high speed, lost telemetry while braking and has not moved for 55 s inside the zone (I0, I6, R1): collision with fouled vía 2 is likely but unconfirmed. AVLO 2181 is stopped at PK 309 on vía 2; all emergency, stop-traffic and call recommendations are still pending.",
+   "unknowns": [
+    "Whether ALVIA 2384 struck IRYO 6189's derailed coaches, and its crew and passenger condition",
+    "Casualties on IRYO 6189 (294 on board) and ALVIA 2384 (184 on board)",
+    "Whether vía 2 is physically fouled and the exact position of derailed coaches",
+    "Whether catenary is de-energised and safe for rescuers"
+   ]
+  },
+  "1|R10": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "ALVIA 2384 almost certainly hit, 184 aboard, no confirmed rescue dispatch to it",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6",
+      "R7",
+      "R9"
+     ],
+     "statement": "ALVIA 2384 struck the IRYO coaches fouling track 2 and is itself derailed or damaged, with injured people and a crew unable to answer."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "A rail discontinuity on track 1 near PK 318.68 caused the IRYO derailment; it was signalled by repeated wheel impacts that stayed below every alarm threshold."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R8",
+      "R10",
+      "R9"
+     ],
+     "statement": "Rescue currently focuses on the IRYO only, leaving ALVIA 2384 victims waiting about 500 m away."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed at PK ~318.5 on track 1 and fouled track 2; driver confirmed it, with fire and injuries, and the first medical unit reached the Iryo at 20:02 (I2, R7, R10). ALVIA 2384 has been stopped on track 2 at PK 318.4–319.0 since 19:43, telemetry lost while braking, two unanswered calls, and a passenger called 112 from it at 19:55 (I6, R1, R5, R6, R9). Its involvement is high-confidence inference, still unconfirmed by crew or responders, and emergency services were mobilised for the Iryo only (R8).",
+   "unknowns": [
+    "Condition of ALVIA 2384, its crew and its 184 passengers, and whether it derailed after striking Iryo coaches.",
+    "Whether responders know a second train is involved, and its exact position (track 2, PK ~318.85 per describer).",
+    "Whether any train other than AVLO 2181 is still approaching PK 317–321 on either track.",
+    "Whether the IRYO 6189 fire is spreading and what casualties there are."
+   ]
+  },
+  "1|R11": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "ALVIA 2384 now reported derailed: send emergency services to it directly, track 2 PK ~318.85",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6",
+      "R9",
+      "R11"
+     ],
+     "statement": "ALVIA 2384 struck the Iryo coaches fouling track 2 and derailed; crew likely incapacitated."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "Initiating cause was a rail discontinuity on track 1 near PK 318.68, flagged earlier by sub-threshold signals. Unconfirmed until inspection."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R8",
+      "R10",
+      "R11"
+     ],
+     "statement": "Responders at the Iryo may be unaware of a second casualty site at the Alvia."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed on track 1 near PK 318.7, fouled track 2, fire and one passenger death reported; medical unit on scene at the Iryo since 20:02 (R7, R10, R11). ALVIA 2384 has been stopped on track 2 at PK 318.4–319.0 since 19:43, crew unreachable, passengers calling 112, and the Iryo driver now says it also derailed: second-hand, but consistent with all other evidence (I6, R1, R5, R6, R9, R11). Emergency dispatch so far is confirmed for the Iryo only; the Alvia, 184 on board, has no confirmed dispatch (R8).",
+   "unknowns": [
+    "ALVIA 2384 condition, casualties and whether any crew is able to act: not confirmed first-hand",
+    "Whether responders have reached ALVIA 2384, about 0.65 km from the Iryo by describer position",
+    "Whether all traffic on both tracks is actually blocked (REC-009/REC-011 still pending)",
+    "Extent of the fire and casualties on IRYO 6189"
+   ]
+  },
+  "1|R12": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "ALVIA 2384 likely derailed and unattended; correct the CPS 'not derailed' message to 112 now",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I0",
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6",
+      "R9",
+      "R11"
+     ],
+     "statement": "ALVIA 2384 struck the fouling Iryo coaches and is derailed with casualties; crew likely incapacitated."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "Root cause: rail discontinuity on track 1 near PK 318.68, flagged by sub-threshold signals before the derailment."
+    },
+    {
+     "confidence": "low",
+     "evidence_ids": [
+      "R12"
+     ],
+     "statement": "ALVIA 2384 only braked hard and is intact (CPS claim), unconfirmed and inconsistent with silence and 112 calls."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "NOTIFY_112",
+     "cost_if_wrong": "If the Alvia is intact, some ambulances are redirected briefly. If it is derailed and 112 believes it is not, 184 people wait without help.",
+     "evidence_ids": [
+      "R12",
+      "R9",
+      "R11",
+      "I6",
+      "R1",
+      "R5",
+      "R6"
+     ],
+     "rationale": "R12 tells 112 the Alvia did not derail, which may divert resources. Evidence (I6, R1, R5, R6, R9, R11) points to involvement. No first-hand confirmation exists; 112 must keep resources heading to track 2, PK ~318.85.",
+     "target": "112 Madrid and 112 Andalucía",
+     "title": "Correct CPS message: ALVIA 2384 status unconfirmed, treat as derailed, send units",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "IRYO 6189 derailed on track 1 at PK ~318.7, fouled track 2, with fire and one death reported; responders are on scene only at the Iryo (I2, R7, R10, R11). ALVIA 2384 has been stationary on track 2 at PK 318.4–319.0 since the alarms, with telemetry lost, two unanswered calls and passengers calling 112 (I6, R1, R5, R6, R9). Adif CPS has just told 112 Madrid it did not derail (R12): that is unconfirmed and contradicts the record, including a second-hand derailment report (R11).",
+   "unknowns": [
+    "First-hand condition of ALVIA 2384: derailed, collided, casualties, fire (184 on board)",
+    "Whether any responders have been sent to or reached ALVIA 2384",
+    "Source of the CPS 'did not derail' claim (R12): first-hand or assumed from braking data",
+    "Whether all traffic is held on both tracks beyond AVLO 2181"
+   ]
+  },
+  "1|R13": {
+   "driver_message": "Interventor: emergency services are being sent to you on track 2. Report injured count, fire, and the maquinista's condition. Keep passengers off track 1. ",
+   "driver_train": "ALVIA 2384",
+   "headline": "ALVIA 2384 confirmed derailed, half overturned: send emergency units to track 2 now",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R7",
+      "R13"
+     ],
+     "statement": "IRYO 6189 derailed on track 1 near PK 318.5, fouled track 2, and ALVIA 2384 struck the fouling coaches and derailed."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "Initial cause: rail discontinuity on track 1 near PK 318.68, signalled by repeated wheel impacts and earlier reports; unconfirmed until inspection."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I6",
+      "R5",
+      "R6",
+      "R13"
+     ],
+     "statement": "The ALVIA 2384 maquinista may be injured or incapacitated, given no answer to calls and loss of telemetry; unconfirmed."
+    }
+   ],
+   "recommendations": [],
+   "situation": "ALVIA 2384 train manager confirms half the train is overturned (R13), contradicting the CPS message to 112 Madrid that it did not derail (R12). IRYO 6189 is derailed with fire and at least one death; medical units are on scene there only (R7, R10, R11). No confirmed emergency dispatch has gone to ALVIA 2384 on track 2, PK ~318.85, 184 on board.",
+   "unknowns": [
+    "Casualties and condition on ALVIA 2384, including the maquinista, unanswered since 19:48 (R5, R6)",
+    "Whether 112 Madrid/Andalucía have received a correction of the CPS 'not derailed' message (R12)",
+    "Whether any responders have reached the Alvia site on track 2",
+    "Fire status on IRYO 6189 and access route between the two trains"
+   ]
+  },
+  "1|R14": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "Two trains derailed at Adamuz; ALVIA 2384 still has no confirmed emergency dispatch.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6",
+      "R7",
+      "R13",
+      "R14"
+     ],
+     "statement": "ALVIA 2384 struck the fouling Iryo coaches on track 2 and overturned; serious casualties are likely, including the driver."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "Initial cause was a rail discontinuity on track 1 near PK 318.68, signalled by wheel impacts from three earlier trains, each below threshold (unconfirmed until inspection)."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R8",
+      "R10",
+      "R12",
+      "R13",
+      "R14"
+     ],
+     "statement": "Emergency response is concentrated on the Iryo; Alvia victims may be under-served because of the incorrect CPS report."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 (294 on board) derailed on track 1 at PK ~318.7, fouled track 2, with fire and at least one death; medical units are at the Iryo since 20:02. ALVIA 2384 (184 on board, track 2, PK ~318.85) is confirmed derailed by its train manager ('medio tren volcado') and Adif Sevilla. The 20:09 CPS message to 112 Madrid saying the Alvia did not derail is wrong and, as far as the record shows, not yet corrected.",
+   "unknowns": [
+    "Whether any emergency units have been sent to the ALVIA 2384 site, not only to the Iryo",
+    "Casualty count and condition of the ALVIA 2384 driver (no answer since 19:48)",
+    "Whether 112 Madrid and 112 Andalucía have received the correction that the Alvia derailed",
+    "Whether all traffic on both tracks is formally stopped and protected (AVLO 2181 stopped at PK 309, track 2, by power loss only)"
+   ]
+  },
+  "1|R15": {
+   "driver_message": "Remain stopped at PK 309, track 2. Line blocked at Adamuz, both tracks. Do not move without CTC authorisation.  Keep passengers informed.",
+   "driver_train": "AVLO 2181",
+   "headline": "Two trains derailed at Adamuz; medical teams now on scene at both trains",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "A rail discontinuity on track 1 near PK 318.4–319.0 caused the Iryo derailment. Precursors were all below their alarm thresholds. Inference, unconfirmed."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R7",
+      "R13"
+     ],
+     "statement": "The derailed Iryo coaches fouled track 2 and ALVIA 2384 struck them. It was braking but could not stop in the distance available."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I6",
+      "R5",
+      "R6"
+     ],
+     "statement": "The ALVIA 2384 driver is incapacitated, given two unanswered calls and loss of the event recorder. Unconfirmed."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 (294 on board) derailed on track 1 and fouled track 2; ALVIA 2384 (184 on board) is derailed and partly overturned on track 2, confirmed first-hand by its train manager and by Adif Sevilla (R13, R14). Medical units reached the Iryo at 20:02 and the Alvia at 20:35, about 52 minutes after the collision (R10, R15). One death is reported on the Iryo (R11); fire was reported there (R7); casualties on the Alvia are not yet known.",
+   "unknowns": [
+    "Number and severity of casualties on ALVIA 2384, and whether its maquinista is alive and reachable",
+    "Whether 112 Madrid has received a correction to the CPS message that the Alvia did not derail (R12)",
+    "Whether all traffic on both tracks is formally blocked, including AVLO 2181 held at PK 309",
+    "Status of the fire on IRYO 6189"
+   ]
+  },
+  "1|R2": {
+   "driver_message": "AVLO 2181: remain stopped. Do not proceed toward Adamuz on any track. Major incident at PK 318.7, both tracks. Await CTC instructions.",
+   "driver_train": "AVLO 2181",
+   "headline": "Two trains likely involved at Adamuz PK 318.7: stop all traffic, send emergency services",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1"
+     ],
+     "statement": "Derailed IRYO 6189 coaches fouled track 2 and ALVIA 2384 ran into them before it could stop. Inferred, unconfirmed."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "The derailment was caused by a rail break on track 1 near PK 318.68 that earlier impacts had already flagged."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R2",
+      "I6"
+     ],
+     "statement": "112 may only know about the Iryo, because the single call came from an Iryo passenger."
+    }
+   ],
+   "recommendations": [
+    {
+     "action": "NOTIFY_112",
+     "cost_if_wrong": "If the ALVIA is unharmed, some ambulances are sent unnecessarily. If 112 is not told and the ALVIA was hit, injured people on 184-passenger train wait longer for help.",
+     "evidence_ids": [
+      "R2",
+      "I6",
+      "R1",
+      "I2"
+     ],
+     "rationale": "The only 112 call so far is from an Iryo passenger (R2). ALVIA 2384 is silent and stopped in the incident zone (I6, R1), so 112 may underestimate the scale and send resources to only one train. Dispatch recommendations REC-008 and REC-014 are still pending, not executed.",
+     "target": "112 Andalucía",
+     "title": "Tell 112 directly: two trains involved, ALVIA 2384 likely hit, up to 478 people",
+     "urgency": "critical"
+    }
+   ],
+   "situation": "IRYO 6189 derailed coaches 6–8 on track 1 near PK 318.69 (onboard detector, I2), and a passenger has called 112 (R2). ALVIA 2384 lost telemetry while braking at about 209 km/h and has been stationary on track 2 at PK 318.4–319.0 for 55 s (I6, R1). A collision with the derailed coaches fouling track 2 is likely but unconfirmed. Catenary power is down (R0). Nothing on the ALVIA was seconds-recoverable by the operator: onboard protection and braking were the relevant layer.",
+   "unknowns": [
+    "Whether ALVIA 2384 struck IRYO 6189's coaches, and its condition (no telemetry, no crew contact yet)",
+    "Casualties on either train (up to 478 on board)",
+    "Whether track 2 is physically fouled or obstructed",
+    "Whether 112 has located the site and both trains, or only the Iryo"
+   ]
+  },
+  "1|R3": {
+   "driver_message": "Maquinista: your rear coaches 6–8 derailed. Check if they foul vía 2 and whether ALVIA 2384 has hit them. Report injuries.  Keep line open.",
+   "driver_train": "IRYO 6189",
+   "headline": "IRYO 6189 derailed; ALVIA 2384 likely struck on vía 2. Treat as two-train accident.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "IRYO 6189 derailed at a rail discontinuity on vía 1 PK ~318.7 flagged by prior sub-threshold signals"
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1"
+     ],
+     "statement": "Derailed IRYO coaches fouled vía 2 and ALVIA 2384 struck them; unconfirmed"
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "I2",
+      "R3",
+      "R0"
+     ],
+     "statement": "IRYO driver's 'catenary snag' is a misreading from the cab; the rear coaches derailed"
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailment is detected onboard (coaches 6–8, vía 1 PK ~318.7) and S613 on vía 2 dropped to STOP seconds later (I2, I4). ALVIA 2384 lost telemetry while braking inside the zone and has not moved for over a minute; collision with fouling coaches is inferred, unconfirmed (I6, R1). The IRYO maquinista is on the line now calling it a catenary snag, which does not explain the derailment alarm (R3).",
+   "unknowns": [
+    "Whether ALVIA 2384 hit the derailed coaches, and the condition of its 184 on board",
+    "Whether IRYO 6189 coaches foul vía 2",
+    "Casualties on either train",
+    "Whether ALVIA 2384 crew can be reached at all"
+   ]
+  },
+  "1|R5": {
+   "driver_message": "Maquinista: your coaches 6–8 are derailed, possibly fouling track 2. Do not move. Check rear coaches and report injured and track 2 status.\u0000",
+   "driver_train": "IRYO 6189",
+   "headline": "Two trains likely involved at Adamuz PK 318.7; ALVIA 2384 silent, 478 people at risk",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "IRYO 6189 derailed at a rail discontinuity on track 1 near PK 318.68, flagged by earlier sub-threshold signals."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I4",
+      "I6",
+      "R1",
+      "R5"
+     ],
+     "statement": "Derailed Iryo coaches fouled track 2 and ALVIA 2384 collided with them; its silence suggests serious damage (unconfirmed)."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R0",
+      "R3",
+      "R4"
+     ],
+     "statement": "The catenary voltage loss is a consequence of the derailment/collision, not the cause."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed coaches 6–8 on track 1 near PK 318.69 (onboard detector, I2); passengers are calling 112 (R2). ALVIA 2384 lost telemetry while braking on track 2 just after S613 dropped (I4, I6), has not moved (R1) and did not answer the CTC call (R5): a collision with fouling Iryo coaches is likely but unconfirmed. The Iryo driver's 'catenary snag' report (R3) does not explain the derailment alarm; treat it as a derailment, not a power fault.",
+   "unknowns": [
+    "Whether ALVIA 2384 struck derailed Iryo coaches, and the condition of its 184 people and crew",
+    "Whether the Iryo driver knows coaches 6–8 derailed and whether they foul track 2",
+    "Number and severity of casualties on either train",
+    "Whether emergency services are already en route to the correct access point at PK 318.2–318.9"
+   ]
+  },
+  "1|R6": {
+   "driver_message": "Your rear coaches derailed and may block track 2. Do not leave the cab area. Check coaches 6–8 and report: are there injured, and is track 2 blocked?",
+   "driver_train": "IRYO 6189",
+   "headline": "ALVIA 2384 silent after likely collision with derailed IRYO coaches: send help to it now",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6"
+     ],
+     "statement": "Derailed IRYO coaches fouled track 2 and ALVIA 2384 hit them; its crew may be injured or without power or radio."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "The derailment was caused by a rail discontinuity on track 1 near PK 318.68, flagged by prior sub-threshold signals."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R3",
+      "I2"
+     ],
+     "statement": "The IRYO driver is underestimating the event as a catenary snag."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed coaches 6–8 on track 1 near PK 318.69 (onboard detector, I2); S613 on track 2 dropped to STOP seconds later (I4) and catenary power was lost (R0). ALVIA 2384 has been stopped on track 2 at PK 318.4–319.0, with telemetry lost while braking (I6, R1), and has not answered two calls (R5, R6). A collision with ALVIA 2384 is strongly inferred but unconfirmed. The IRYO driver's 'catenary snag' report (R3) does not explain the derailment alarm.",
+   "unknowns": [
+    "Whether ALVIA 2384 struck the derailed IRYO coaches, and casualties on board (184 people)",
+    "Condition of IRYO 6189 coaches 6–8 and injuries (294 on board)",
+    "Whether 112 knows a second train is involved; so far only an IRYO passenger has called (R2)",
+    "Whether any other train is still approaching Adamuz on either track"
+   ]
+  },
+  "1|R7": {
+   "driver_message": "Emergency services are coming. ALVIA 2384 on track 2 is likely hit near your rear coaches. Report anything you can see of it. ",
+   "driver_train": "IRYO 6189",
+   "headline": "ALVIA 2384 likely hit by derailed IRYO 6189 at Adamuz. Not 'no train coming'.",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6",
+      "R7"
+     ],
+     "statement": "ALVIA 2384 struck the IRYO coaches fouling track 2 and is badly damaged; crew may be incapacitated (unconfirmed)."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "A rail discontinuity on track 1 near PK 318.68, signalled by repeated sub-threshold impacts, caused the IRYO derailment."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R0",
+      "R4"
+     ],
+     "statement": "The power loss across the Adamuz section has stopped other trains such as AVLO 2181, but this does not guarantee they are protected."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed at PK ~318.5 on track 1 and is fouling track 2, with fire reported (I2, R7). ALVIA 2384 was on track 2 at speed when the derailment happened, lost telemetry while braking, has stood still at PK 318.4–319.0 since, and has not answered 2 calls (I0, I4, I6, R1, R5, R6). Collision with ALVIA 2384 is unconfirmed but highly likely; the operator's reply 'no train is coming' was wrong for this train.",
+   "unknowns": [
+    "Condition of ALVIA 2384 and its 184 on board: collision, derailment, casualties",
+    "Whether 112 knows that a second train is involved",
+    "Extent of the fire on IRYO 6189 and the number of injured",
+    "Whether any other train is still approaching on either track"
+   ]
+  },
+  "1|R8": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "ALVIA 2384 likely hit by derailed Iryo; no emergency dispatch for it yet",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6",
+      "R7"
+     ],
+     "statement": "ALVIA 2384 collided with the fouling Iryo coaches on track 2 and needs rescue."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "I2"
+     ],
+     "statement": "A rail discontinuity on track 1 near PK 318.68 caused the IRYO 6189 derailment. Each warning sign was below its own alarm threshold."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R0",
+      "R3",
+      "R7"
+     ],
+     "statement": "The Iryo driver's 'catenary snag' was the derailment; the catenary voltage loss is a consequence of it."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed at Adamuz PK ~318.7, fouling track 2, with fire and injuries; emergency services are mobilised for the Iryo only (I2, R7, R8). ALVIA 2384 (184 on board) was 0.55 km away at ~209 km/h when S613 dropped, lost telemetry while braking, has not moved since, and has not answered 2 calls (I4, I6, R1, R5, R6). Its involvement is unconfirmed but highly likely; the CTC statement 'no train is coming' was wrong for that moment.",
+   "unknowns": [
+    "Condition of ALVIA 2384, its crew and its 184 passengers",
+    "Whether emergency services know a second train is involved",
+    "Extent of the fire and casualties on IRYO 6189",
+    "Whether all traffic on both tracks is actually held (AVLO 2181 is stopped, but are there trains behind it?)"
+   ]
+  },
+  "1|R9": {
+   "driver_message": "",
+   "driver_train": "",
+   "headline": "ALVIA 2384 almost certainly hit: first 112 call from its passengers, no emergency dispatch yet",
+   "hypotheses": [
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "I2",
+      "I4",
+      "I6",
+      "R1",
+      "R5",
+      "R6",
+      "R7",
+      "R9"
+     ],
+     "statement": "ALVIA 2384 struck the derailed Iryo coaches fouling track 2 and is itself badly damaged, with crew incapacitated."
+    },
+    {
+     "confidence": "high",
+     "evidence_ids": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+     ],
+     "statement": "The derailment started at a rail discontinuity on track 1 near PK 318.68 that earlier signals pointed to, each below its own threshold."
+    },
+    {
+     "confidence": "medium",
+     "evidence_ids": [
+      "R8",
+      "R9"
+     ],
+     "statement": "Emergency response is currently sized and located for one train only, so the Alvia site may go unattended."
+    }
+   ],
+   "recommendations": [],
+   "situation": "IRYO 6189 derailed at PK ~318.7 and is fouling track 2, with fire reported (I2, R7); emergency services were mobilised for the Iryo only (R8). ALVIA 2384 has been stopped on track 2 at PK 318.4–319.0 since 19:43, its telemetry was lost while braking, two calls to its driver went unanswered, and at 19:55 a passenger on board called 112 (I6, R1, R5, R6, R9). The collision is unconfirmed by crew but strongly supported, and the CTC statement 'no train is coming' (R7) does not cover the Alvia already in the section.",
+   "unknowns": [
+    "Condition of ALVIA 2384 crew and its 184 passengers; whether coaches derailed or overturned",
+    "Whether responders know a second train is involved and where it is (track 2, PK ~318.85)",
+    "Whether traffic is formally stopped on both tracks beyond AVLO 2181 (pending REC-009/REC-011)",
+    "Extent of the Iryo fire and casualties"
+   ]
+  }
+ },
+ "handovers": {
+  "0|R15": {
+   "decisions_pending": [
+    "REC-001 / REC-002: stop all traffic, both tracks, Adamuz PK 317–320 / 300–340 (critical).",
+    "REC-014: correct 112 Madrid and 112 Andalucía on the Alvia's status (critical).",
+    "REC-007: confirm with CRC Energy that the catenary is de-energised and earthed (high).",
+    "REC-005 / REC-006 / REC-010: dispatch to both trains and notify 112 Andalucía, up to 478 people (critical).",
+    "REC-003, REC-004, REC-008, REC-009, REC-011, REC-012, REC-013: call and status-check actions, now largely overtaken by events [R13][R14][R15]. Close these out formally or confirm them."
+   ],
+   "summary": "Major two-train derailment at Adamuz, PK ~318.2–318.9, both tracks. Sim time 20:35. IRYO 6189 (track 1, 294 on board) derailed and is fouling the adjacent track, with fire, injuries and at least one passenger death reported by its driver [R7][R11]. ALVIA 2384 (track 2, 184 on board) has also derailed, with 'half the train overturned' per its train manager [R13], confirmed by Adif Sevilla [R14]. The first medical unit reached the Iryo at 20:02 [R10] and the first medical team reached the Alvia at 20:35, about 52 minutes after the collision [R15]. The incident began at 19:43:37, when S613 (track 2) dropped to STOP on loss of point detection as ALVIA 2384 approached [I4], followed by a catenary voltage drop in the Adamuz section [R0]. The ALVIA driver did not answer two calls [R5][R6]. At 19:49 the CTC told the Iryo driver 'no train is coming' [R7], and at 20:09 Adif CPS wrongly told 112 Madrid that the Alvia had not derailed [R12]. That statement was later contradicted [R13][R14], but there is no record that 112 was corrected. AVLO 2181 is stopped at PK 309.0 on track 2 with no catenary voltage [R4]; its passenger count is unknown. All 14 recommendations (REC-001 to REC-014) still show as pending with no recorded decision.",
+   "unresolved": [
+    "No recorded traffic stop on either track. The Iryo driver urgently requested one [R7]; REC-001 and REC-002 are still pending. Confirm both tracks are blocked, roughly PK 300–340.",
+    "112 Madrid was told the Alvia did not derail [R12], and no correction is recorded. REC-014 (correct 112 Madrid and 112 Andalucía: Alvia derailed, half overturned, 184 on board) is still pending.",
+    "There is no confirmation that the catenary is de-energised and earthed, yet responders are now on site at both trains [R10][R15]. REC-007 is still pending.",
+    "Casualties: one death [R11], plus fire and injuries on the Iryo [R7]. The Alvia's condition is unknown beyond 'half overturned' [R13]. No casualty counts are recorded for either train (478 people on board in total).",
+    "ALVIA 2384 driver: the record shows two unanswered calls [R5][R6] and no later contact with or information about the driver.",
+    "Emergency mobilisation was recorded for the Iryo only [R8]. There is no record of explicit dispatch to the Alvia (REC-010) or of 112 Andalucía being notified (REC-006); responders reached the Alvia only at 20:35 [R15].",
+    "AVLO 2181 is stopped at PK 309.0, track 2, without power [R4]. Its passenger count and onward handling are not recorded.",
+    "The cause is undetermined: loss of point detection at S613 [I4] and the power loss [R0] occurred within seconds of each other."
+   ],
+   "watch_next": [
+    "Confirmation from CRC Energy that the line is isolated and earthed while responders work near the catenary.",
+    "Responder reports from the Alvia [R15]: casualties, overturned coaches, and the driver's condition.",
+    "Confirmation that 112 has received and acknowledged the corrected Alvia information.",
+    "Any train movements toward PK 300–340 on either track.",
+    "Status of AVLO 2181 [R4] and its passengers.",
+    "Further reports of fire at the Iryo site [R7]."
+   ]
+  },
+  "1|R15": {
+   "decisions_pending": [
+    "Formally action the stop and hold of all traffic on both tracks, PK 300–340 (REC-011, REC-009, REC-007); confirm AVLO 2181's protection.",
+    "Issue a correction to 112 Madrid and 112 Andalucía: both trains derailed, up to 478 people (REC-021, REC-015).",
+    "Confirm resources for both sites, especially the Alvia on track 2 at PK ~318.85 (REC-014, REC-018).",
+    "Close or update stale contact and status recommendations against current facts (REC-010, REC-012, REC-013, REC-016, REC-017, REC-019, REC-020).",
+    "Contact the crews of Iryo 109-012, Iryo 109-003 and the Renfe Series 130 to check wheelset condition after the impacts at PK 318.68 (REC-004, REC-005, REC-006 pending) [P5][P6][P7]."
+   ],
+   "summary": "Sim time 20:35, 18 Jan 2026. Major incident at Adamuz, PK ~318.7, affecting both tracks [I2][I4][R0]. IRYO 6189 (294 on board, track 1, now PK 318.2) derailed at 19:43:34: coach 6 first axle, then coaches 7–8. It is fouling the adjacent track 2, with fire reported and at least one passenger death [I2][R7][R11]. ALVIA 2384 (184 on board, track 2, now PK 318.85) is also derailed, with 'half the train overturned'. This was confirmed by its train manager [R13] and by Adif Sevilla [R14]. Its telemetry was lost while braking [I6], and the driver did not answer two calls [R5][R6]; the driver's condition remains unknown. Emergency response: Adif mobilised emergency services at 19:50 [R8]. The first medical unit reached the Iryo at 20:02 [R10]. The first medical team reached the Alvia only at 20:35, about 52 minutes after the collision [R15]. At 20:09:58 Adif CPS told 112 Madrid that the Alvia had NOT derailed [R12]; this was false, and the record holds no correction to 112. Catenary power was lost in the Adamuz section [R0]. AVLO 2181 is stopped on track 2 at PK 309.0 with no catenary voltage [R4]; its number on board is unknown. Likely cause (hypothesis, high confidence): a rail discontinuity on track 1, PK 318.4–319.0. Precursors were all below their own alarm thresholds: a union warning [P1], an inspection reading [P2], a track-circuit voltage drop [P3], a driver vibration report [P4], and wheel impacts on 3 trains at PK 318.68 [P5][P6][P7]. A rail break is suspected but not confirmed.",
+   "unresolved": [
+    "No record that traffic is formally stopped and protected on both tracks PK 300–340. REC-007, REC-009 and REC-011 are still pending. AVLO 2181 [R4] and any following trains must be held. Track 2 is fouled [R7] and both trains are on site.",
+    "112 Madrid was told the Alvia did not derail [R12]. No correction to 112 Madrid or 112 Andalucía is logged (REC-021 and REC-015 pending). This risks under-resourcing the 184 people on the Alvia.",
+    "ALVIA 2384 driver unreachable after 2 calls [R5][R6]; condition unknown. Casualty status on both trains is incomplete: one death on the Iryo is reported [R11], fire was reported on the Iryo [R7], and the Alvia is half overturned [R13].",
+    "Medical response to the Alvia arrived only at 20:35 [R15]. Whether resources are sufficient for both sites (up to 478 people) is unconfirmed (REC-014 and REC-018 pending).",
+    "Catenary in the Adamuz section is de-energised [R0]. No record of isolation or earthing for responders working near the overhead line."
+   ],
+   "watch_next": [
+    "Casualty and fire updates from both sites [R7][R11][R13].",
+    "Any train movement requests toward PK 317–321 on either track.",
+    "Status of AVLO 2181 and its passengers, stranded without power at PK 309.0 [R4].",
+    "Preserve evidence: the suspected track 1 defect at PK 318.4–319.0, and the precursor records [P1]–[P7].",
+    "Any further conflicting reports between Adif CPS and the site; do not accept single-source 'all clear' messages [R12]."
+   ]
+  }
+ }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copi · Pilot</title>
+  <link rel="stylesheet" href="/static/drill/drill.css">
+</head>
+<body class="cab">
+  <div class="view" id="view">
+    <canvas id="cab"></canvas>
+    <div class="hud l"><b id="h-train">Train A</b><span id="h-route"></span></div>
+    <div class="hud r"><b class="mono" id="h-clock">--:--:--</b><span id="h-pk"></span></div>
+    <div id="alarm"></div>
+    <div class="sheet" id="sheet"></div>
+  </div>
+
+  <div class="desk">
+    <div><span class="speed" id="v">0</span> <span class="speed-u">km/h <span id="cruise"></span></span></div>
+    <div>
+      <div class="lever" id="lever"></div>
+      <div class="lever-lab"><span>brake</span><span>power</span></div>
+    </div>
+    <div class="keys">
+      <span><kbd>↑</kbd>power</span><span><kbd>C</kbd>hold this speed</span>
+      <span><kbd>↓</kbd>brake</span><span><kbd>N</kbd>coast</span>
+    </div>
+    <button class="eb" id="b-eb">Emergency brake <kbd>Space</kbd></button>
+    <span class="talk"><span id="radio-state"></span><button id="btn-radio">Hold to talk <kbd>T</kbd></button></span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/livekit-client@2.23.0/dist/livekit-client.umd.js"></script>
+  <script src="/static/drill/common.js"></script>
+  <script src="/static/drill/comms.js"></script>
+  <script src="/static/drill/driver.js"></script>
+</body>
+</html>

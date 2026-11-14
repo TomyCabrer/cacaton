@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copi Drill · Pilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/drill/classic/drill.css">
+</head>
+<body class="drill cab">
+  <div class="cab-view" id="view">
+    <canvas id="cab"></canvas>
+
+    <div class="hud tl">
+      <div class="big" id="h-train">Train</div>
+      <div class="sub" id="h-route"></div>
+    </div>
+    <div class="hud tr">
+      <div class="big" id="h-pk">PK</div>
+      <div class="sub" id="h-sig"></div>
+      <div class="sub" id="h-clock"></div>
+    </div>
+    <div class="alarms" id="alarms"></div>
+    <div class="instr hidden" id="instr">
+      <div>
+        <div class="i-from" id="i-from"></div>
+        <div class="i-text" id="i-text"></div>
+      </div>
+      <div id="i-btns"></div>
+    </div>
+
+    <div class="cab-start" id="start">
+      <div class="card">
+        <div class="who-tag pilot">Pilot</div>
+        <h2>Take the seat</h2>
+        <p id="start-brief">Waiting for the control tower to load a case.</p>
+        <div class="keys">
+          <kbd>↑</kbd><span>power</span>
+          <kbd>↓</kbd><span>brake</span>
+          <kbd>C</kbd><span>hold this speed</span>
+          <kbd>Space</kbd><span>emergency brake</span>
+          <kbd>T</kbd><span>hold to talk to the tower</span>
+          <span><kbd>1</kbd>–<kbd>4</kbd></span><span>quick report</span>
+          <kbd>R</kbd><span>heard: acknowledge an order</span>
+        </div>
+        <button class="go big" id="btn-seat">Take the seat</button>
+        <span class="hint" id="start-state"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="desk">
+    <section class="dpanel drive">
+      <div class="speedo"><span class="v" id="v">0</span><span class="u">km/h</span></div>
+      <div class="limits"><span>limit <b id="lim">-</b></span><span id="next-lim"></span><span id="cruise"></span></div>
+      <div class="lever" id="lever"></div>
+      <div class="levlab"><span>brake</span><span>power</span></div>
+      <div class="drive-btns">
+        <button id="b-brake">Brake <kbd>↓</kbd></button>
+        <button id="b-power">Power <kbd>↑</kbd></button>
+        <button id="b-neutral">Coast <kbd>N</kbd></button>
+        <button id="b-cruise">Hold speed <kbd>C</kbd></button>
+        <button id="b-eb" class="danger eb">Emergency brake <kbd>Space</kbd></button>
+      </div>
+    </section>
+
+    <section class="dpanel talk">
+      <button class="ptt pilot" id="btn-radio">
+        <span class="ptt-ring"><i></i></span>
+        <span class="ptt-text"><b>Hold <kbd>T</kbd> to talk to the tower</b><small id="radio-state">radio</small></span>
+      </button>
+      <div class="peer big" id="peer-tower"><span class="lvl"><i></i></span><span>Tower</span></div>
+      <div class="sayrow hidden" id="say-row">
+        <input id="say" placeholder="No microphone here: type to the tower" autocomplete="off">
+        <button id="btn-say">Send</button>
+      </div>
+    </section>
+
+    <section class="dpanel reports">
+      <div class="dp-head">Quick report <span class="hint">your position goes with it</span></div>
+      <div class="report-grid" id="reports"></div>
+      <div class="jobs">
+        <button id="b-rec" class="danger">Emergency call</button>
+        <button id="b-inspect">Look back</button>
+        <button id="b-clip">Clip other track</button>
+      </div>
+      <div class="prog hidden" id="job-prog"><i></i></div>
+      <div class="finding hidden" id="finding"></div>
+      <details class="log">
+        <summary>Radio log</summary>
+        <div class="scroll" id="radio"></div>
+      </details>
+    </section>
+  </div>
+
+  <div id="modal" class="modal hidden"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/livekit-client@2.23.0/dist/livekit-client.umd.js"></script>
+  <script src="/static/drill/classic/common.js"></script>
+  <script src="/static/drill/classic/comms.js"></script>
+  <script src="/static/drill/classic/driver.js"></script>
+</body>
+</html>

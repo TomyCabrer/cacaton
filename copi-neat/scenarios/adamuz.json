@@ -1,0 +1,864 @@
+{
+  "id": "adamuz-2026",
+  "title": "Adamuz (Córdoba), 18 January 2026",
+  "line": "LAV Madrid–Sevilla (high-speed line)",
+  "disclaimer": "Reconstruction for a decision-support prototype. Times marked 'real' come from the public timeline (es.wikipedia, citing CIAF and court documents) and press reports of leaked audio. Train positions are interpolated and approximate. Events marked 'simulated' or 'counterfactual' did not happen as shown: they model data a control room could have had. CIAF's final report was not published when this was written; all cause findings are provisional.",
+  "sources": [
+    {
+      "id": "eswiki",
+      "label": "Accidente ferroviario de Adamuz (es.wikipedia, timeline from CIAF/court documents)",
+      "url": "https://es.wikipedia.org/wiki/Accidente_ferroviario_de_Adamuz"
+    },
+    {
+      "id": "enwiki",
+      "label": "2026 Adamuz rail disaster (en.wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2026_Adamuz_rail_disaster"
+    },
+    {
+      "id": "infobae",
+      "label": "Infobae: the Iryo driver's calls to the control centre",
+      "url": "https://www.infobae.com/espana/2026/01/20/los-primeros-minutos-del-iryo-accidentado-en-adamuz-segun-lo-que-revela-la-llamada-del-maquinista/"
+    },
+    {
+      "id": "debate",
+      "label": "El Debate: 'Si el centro de control no vio al Alvia, vamos a ciegas'",
+      "url": "https://www.eldebate.com/economia/20260121/incognitas-extrano-accidente-adamuz-centro-control-no-vio-alvia-significa-vamos-ciegas_376706.html"
+    },
+    {
+      "id": "telegraph",
+      "label": "Telegraph (via Yahoo): driver did not know of crash for four minutes",
+      "url": "https://www.yahoo.com/news/articles/spanish-train-driver-did-not-200200530.html"
+    },
+    {
+      "id": "cordopolis",
+      "label": "Cordópolis: earlier Alvia driver felt a 'ligera vibración'",
+      "url": "https://cordopolis.eldiario.es/cordoba-hoy/maquinista-alvia-paso-accidente-adamuz-noto-ligera-vibracion-no-dio-importancia_1_13045946.html"
+    },
+    {
+      "id": "railgazette",
+      "label": "Railway Gazette: CIAF investigation to continue for months (Jul 2026)",
+      "url": "https://www.railwaygazette.com/spain/2026/07/21/ciaf-says-adamuz-crash-investigation-will-continue-for-several-months-more/"
+    }
+  ],
+  "acts": [
+    {
+      "id": "precursors",
+      "title": "Act 1 · The 22 hours",
+      "subtitle": "Weak signals in separate systems that nobody connected",
+      "start": "2025-08-20T10:00:00"
+    },
+    {
+      "id": "impact",
+      "title": "Act 2 · The 8 seconds",
+      "subtitle": "Only automatic protection is fast enough. Copi watches.",
+      "start": "2026-01-18T19:42:40"
+    },
+    {
+      "id": "response",
+      "title": "Act 3 · The 33 minutes",
+      "subtitle": "Fragmented calls and alarms under stress",
+      "start": "2026-01-18T19:43:45"
+    }
+  ],
+  "infrastructure": {
+    "pk_range": [
+      300,
+      345
+    ],
+    "places": [
+      {
+        "name": "towards Madrid",
+        "pk": 300.5
+      },
+      {
+        "name": "Adamuz",
+        "pk": 318.8
+      },
+      {
+        "name": "Córdoba",
+        "pk": 343.0
+      }
+    ],
+    "signals": [
+      {
+        "id": "S613",
+        "track": 2,
+        "pk": 318.45
+      }
+    ],
+    "track_circuits": [
+      {
+        "id": "TC-318-V1",
+        "track": 1,
+        "pk_from": 318.4,
+        "pk_to": 319.0,
+        "nominal_v": 2.0,
+        "alarm_v": 0.78
+      }
+    ],
+    "power_sections": [
+      {
+        "id": "Adamuz",
+        "pk_from": 310.0,
+        "pk_to": 327.0
+      }
+    ],
+    "defect": {
+      "track": 1,
+      "pk": 318.68,
+      "label": "rail fracture (weld), per Civil Guard / CIAF provisional findings"
+    }
+  },
+  "trains": [
+    {
+      "id": "IRYO 6189",
+      "operator": "Iryo",
+      "route": "Málaga → Madrid",
+      "track": 1,
+      "on_board": 294,
+      "keyframes": [
+        {
+          "t": "2026-01-18T19:42:00",
+          "pk": 325.2,
+          "status": "running"
+        },
+        {
+          "t": "2026-01-18T19:43:19",
+          "pk": 319.6,
+          "status": "running"
+        },
+        {
+          "t": "2026-01-18T19:43:34",
+          "pk": 318.69,
+          "status": "running"
+        },
+        {
+          "t": "2026-01-18T19:44:00",
+          "pk": 318.2,
+          "status": "stopped"
+        }
+      ]
+    },
+    {
+      "id": "ALVIA 2384",
+      "operator": "Renfe",
+      "route": "Madrid → Huelva",
+      "track": 2,
+      "on_board": 184,
+      "keyframes": [
+        {
+          "t": "2026-01-18T19:40:00",
+          "pk": 305.7,
+          "status": "running"
+        },
+        {
+          "t": "2026-01-18T19:43:37",
+          "pk": 318.31,
+          "status": "running"
+        },
+        {
+          "t": "2026-01-18T19:43:42",
+          "pk": 318.6,
+          "status": "running"
+        },
+        {
+          "t": "2026-01-18T19:43:50",
+          "pk": 318.85,
+          "status": "stopped"
+        }
+      ]
+    },
+    {
+      "id": "AVLO 2181",
+      "operator": "Renfe",
+      "route": "illustrative position",
+      "track": 2,
+      "on_board": null,
+      "keyframes": [
+        {
+          "t": "2026-01-18T19:40:00",
+          "pk": 301.0,
+          "status": "running"
+        },
+        {
+          "t": "2026-01-18T19:43:45",
+          "pk": 309.0,
+          "status": "stopped"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "P1",
+      "t": "2025-08-20T10:00:00",
+      "act": "precursors",
+      "kind": "document",
+      "channel": "Drivers' union letter",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "enwiki",
+      "time_note": "Date approximate (August 2025).",
+      "location": {
+        "pk": 318.8,
+        "track": null,
+        "radius_km": 5.0
+      },
+      "anomaly": {
+        "weight": 0.5,
+        "family": "human_report"
+      },
+      "text": "SEMAF (drivers' union) warns Adif in writing about wear and vibrations on the Madrid–Sevilla line, including the Adamuz area.",
+      "note": "Drivers later told investigators these August warnings were about passenger comfort, not safety (Cordópolis). Low specificity: area-level, not a precise location."
+    },
+    {
+      "id": "P2",
+      "t": "2025-11-18T11:00:00",
+      "act": "precursors",
+      "kind": "inspection",
+      "channel": "Track inspection record",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "enwiki",
+      "time_note": "Date approximate (about two months before the accident).",
+      "location": {
+        "pk": 318.7,
+        "track": 1,
+        "radius_km": 0.3
+      },
+      "anomaly": {
+        "weight": 1.0,
+        "family": "inspection"
+      },
+      "text": "Track inspection records a small vertical acceleration near the later derailment site. Below intervention limits; no action taken.",
+      "note": "The Civil Guard report also criticised handheld inspection devices without digital upload: the data sat in a silo."
+    },
+    {
+      "id": "P3",
+      "t": "2026-01-17T21:46:00",
+      "act": "precursors",
+      "kind": "track_circuit",
+      "channel": "Track-circuit monitoring",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "enwiki",
+      "location": {
+        "pk": 318.7,
+        "track": 1,
+        "radius_km": 0.3
+      },
+      "anomaly": {
+        "weight": 1.5,
+        "family": "electrical"
+      },
+      "data": {
+        "circuit": "TC-318-V1",
+        "from_v": 2.0,
+        "to_v": 1.5,
+        "alarm_v": 0.78
+      },
+      "text": "Track circuit TC-318-V1 (track 1): voltage drops from 2.0 V to 1.5 V (−25%). Alarm threshold is 0.78 V, so no alarm is raised.",
+      "note": "Civil Guard: an electrical change 'compatible with a rail break', about 22 hours before the crash. Adif's president disputed this link (13 Apr 2026). Provisional."
+    },
+    {
+      "id": "P4",
+      "t": "2026-01-18T08:30:00",
+      "act": "precursors",
+      "kind": "driver_report",
+      "channel": "Driver one-tap report (cab tablet)",
+      "feed": "proposed",
+      "provenance": "counterfactual",
+      "source": "cordopolis",
+      "time_note": "Time illustrative.",
+      "location": {
+        "pk": 318.7,
+        "track": 1,
+        "radius_km": 0.5
+      },
+      "anomaly": {
+        "weight": 1.0,
+        "family": "human_report"
+      },
+      "text": "Driver of an earlier Alvia logs: 'ligera vibración' (slight vibration) near PK 318.7.",
+      "original": "ligera vibración",
+      "note": "Real: 1 of the 19 drivers who ran this section on 17–18 Jan felt a slight vibration and gave it no importance; it was never reported. Counterfactual: a one-tap report button captured it."
+    },
+    {
+      "id": "P5",
+      "t": "2026-01-18T17:21:00",
+      "act": "precursors",
+      "kind": "wheel_impact",
+      "channel": "Axle-box accelerometer / wheel-impact detector",
+      "feed": "proposed",
+      "provenance": "counterfactual",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.68,
+        "track": 1,
+        "radius_km": 0.2
+      },
+      "anomaly": {
+        "weight": 2.0,
+        "family": "dynamic"
+      },
+      "train": "Iryo trainset 109-012",
+      "text": "Iryo trainset 109-012 passes PK 318.68 on track 1. Impact peak on wheelsets.",
+      "note": "Real: this train passed at 17:21 and its wheels were later found notched like the crashed train's. Counterfactual: an onboard or wayside sensor reported the impact live."
+    },
+    {
+      "id": "P6",
+      "t": "2026-01-18T19:01:00",
+      "act": "precursors",
+      "kind": "wheel_impact",
+      "channel": "Axle-box accelerometer / wheel-impact detector",
+      "feed": "proposed",
+      "provenance": "counterfactual",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.68,
+        "track": 1,
+        "radius_km": 0.2
+      },
+      "anomaly": {
+        "weight": 2.0,
+        "family": "dynamic"
+      },
+      "train": "Iryo trainset 109-003",
+      "text": "Iryo trainset 109-003 passes PK 318.68 on track 1. Impact peak on wheelsets.",
+      "note": "Real passage at 19:01; wheel damage found afterwards. Live impact report is counterfactual."
+    },
+    {
+      "id": "P7",
+      "t": "2026-01-18T19:09:00",
+      "act": "precursors",
+      "kind": "wheel_impact",
+      "channel": "Axle-box accelerometer / wheel-impact detector",
+      "feed": "proposed",
+      "provenance": "counterfactual",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.68,
+        "track": 1,
+        "radius_km": 0.2
+      },
+      "anomaly": {
+        "weight": 2.0,
+        "family": "dynamic"
+      },
+      "train": "Renfe Series 130",
+      "text": "Renfe Series 130 passes PK 318.68 on track 1. Impact peak on wheelsets.",
+      "note": "Real passage at 19:09; wheel damage found afterwards. Live impact report is counterfactual. Next train due on track 1: IRYO 6189 (Málaga → Madrid)."
+    },
+    {
+      "id": "I0",
+      "t": "2026-01-18T19:43:00",
+      "act": "impact",
+      "kind": "occupancy",
+      "channel": "Interlocking / train describer (CTC)",
+      "feed": "ctc",
+      "provenance": "simulated",
+      "source": null,
+      "location": {
+        "pk": 317.5,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "occupancy": {
+        "train": "ALVIA 2384",
+        "track": 2,
+        "pk_from": 317.0,
+        "pk_to": 319.0,
+        "state": "entered"
+      },
+      "text": "Train describer: ALVIA 2384 occupies track 2, PK 317–319, approaching signal S613 (Adamuz).",
+      "note": "Simulated. Standard interlocking data; what the Adamuz CTC screen actually showed has not been published."
+    },
+    {
+      "id": "I1",
+      "t": "2026-01-18T19:43:19",
+      "act": "impact",
+      "kind": "onboard",
+      "channel": "Onboard recorder (reconstructed afterwards)",
+      "feed": "hindsight",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 319.6,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "text": "IRYO 6189 enters the section with the broken rail."
+    },
+    {
+      "id": "I2",
+      "t": "2026-01-18T19:43:34",
+      "act": "impact",
+      "kind": "onboard",
+      "channel": "Onboard derailment detector",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.69,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "derailment": {
+        "train": "IRYO 6189",
+        "coaches": "6–8"
+      },
+      "text": "IRYO 6189: coach 6, first axle, derails just past the break. Coaches 7–8 follow.",
+      "note": "Time is real (reconstructed). A live onboard derailment-detector alert is a proposed integration."
+    },
+    {
+      "id": "I3",
+      "t": "2026-01-18T19:43:36",
+      "act": "impact",
+      "kind": "onboard",
+      "channel": "IRYO 6189 cab systems",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.6,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "driver_view": "IRYO 6189",
+      "text": "IRYO 6189 onboard systems report infrastructure faults and loss of several systems. Emergency brake.",
+      "note": "Real event in the cab. Sharing it live with the CTC is a proposed integration."
+    },
+    {
+      "id": "I4",
+      "t": "2026-01-18T19:43:37",
+      "act": "impact",
+      "kind": "signal",
+      "channel": "Interlocking (CTC)",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.45,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "signal": {
+        "id": "S613",
+        "from": "clear",
+        "to": "stop",
+        "cause": "loss of point detection"
+      },
+      "text": "Signal S613 (track 2) drops from clear to STOP: loss of point detection. ALVIA 2384 is approaching it.",
+      "note": "Real. ALVIA 2384 started emergency braking. The automatic protection layer worked, but at ~205 km/h a high-speed train needs well over 2 km to stop; the obstacle was a few hundred metres ahead."
+    },
+    {
+      "id": "I5",
+      "t": "2026-01-18T19:43:40",
+      "act": "impact",
+      "kind": "onboard",
+      "channel": "Onboard video (reconstructed afterwards)",
+      "feed": "hindsight",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.6,
+        "track": 2
+      },
+      "text": "The two trains cross."
+    },
+    {
+      "id": "I6",
+      "t": "2026-01-18T19:43:42",
+      "act": "impact",
+      "kind": "telemetry_lost",
+      "channel": "Onboard telemetry heartbeat",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.6,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "heartbeat_lost": "ALVIA 2384",
+      "text": "ALVIA 2384 telemetry heartbeat lost (event recorder power failure) while braking.",
+      "note": "Time is real (from the recorder): probable moment of collision, at 205–210 km/h. A live telemetry heartbeat to the CTC is a proposed integration."
+    },
+    {
+      "id": "R0",
+      "t": "2026-01-18T19:43:45",
+      "act": "response",
+      "kind": "power",
+      "channel": "Energy SCADA (CRC)",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.7,
+        "track": null
+      },
+      "power": {
+        "section": "Adamuz",
+        "state": "voltage_drop"
+      },
+      "text": "Catenary voltage drop in the Adamuz power section."
+    },
+    {
+      "id": "R1",
+      "t": "2026-01-18T19:44:45",
+      "act": "response",
+      "kind": "occupancy",
+      "channel": "Interlocking / train describer (CTC)",
+      "feed": "ctc",
+      "provenance": "simulated",
+      "source": null,
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "occupancy": {
+        "train": "ALVIA 2384",
+        "track": 2,
+        "pk_from": 318.4,
+        "pk_to": 319.0,
+        "state": "static"
+      },
+      "text": "Train describer: ALVIA 2384 still occupies track 2 at PK 318.4–319.0. No movement for 55 s.",
+      "note": "Simulated. Consistent with the train having stopped ~200 m past the impact point."
+    },
+    {
+      "id": "R2",
+      "t": "2026-01-18T19:44:51",
+      "act": "response",
+      "kind": "external_112",
+      "channel": "112 Andalucía",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.5,
+        "track": null
+      },
+      "train": "IRYO 6189",
+      "text": "First 112 emergency call, from a passenger on the Iryo.",
+      "note": "112 calls do not reach the rail control centre today. A live 112 feed is a proposed integration."
+    },
+    {
+      "id": "R3",
+      "t": "2026-01-18T19:45:02",
+      "act": "response",
+      "kind": "radio",
+      "channel": "GSM-R voice · IRYO 6189 driver → CTC Atocha",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "infobae",
+      "location": {
+        "pk": 318.2,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "call": {
+        "from": "IRYO 6189 driver",
+        "to": "CTC",
+        "status": "answered"
+      },
+      "claims": [
+        {
+          "subject": "IRYO 6189",
+          "assertion": "catenary_snag",
+          "by": "IRYO 6189 driver"
+        }
+      ],
+      "text": "IRYO 6189 driver reports a snag ('un enganchón') near Adamuz; thinks it is the catenary. CTC: lower the pantographs. Driver: the train is blocked. CTC: 'One second, driver, don't hang up.'",
+      "original": "un enganchón … tengo el tren bloqueado … Un segundito maquinista, no cuelgues"
+    },
+    {
+      "id": "R4",
+      "t": "2026-01-18T19:46:07",
+      "act": "response",
+      "kind": "radio",
+      "channel": "GSM-R voice · AVLO 2181 → CTC",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 309.0,
+        "track": 2
+      },
+      "train": "AVLO 2181",
+      "call": {
+        "from": "AVLO 2181 driver",
+        "to": "CTC",
+        "status": "answered"
+      },
+      "text": "AVLO 2181 calls the CTC: stopped, no catenary voltage."
+    },
+    {
+      "id": "R5",
+      "t": "2026-01-18T19:48:39",
+      "act": "response",
+      "kind": "radio",
+      "channel": "GSM-R voice · CTC → ALVIA 2384 driver",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "call": {
+        "from": "CTC",
+        "to": "ALVIA 2384 driver",
+        "status": "no_answer"
+      },
+      "text": "CTC calls the ALVIA 2384 driver. No answer."
+    },
+    {
+      "id": "R6",
+      "t": "2026-01-18T19:48:51",
+      "act": "response",
+      "kind": "radio",
+      "channel": "GSM-R voice · CTC → ALVIA 2384 driver",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "call": {
+        "from": "CTC",
+        "to": "ALVIA 2384 driver",
+        "status": "no_answer"
+      },
+      "text": "CTC calls the ALVIA 2384 driver again. No answer.",
+      "note": "The Alvia driver had died on impact."
+    },
+    {
+      "id": "R7",
+      "t": "2026-01-18T19:49:35",
+      "act": "response",
+      "kind": "radio",
+      "channel": "GSM-R voice · IRYO 6189 driver → CTC Atocha",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "infobae",
+      "location": {
+        "pk": 318.2,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "call": {
+        "from": "IRYO 6189 driver",
+        "to": "CTC",
+        "status": "answered"
+      },
+      "claims": [
+        {
+          "subject": "IRYO 6189",
+          "assertion": "derailed_fouling_adjacent",
+          "by": "IRYO 6189 driver"
+        },
+        {
+          "subject": "track 2",
+          "assertion": "no_train_approaching",
+          "by": "CTC operator"
+        }
+      ],
+      "text": "IRYO 6189 driver: 'It's a derailment and I'm fouling the adjacent track. I need traffic stopped urgently.' CTC: 'No train is coming.' Driver reports fire, leaves the cab, asks for firefighters and ambulances.",
+      "original": "es un descarrilamiento y estoy invadiendo la vía contigua … Necesito que paren el tráfico en las vías urgentemente … no hay ningún tren llegando"
+    },
+    {
+      "id": "R8",
+      "t": "2026-01-18T19:50:00",
+      "act": "response",
+      "kind": "emergency",
+      "channel": "Adif emergency protocol",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.2,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "emergency": {
+        "target": "IRYO 6189",
+        "state": "mobilised"
+      },
+      "text": "Adif mobilises emergency services."
+    },
+    {
+      "id": "R9",
+      "t": "2026-01-18T19:55:00",
+      "act": "response",
+      "kind": "external_112",
+      "channel": "112 Andalucía",
+      "feed": "proposed",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "text": "First 112 call from the Alvia."
+    },
+    {
+      "id": "R10",
+      "t": "2026-01-18T20:02:00",
+      "act": "response",
+      "kind": "emergency",
+      "channel": "Emergency services",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.2,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "emergency": {
+        "target": "IRYO 6189",
+        "state": "on_scene"
+      },
+      "text": "First medical unit reaches the Iryo."
+    },
+    {
+      "id": "R11",
+      "t": "2026-01-18T20:06:16",
+      "act": "response",
+      "kind": "radio",
+      "channel": "GSM-R voice · IRYO 6189 driver → CTC Atocha",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.2,
+        "track": 1
+      },
+      "train": "IRYO 6189",
+      "call": {
+        "from": "IRYO 6189 driver",
+        "to": "CTC",
+        "status": "answered"
+      },
+      "claims": [
+        {
+          "subject": "ALVIA 2384",
+          "assertion": "derailed",
+          "by": "IRYO 6189 driver"
+        }
+      ],
+      "text": "IRYO 6189 driver reports a passenger death and says the Alvia has also derailed.",
+      "note": "Earliest mention of the Alvia's involvement on the control-centre side in the public timeline."
+    },
+    {
+      "id": "R12",
+      "t": "2026-01-18T20:09:58",
+      "act": "response",
+      "kind": "external",
+      "channel": "Adif CPS → 112 Madrid",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "claims": [
+        {
+          "subject": "ALVIA 2384",
+          "assertion": "not_derailed",
+          "by": "Adif CPS"
+        }
+      ],
+      "text": "Adif CPS tells 112 Madrid that the Alvia did NOT derail; it only braked hard.",
+      "note": "This was wrong."
+    },
+    {
+      "id": "R13",
+      "t": "2026-01-18T20:12:27",
+      "act": "response",
+      "kind": "radio",
+      "channel": "GSM-R voice · ALVIA 2384 train manager → CTC",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "call": {
+        "from": "ALVIA 2384 train manager",
+        "to": "CTC",
+        "status": "answered"
+      },
+      "claims": [
+        {
+          "subject": "ALVIA 2384",
+          "assertion": "derailed",
+          "by": "ALVIA 2384 train manager"
+        }
+      ],
+      "text": "ALVIA 2384 train manager: 'half the train is overturned'.",
+      "original": "medio tren volcado"
+    },
+    {
+      "id": "R14",
+      "t": "2026-01-18T20:16:29",
+      "act": "response",
+      "kind": "report",
+      "channel": "Adif Sevilla",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "claims": [
+        {
+          "subject": "ALVIA 2384",
+          "assertion": "derailed",
+          "by": "Adif Sevilla"
+        }
+      ],
+      "text": "Adif Sevilla confirms a second derailed train at the same location."
+    },
+    {
+      "id": "R15",
+      "t": "2026-01-18T20:35:00",
+      "act": "response",
+      "kind": "emergency",
+      "channel": "Emergency services",
+      "feed": "ctc",
+      "provenance": "real",
+      "source": "eswiki",
+      "location": {
+        "pk": 318.85,
+        "track": 2
+      },
+      "train": "ALVIA 2384",
+      "emergency": {
+        "target": "ALVIA 2384",
+        "state": "on_scene"
+      },
+      "text": "First medical team reaches the Alvia — about 52 minutes after the collision.",
+      "note": "37 of the 46 victims were on the Alvia. Autopsies found 45 of the 46 died on impact, so faster arrival would have mattered most for the injured."
+    }
+  ],
+  "reality": {
+    "rail_defect_flagged": null,
+    "alvia_involvement_known": "2026-01-18T20:06:16",
+    "alvia_confirmed_derailed": "2026-01-18T20:16:29",
+    "emergency_at_alvia": "2026-01-18T20:35:00",
+    "collision": "2026-01-18T19:43:42"
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copi</title>
+  <link rel="stylesheet" href="/static/drill/drill.css">
+</head>
+<body>
+  <main class="lobby">
+    <h1>Copi</h1>
+    <p>Two laptops. One drives the train, one is the control tower. They talk by voice.</p>
+    <nav class="seats">
+      <a href="/drill/control">Control tower <span>this laptop</span></a>
+      <a href="/drill/driver">Pilot <span>the other laptop</span></a>
+    </nav>
+    <div class="join" id="join"></div>
+  </main>
+  <script src="/static/drill/common.js"></script>
+  <script>
+    (async () => {
+      const j = await (await fetch("/api/drill/join")).json();
+      const link = j.tunnel || j.lan;
+      $("#join").innerHTML = link ? `Pilot's link: <code>${esc(link)}</code>` : "For a link the pilot can open: <code>./drill.sh --tunnel</code>";
+    })();
+  </script>
+</body>
+</html>

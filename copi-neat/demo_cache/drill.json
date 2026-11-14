@@ -1,0 +1,315 @@
+{
+ "dark_signal|P-03|": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Confirm the signal number is S2-314.",
+    "Is the signal dark or showing a wrong aspect, and which aspect?"
+   ],
+   "cautions": [
+    "Section beyond S2-314 is occupied by AVLO 2187, stopped at PK 314.55. No authority until it clears, whatever the delay costs.",
+    "S2-314 had its lamp replaced three days ago and lamp-proving alarms yesterday. Treat this as a real recurring fault."
+   ],
+   "headline": "AVLO 2187 stopped in the section beyond S2-314. Hold AVE 3142, no authority.",
+   "next_step": "stand",
+   "said_steps": [],
+   "say_to_pilot": "AVE 3142, control. Treat signal S2-314 as at danger. Stay at a stand and confirm the signal number."
+  },
+  "model": "claude-opus-5-5"
+ },
+ "derailment|P-04|": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Are all your coaches on the rails?",
+    "Is the other track clear?",
+    "Any fire, smoke or injuries?"
+   ],
+   "cautions": [
+    "Panel shows IRYO 6021 as derailed; the pilot only said train fault. Treat track 2 as blocked.",
+    "Two earlier track 1 records near PK 318.7 back this report. Stopping ALVIA costs delay only; the stop call works for 107 seconds."
+   ],
+   "headline": "ALVIA 2264 heading for PK 318.5 on track 2, not stopped. Stop it now.",
+   "next_step": "stop",
+   "said_steps": [],
+   "say_to_pilot": ""
+  },
+  "model": "claude-fable-5-2"
+ },
+ "obstruction|P-01|": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Exact location and what the obstruction is",
+    "Whether track 2 is clear under the pilot's train",
+    "Any sign of rock or debris falling from the cutting"
+   ],
+   "cautions": [
+    "Track 1 is shown as stop-clear only once Train B is halted; check the site first."
+   ],
+   "headline": "Train B heading to site: stop track 1 now",
+   "next_step": "stop",
+   "said_steps": [],
+   "say_to_pilot": "Train A, control. Where is it, which track, what is it, and is your track clear?"
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|details": {
+  "brief": {
+   "answered_steps": [
+    "details"
+   ],
+   "ask": [
+    "Exact PK and track of what the pilot hit, and whether the train is stopped.",
+    "Any damage to the pilot's train or signs of derailment."
+   ],
+   "cautions": [
+    "Pilot's report now puts the obstruction on track 2 at PK 311.9, not track 1 at PK 307.8. Both sites are unconfirmed.",
+    "AVE 3142 is coming towards the pilot's position on the other track; the stop call on track 1 must be made now, with the emergency call for track 2 too."
+   ],
+   "headline": "Pilot hit something at PK 311.9 on track 2; AVE 3142 is 3.9 km ahead on track 1, closing fast.",
+   "next_step": "stop",
+   "said_steps": [
+    "caution"
+   ],
+   "say_to_pilot": "ALVIA 2264, tower. Stop your train now if you can. Confirm exact PK and track of what you hit, and whether any part of your train is damaged."
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|details,caution": {
+  "brief": {
+   "answered_steps": [
+    "details"
+   ],
+   "ask": [
+    "Is ALVIA 2264 stopped, and is any part of the train damaged?",
+    "Is the obstruction still on track 2 at PK 311.9?",
+    "Can you see anything on track 1 near PK 307.8 or 311.9?"
+   ],
+   "cautions": [
+    "AVE 3142 is on the other track at 300 km/h. Stop it now, and block track 2 the same way.",
+    "The track 1 report at PK 307.8 is now unconfirmed. Do not clear either line until crews check both sites."
+   ],
+   "headline": "Pilot hit an obstruction at PK 311.9 on track 2; AVE 3142 is 3.7 km away on track 1, heading your way.",
+   "next_step": "stop",
+   "said_steps": [
+    "caution"
+   ],
+   "say_to_pilot": "ALVIA 2264, control. Emergency stop now. Report damage and whether you are clear of the obstruction."
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|stop": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Exact location and what the obstruction is",
+    "Whether track 2 ahead of Train A is clear",
+    "Whether the pilot can see the obstruction from the cab"
+   ],
+   "cautions": [
+    "Train B still heading for the site; hold S1-312 now."
+   ],
+   "headline": "Train B approaching site on track 1, not yet stopped",
+   "next_step": "block",
+   "said_steps": [],
+   "say_to_pilot": "Train A, control. Where is it, which track, what is it, and is your track clear?"
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|stop,block": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Exact position of the obstruction relative to your train",
+    "What the obstruction is",
+    "Is track 2 clear at your position"
+   ],
+   "cautions": [
+    "Train B braking but not stopped; confirm stop before clearing track"
+   ],
+   "headline": "Train B still approaching site; get Train A's facts",
+   "next_step": "details",
+   "said_steps": [],
+   "say_to_pilot": "Train A, control. Where is it, which track, what is it, and is your track clear?"
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|stop,block,details,caution,stopped": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Exact PK of the obstruction and which track it is on.",
+    "What you actually saw on the line.",
+    "Whether your own track 2 is clear ahead of you."
+   ],
+   "cautions": [
+    "Pilot's replies 'all good' and 'power but' do not answer the fact questions and are not a clear report.",
+    "Earlier rated watch cutting at PK 311.3 to 311.6 with loose blocks, plus heavy rain warning today; the obstruction may be a slip."
+   ],
+   "headline": "Pilot's fact answers are still missing; do not treat track 1 as clear. Crew is the pending step.",
+   "next_step": "crew",
+   "said_steps": [
+    "details",
+    "caution"
+   ],
+   "say_to_pilot": "ALVIA 2264, control. Confirm the exact PK, which track, what you saw, and whether your own track is clear. Do not proceed beyond 100 kilometres per hour."
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|stop,block,details,crew": {
+  "brief": {
+   "answered_steps": [
+    "details"
+   ],
+   "ask": [
+    "Which track are you on right now?",
+    "Is AVE 3142 visible ahead of you or on track 1 anywhere?",
+    "What is your current speed?"
+   ],
+   "cautions": [
+    "ALVIA 2264 still shows 113 km/h on the panel, above the 100 you ordered. Check its speed now.",
+    "Cutting at PK 311.3 to 311.6 was rated watch in 2024 for loose blocks. Heavy rain warning until 22:00."
+   ],
+   "headline": "AVE 3142 braking toward slide on track 1; stop not confirmed yet.",
+   "next_step": "stopped",
+   "said_steps": [
+    "caution"
+   ],
+   "say_to_pilot": "ALVIA 2264, confirm which track you are on now. Your report says track 1, but the panel shows track 2."
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|stop,block,details,stopped": {
+  "brief": {
+   "answered_steps": [
+    "stopped"
+   ],
+   "ask": [
+    "Exact PK and track of what the pilot saw.",
+    "Whether ALVIA 2264's own track 2 is clear.",
+    "What 'power but' meant."
+   ],
+   "cautions": [
+    "Pilot's 'all good' and 'power but' are not the fact answers; do not treat the track as clear.",
+    "Heavy rain warning and a 'watch' rated cutting near PK 311.3 may mean more loose material."
+   ],
+   "headline": "Pilot has not given facts; ALVIA 2264 slowed to 100, crew still needed at PK 308.4 track 1.",
+   "next_step": "crew",
+   "said_steps": [
+    "caution"
+   ],
+   "say_to_pilot": "ALVIA 2264, control. Confirm the exact PK, which track, what you saw, and whether your own track is clear."
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "obstruction|P-01|stop,block,stopped": {
+  "brief": {
+   "answered_steps": [
+    "stopped"
+   ],
+   "ask": [
+    "Exact PK of the obstruction and which track it is on.",
+    "What the obstruction is.",
+    "Whether the pilot's own track is clear."
+   ],
+   "cautions": [
+    "Pilot's 'all good' is not an answer to the fact questions; do not treat it as a clear report.",
+    "Track 1 block is unconfirmed on the panel after the garbled transmission; check S1-312 before sending the crew."
+   ],
+   "headline": "Pilot's last reply 'all good' does not answer the PK, track, or own-track questions.",
+   "next_step": "crew",
+   "said_steps": [
+    "details",
+    "caution"
+   ],
+   "say_to_pilot": "ALVIA 2264, control. Confirm again the exact PK, which track, what you saw, and whether your own track is clear."
+  },
+  "model": "claude-haiku-5-5"
+ },
+ "rough_ride|P-02|": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Was the jolt vertical or sideways?",
+    "How hard was the jolt?",
+    "Any alarms or ride change on the train since the jolt?"
+   ],
+   "cautions": [
+    "The pilot has already given PK 318.7, track 1 and 300 km/h, but not jolt direction, severity or train check.",
+    "Positions disagree: radio said IRYO 6021 at PK 321.65, the train describer shows 317.75, past the site. Check which is current."
+   ],
+   "headline": "AVLO 2187 at 300 km/h heads for PK 318.7 unrestricted; restrict track 1 now.",
+   "next_step": "tsr",
+   "said_steps": [],
+   "say_to_pilot": "IRYO 6021, control. Rough ride received. Confirm the PK, the track, vertical or sideways, how hard, and your speed."
+  },
+  "model": "claude-sonnet-5-5"
+ },
+ "urda|P-05|": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Has Train A stayed at a stand since the LZB loss?",
+    "Can Train A see anything ahead on track 2?"
+   ],
+   "cautions": [],
+   "headline": "Train B stopped ahead of Train A, same track",
+   "next_step": "answer",
+   "said_steps": [],
+   "say_to_pilot": "Train A, control. Hold at a stand. Train B is stopped ahead of you at E242."
+  },
+  "model": "claude-opus-5-5"
+ },
+ "urda|P-05|answer": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Train A, confirm you are at a stand.",
+    "Train A, confirm your PK."
+   ],
+   "cautions": [
+    "Panel shows Train A at 43, not at a stand."
+   ],
+   "headline": "Train A running towards stopped Train B",
+   "next_step": "hold",
+   "said_steps": [],
+   "say_to_pilot": "Train A, control. Stop now. Hold at a stand. Train B is stopped ahead at E242."
+  },
+  "model": "claude-opus-5-5"
+ },
+ "urda|P-05|answer,hold": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Train A, confirm your speed now.",
+    "Train A, confirm you are braking to a stand."
+   ],
+   "cautions": [
+    "Do not release to normal running. Train A is at 121."
+   ],
+   "headline": "Train A at 121 heading for Train B",
+   "next_step": "on_sight",
+   "said_steps": [],
+   "say_to_pilot": "Train A, control. Stop now. Train B is stopped ahead at E242."
+  },
+  "model": "claude-opus-5-5"
+ },
+ "urda|P-05|answer,hold,technician": {
+  "brief": {
+   "answered_steps": [],
+   "ask": [
+    "Confirm Train A is braking to a stand",
+    "Confirm Train A's speed now"
+   ],
+   "cautions": [
+    "Release was garbled, wrong signal named. Stop first, then release."
+   ],
+   "headline": "Train A at 167 heading for stopped Train B",
+   "next_step": "on_sight",
+   "said_steps": [],
+   "say_to_pilot": "Train A, control. Stop now. Train B is stopped 2.4 km ahead at E242."
+  },
+  "model": "claude-opus-5-5"
+ }
+}

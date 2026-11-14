@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copi Drill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/drill/classic/drill.css">
+</head>
+<body class="drill lobby-page">
+  <div class="lobby">
+    <h1>Copi Drill</h1>
+    <p class="lede">Two seats, two laptops. The pilot drives and sees only the track. The control tower sees the line,
+      the trains and the protocol, but not the track. They talk on a real voice radio. Copi listens to the radio
+      and speaks only to the tower: the tower decides and gives the orders.</p>
+
+    <div class="seats">
+      <a class="seat-card tower" href="/drill/classic/control">
+        <span class="who-tag tower">Tower</span><h2>Control tower</h2>
+        <p>This laptop. Line diagram, protocol, Copi. Pick the case and press Start.</p>
+      </a>
+      <a class="seat-card pilot" href="/drill/classic/driver" id="pilot-link">
+        <span class="who-tag pilot">Pilot</span><h2>Pilot</h2>
+        <p>The other laptop. Cab view, driving desk, report buttons.</p>
+      </a>
+    </div>
+
+    <section class="lobby-block">
+      <div class="subhead">Link for the pilot's laptop</div>
+      <div id="join" class="join-box">Looking for the link…</div>
+    </section>
+
+    <section class="lobby-block">
+      <div class="subhead">The cases: one protocol and one Claude model each</div>
+      <table class="route-table" id="routes"></table>
+    </section>
+  </div>
+  <script src="/static/drill/classic/common.js"></script>
+  <script>
+    (async () => {
+      const j = await (await fetch("/api/drill/join")).json();
+      const link = j.tunnel || j.lan;
+      $("#join").innerHTML = link
+        ? `<code>${esc(link)}</code><br>` +
+          (j.tunnel ? "https link: the pilot gets the radio." : "LAN link, same Wi-Fi: no microphone on the pilot's laptop. Run <code>./drill.sh --tunnel</code> for the radio.")
+        : "Start the server with <code>./drill.sh</code> (same Wi-Fi) or <code>./drill.sh --tunnel</code> (any network, with microphone) to get a link.";
+      const s = await (await fetch("/api/drill/state?role=control")).json();
+      $("#routes").innerHTML = "<tr><th>Case</th><th>Protocol</th><th>Train</th><th>Copi is</th></tr>" + s.cases.map((c) =>
+        `<tr><td><b>${c.n}. ${esc(c.title)}</b><br><span class="hint">${esc(c.summary)}</span></td><td>${c.protocol} · ${esc(c.protocol_title)}</td>` +
+        `<td>${esc(c.train)}</td><td><span class="chipm">${esc(c.model)}</span></td></tr>`).join("");
+    })();
+  </script>
+</body>
+</html>

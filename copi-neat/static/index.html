@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copi · CTC working memory</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">C</div>
+      <div>
+        <div class="name">Copi</div>
+        <div class="tag">working memory for rail control · the human decides</div>
+      </div>
+    </div>
+
+    <nav class="acts" id="acts"></nav>
+
+    <div class="transport">
+      <button id="btn-reset" title="Restart">↺</button>
+      <button id="btn-play" class="primary" title="Play / pause">▶</button>
+      <button id="btn-step" title="Next event">⏭</button>
+      <select id="speed" title="Replay speed">
+        <option value="0.5">0.5×</option>
+        <option value="1" selected>1×</option>
+        <option value="2">2×</option>
+        <option value="4">4×</option>
+      </select>
+    </div>
+
+    <div class="clock">
+      <div class="clock-date" id="clock-date">—</div>
+      <div class="clock-time" id="clock-time">--:--:--</div>
+    </div>
+
+    <div class="switches">
+      <label class="switch" title="Feed Copi data that today's control room does not receive (onboard telemetry, 112, sensors, inspection records). Off = CTC data only.">
+        <input type="checkbox" id="sw-integrations" checked><span>Proposed integrations</span>
+      </label>
+      <label class="switch" title="Demo aid: pause when a critical recommendation appears so the presenter can decide.">
+        <input type="checkbox" id="sw-autopause" checked><span>Pause on critical</span>
+      </label>
+    </div>
+
+    <div class="copilot-chip" id="copilot-chip">—</div>
+  </header>
+
+  <div id="banner" class="banner hidden"></div>
+  <div id="pause-note" class="pause-note hidden"></div>
+
+  <section class="line-row">
+    <div class="panel line-panel">
+      <div class="panel-head"><h2>Line · LAV Madrid–Sevilla</h2><span class="hint">train describer · positions approximate</span></div>
+      <svg id="line-overview" viewBox="0 0 1000 130" preserveAspectRatio="none"></svg>
+    </div>
+    <div class="panel line-panel detail">
+      <div class="panel-head"><h2>Adamuz detail</h2><span class="hint">PK 317.8 – 319.6</span></div>
+      <svg id="line-detail" viewBox="0 0 600 130" preserveAspectRatio="none"></svg>
+    </div>
+  </section>
+
+  <main class="grid">
+    <section class="panel briefing">
+      <div class="panel-head">
+        <h2>Briefing</h2>
+        <span class="hint" id="briefing-meta"></span>
+      </div>
+      <div id="briefing" class="scroll"></div>
+      <form id="ask" class="ask">
+        <input id="ask-input" autocomplete="off" placeholder="Ask Copi… e.g. “Where was the Alvia when S613 dropped?”">
+        <button type="submit">Ask</button>
+      </form>
+      <div id="qa" class="qa"></div>
+    </section>
+
+    <section class="panel memory">
+      <div class="panel-head"><h2>Working memory</h2><span class="hint" id="memory-count"></span></div>
+      <div id="memory" class="scroll"></div>
+    </section>
+
+    <section class="panel decisions">
+      <div class="panel-head"><h2>Decisions</h2><span class="hint" id="decision-count"></span></div>
+      <div id="decisions" class="scroll"></div>
+    </section>
+
+    <section class="panel feed">
+      <div class="panel-head">
+        <h2>Incoming</h2>
+        <label class="mini"><input type="checkbox" id="show-notes" checked> context notes</label>
+      </div>
+      <div id="feed" class="scroll"></div>
+    </section>
+
+    <section class="panel driver">
+      <div class="panel-head"><h2>Driver tablet</h2><span class="hint">one line, only when it matters</span></div>
+      <div id="driver" class="tablet"></div>
+    </section>
+
+    <section class="panel audit">
+      <div class="panel-head">
+        <h2>Audit log</h2>
+        <div class="head-actions">
+          <button id="btn-handover" class="ghost">Shift handover</button>
+          <button id="btn-reality" class="ghost">Reality check</button>
+          <button id="btn-about" class="ghost">Sources</button>
+        </div>
+      </div>
+      <div id="audit" class="scroll mono"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

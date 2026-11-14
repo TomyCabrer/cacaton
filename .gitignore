@@ -31,3 +31,9 @@ data/raw/
 .DS_Store
 .vscode/
 .idea/
+
+# drill tunnel state (memoria/ and its saved copies)
+.drill_tunnel
+.drill_tunnel.log
+.copi_voice.log
+.pytest_cache/
