@@ -1,0 +1,16 @@
+/* Juan — v25: Copi presentation and website reference tokens */
+:root {
+ --copi-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ --copi-canvas: #fff;
+ --copi-ink: #121212;
+ --copi-symbol: #151515;
+ --copi-secondary: #62626a;
+ --copi-control: #f4f5f7;
+ --copi-core: #f2f3f5;
+ --copi-connector: #b9c0cc;
+ --copi-attention: #f8dfcd;
+ --copi-focus: #4265d2;
+ --copi-weight-heading: 800;
+ --copi-radius-button: 25px;
+ --copi-depth: inset 0 1px 1px #fff, inset 0 -1px 2px #70798528, 0 3px 7px #232c3a12;
+}
