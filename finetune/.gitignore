@@ -1,0 +1,6 @@
+# local only: weights, venv, derived/regenerable files
+checkpoint/
+.venv/
+*.tgz
+results.jsonl
+data/adaption_train.jsonl
