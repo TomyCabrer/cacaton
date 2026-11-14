@@ -1,152 +1,240 @@
-# Copi
+<div align="center">
 
-**A second pair of eyes for rail control rooms. Copi listens to the controller and the driver, checks what is said against the protocol that applies, and flags the controller when the two diverge. The human decides.**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/logo-dark.png">
+  <img src="docs/img/logo-light.png" alt="Copi" width="200">
+</picture>
 
-Built at the Imperial AI Hackathon 2026 (14–15 November, Imperial College London).
+### A second pair of eyes for rail control rooms
 
-## Why
+Copi listens to the controller and the driver, checks every order against the protocol,<br>
+and flags the controller when the two don't match. **The human decides.**
 
-On 28 October 2026 the LZB cab signalling dropped over about 63 km of the Madrid–Sevilla high-speed line. An Iryo stopped near Urda (Toledo) and could not restart. According to preliminary press reports, the control centre then released the AVE following it on the same track to normal running, when the rule after an LZB loss is to continue on sight. About 17 minutes later the AVE hit the stationary train. Reports give 68 to 69 dead.
+<p>
+  <img src="https://img.shields.io/badge/Imperial_AI_Hack-2026-121212?style=flat-square" alt="Imperial AI Hack 2026">
+  <img src="https://img.shields.io/badge/Track_03-Voice%2C_Vision_%26_Generative_Media-4265d2?style=flat-square" alt="Track 03: Voice, Vision and Generative Media">
+  <img src="https://img.shields.io/badge/Fine--tuned_on-Adaption-d52b1e?style=flat-square" alt="Fine-tuned on Adaption">
+  <img src="https://img.shields.io/badge/Built_with-Claude-d97757?style=flat-square" alt="Built with Claude">
+  <img src="https://img.shields.io/badge/Voice-LiveKit-121212?style=flat-square" alt="Voice by LiveKit">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square" alt="Python 3.10+">
+</p>
 
-Press reports describe no mechanism in the control room that checks a spoken order against the rule. Copi is a prototype of that check. It runs in the control centre only, needs nothing installed on the train, and cannot touch the railway: it writes a flag, and the controller acts on it or dismisses it.
+**[Try it](#-try-it-in-60-seconds)** · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [Team](#-team)
 
-The investigation is not finished and the cause is not established. Everything here is built from press reports. The timeline and sources are in [`copi-neat/docs/urda.md`](copi-neat/docs/urda.md).
+<br>
 
-## What is in the repo
+<img src="docs/img/drill.gif" alt="The control tower's screen: the cab signalling fails, the tower clears a train for 160 km/h, and Copi flags it" width="880">
 
-| Folder | What it is | Start with |
+<sub>The tower's screen in our drill. The cab signalling fails, the tower clears a train for 160 km/h, and Copi flags it.</sub>
+
+</div>
+
+<br>
+
+## 🚨 The problem
+
+> **28 October 2026, Urda (Toledo).** The cab signalling (LZB) drops on the Madrid–Sevilla high-speed line. One train stops and cannot restart. The control centre clears the train behind it for normal running, when the rule is to continue on sight. About 17 minutes later the two collide.
+
+Control rooms have panels, alarms and supervisors. None of them checks a **spoken order** against the rule that applies at that moment. Copi does.
+
+<sub>Reconstructed from preliminary press reports. The investigation is still open. Timeline and sources: <a href="copi-neat/docs/urda.md">copi-neat/docs/urda.md</a>.</sub>
+
+## 💡 What Copi does
+
+| 👂 Listens | 📖 Checks | 🚩 Flags |
 |---|---|---|
-| [`copi-neat/`](copi-neat/) | The prototype. A two-laptop drill of the Urda LZB failure (pilot, control tower, Copi), and a replay console for the Adamuz collision of 18 January 2026. FastAPI, plain JavaScript, Claude. | [`copi-neat/README.md`](copi-neat/README.md) |
-| [`finetune/`](finetune/) | A small model (Qwen3.5-4B, fine-tuned on Adaption) that reads a control log and says whether the LZB-failure protocol was followed, and which rule was broken. | [`finetune/REPORT.md`](finetune/REPORT.md) |
-| [`business/`](business/) | Need, market, financials, feasibility, regulation and legal. In Spanish. | [`business/README.md`](business/README.md) |
+| To the radio between driver and controller, in English or Spanish | Each order against the protocol for what is happening on the line | One line on the controller's screen, and only when something is wrong |
 
-## Run the demo
+It runs in the control centre and needs nothing installed on the train. It is advisory: Copi cannot touch the railway.
 
-Needs Python 3.10 or later. Nothing else is required for a first look.
+## ⚡ Try it in 60 seconds
+
+**No API key, no account, no microphone.** You need Python 3.10 or later.
 
 ```bash
 git clone https://github.com/TomyCabrer/cacaton.git
 cd cacaton/copi-neat
-./run.sh                 # first run creates .venv, then serves http://localhost:8000
+./run.sh
 ```
 
-| Page | Address |
-|---|---|
-| Adamuz replay console | http://localhost:8000 |
-| Drill, control tower | http://localhost:8000/drill/control |
-| Drill, pilot | the link shown on the tower's page |
+The first run sets up its own environment. Then open:
 
-For the drill on two laptops, start it with `drill.sh` instead:
+| | |
+|---|---|
+| 🗼 **Control tower** | http://localhost:8000/drill/control |
+| 🚄 **Pilot** (a second window) | http://localhost:8000/drill/driver |
+| 🎬 **Adamuz replay** | http://localhost:8000 |
+
+**Play the drill**
+
+1. In the pilot window, click **Take the seat**. In the tower window, press **Start**.
+2. Four seconds in, LZB fails. Do nothing, and ten seconds later Copi writes *Train A is still moving: 200 km/h.*
+3. Now give the tower's orders. With no microphone set up, speak for the tower from a second terminal:
 
 ```bash
-./drill.sh --tunnel      # tower on this laptop, plus an https link for the pilot's laptop
+tower() { curl -s localhost:8000/api/drill/copi/heard -H 'content-type: application/json' -d "{\"role\":\"control\",\"text\":\"$1\"}"; }
+
+tower "All trains stop"             # then brake in the pilot window with Space
+tower "Train A, continue at 160"    # the Urda mistake. Watch Copi flag it
+tower "Continue on sight at 40"     # the right order. Space releases the brake, ↑ drives on: keep to 40
 ```
 
-What each extra gives you:
+### 🔑 Bring your own keys
 
-| To get | You need |
-|---|---|
-| Live Claude (briefings, questions, reading the tower's orders) | `ANTHROPIC_API_KEY` in `copi-neat/.env` (copy `.env.example`) |
-| Voice radio between pilot and tower | `LIVEKIT_URL`, `LIVEKIT_API_KEY` and `LIVEKIT_API_SECRET` in `copi-neat/.env`, and [`uv`](https://docs.astral.sh/uv/) |
-| A pilot on a different network | `cloudflared` (`brew install cloudflared`) and the `--tunnel` flag |
-
-Without an Anthropic key, Copi replays the Claude outputs recorded in `copi-neat/demo_cache/`, and falls back to the rule engine where nothing is recorded. That makes the demo safe on bad wifi.
-
-Tests:
+**This repo ships no API keys.** Out of the box, Copi replays Claude outputs we recorded, which is why everything above works offline. To run it live, add your own keys. They stay on your machine in a git-ignored file.
 
 ```bash
-.venv/bin/python -m pytest -q    # the replay rules and the drill
+cp .env.example .env
 ```
 
-## The drill
+| To get | Put in `copi-neat/.env` | Where to get it |
+|---|---|---|
+| Live Claude | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com) |
+| Voice radio between pilot and tower | `LIVEKIT_URL`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET` | [cloud.livekit.io](https://cloud.livekit.io) |
+| A different Claude model for the replay | `MEMORIA_MODEL` | optional |
 
-One person is the pilot and sees only the track. The other is the control tower and sees the line, not the track. They talk by voice.
+With LiveKit keys you can run the full drill on two laptops, by voice:
 
-1. Two trains run at 200 km/h. Four seconds after the start, LZB fails.
-2. The tower tells the trains to stop.
-3. With every train at a stand, the tower clears them to continue on sight at 40 km/h.
+```bash
+./drill.sh --tunnel     # the tower runs here; the pilot's link appears on the tower's screen
+```
 
-Copi listens and writes to the tower. It stays silent unless something is going wrong:
+That needs [`uv`](https://docs.astral.sh/uv/) and `cloudflared` (`brew install cloudflared`).
+
+## 🎮 The drill
+
+One person is the pilot and sees only the track. The other is the control tower and sees the line but not the track. They have nothing but their voices.
+
+| 🗼 Control tower | 🚄 Pilot |
+|---|---|
+| <img src="docs/img/tower.png" alt="Control tower screen with a Copi flag" width="440"> | <img src="docs/img/pilot.png" alt="Pilot's view of the track after the LZB failure" width="440"> |
+
+Copi stays silent unless something is going wrong:
 
 | Copi writes | When |
 |---|---|
-| Train A is still moving: 200 km/h. | 10 s after the failure the train is not braking |
-| Train A cleared for 200 km/h. First step: stop all trains. | the tower let a train go on before it had stopped |
-| Train A cleared for 160 km/h. LZB is down: on sight, 40 at most. | after the stop, the tower allowed more than 40, in any wording or language |
-| Train A at 66 km/h. On sight is 40. | too fast after the stop |
-| Train B is stopped 460 m ahead of Train A. | Train A is running out of room to stop |
+| *Train A is still moving: 200 km/h.* | 10 s after the failure, the train is not braking |
+| *Train A cleared for 200 km/h. First step: stop all trains.* | the tower lets a train go on before it has stopped |
+| *Train A cleared for 160 km/h. LZB is down: on sight, 40 at most.* | the tower allows more than 40, in any wording or language |
+| *Train A at 66 km/h. On sight is 40.* | the train is too fast after the stop |
+| *Train B is stopped 460 m ahead of Train A.* | the train is running out of room |
 
-The drill is a simplification, not a replay of the accident. Full rules, keys and options are in [`copi-neat/README.md`](copi-neat/README.md).
+<details>
+<summary><b>🎬 Also in the box: the Adamuz replay console</b></summary>
 
-## How Copi is designed
+<br>
 
-- **Advisory only.** Copi cannot act on the railway. It proposes, and a person approves, rejects or defers.
-- **No language model where seconds count.** Deterministic rules do the fast work with no network. Claude's output arrives a few seconds later and says how old it is.
-- **Evidence or nothing.** Every flag cites the events behind it. A recommendation that cites an event that does not exist is dropped, and the drop is logged.
-- **Quiet by default.** One line when something is wrong, "Nothing to flag" otherwise.
-- **A "no" is respected.** A rejected recommendation comes back only if new evidence raises the urgency.
-- **Honest about its data.** The interface marks which data is real, simulated or counterfactual, and which a control room receives today.
+A second demo replays the real timeline of the Adamuz collision (18 January 2026) in three acts. Copi correlates weak signals in the 22 hours before, stays out of the way in the 8 seconds that belong to automatic protection, and in the 33 minutes after it fuses alarms, tracks unanswered calls and flags contradictions. Every recommendation waits for **Approve**, **Reject** or **Defer**.
 
-## The fine-tuned model
+<img src="docs/img/replay.png" alt="The Adamuz replay console" width="880">
 
-The task: read a timestamped control log from an LZB failure and answer with a verdict, the rule broken, the step and a reason. The protocol is six rules (R1 to R6) taken from the Spanish rail traffic regulation, RCF annex 5ET3; see [`finetune/PROTOCOL.md`](finetune/PROTOCOL.md).
+</details>
 
-Results on 200 held-out synthetic logs:
+## 🧠 How it works
 
-| Metric | Untuned Qwen3.5-4B, rules in prompt | Fine-tuned |
+```mermaid
+flowchart LR
+    P["🚄 Driver"] <-->|"voice radio"| T["🗼 Controller"]
+    P -.->|"speech to text"| R
+    T -.->|"speech to text"| R
+    D["📡 Train speed and position"] --> R
+    subgraph COPI["Copi"]
+        R["Rule engine<br/>instant, no network"] -->|"words the rules cannot read"| L["Claude<br/>any wording, any language"]
+    end
+    R ==> F["🚩 One written flag"]
+    L ==> F
+    F --> H["🧑 The controller decides"]
+```
+
+- **Advisory only.** Copi proposes. A person approves, rejects or defers.
+- **No language model where seconds count.** Rules do the fast work with no network. Claude handles what the rules cannot read.
+- **Evidence or nothing.** Every flag cites the events behind it.
+- **Quiet by default.** One line when something is wrong. Otherwise, *Nothing to flag*.
+
+Stack: FastAPI, plain JavaScript with no build step, Claude, LiveKit. More in [`copi-neat/README.md`](copi-neat/README.md).
+
+## 🎤 Track 03: Voice, Vision & Generative Media
+
+Copi is a voice product. People talk, Copi listens, and the only thing anyone has to learn is to keep talking the way they already do.
+
+| | How Copi uses it |
+|---|---|
+| **Voice in** | Pilot and tower talk over a LiveKit radio. Speech-to-text streams every line to Copi, in English or Spanish. |
+| **Understanding** | Rules read the common orders instantly. Claude reads everything else, however it is phrased. |
+| **Voice out** | Copi can speak its flags to the tower, and stops the moment the tower says "heard". |
+| **Generative media** | An optional Synthesia avatar gives Copi a face that lip-syncs the same audio. |
+
+## 🔬 How we used Adaption
+
+We used **Adaption AutoScientist** to turn a small open model into a protocol checker. It reads a control log from an LZB failure and answers with a verdict, the rule broken, the step, and a reason. The goal is a model that knows the protocol by heart, with no rule book in its prompt, and small enough to run on one GPU.
+
+```mermaid
+flowchart LR
+    A["📝 1,200 synthetic<br/>control logs"] --> B["⬆️ Upload<br/>raw mode"]
+    B --> C["🧪 AutoScientist<br/>Qwen3.5-4B, SFT, LoRA"]
+    C --> D["⏱️ 2 iterations<br/>43 minutes"]
+    D --> E["📦 LoRA adapter<br/>170 MB"]
+    E --> F["✅ Our own eval<br/>200 held-out logs"]
+```
+
+The whole pipeline is a few short scripts on the `adaption` Python SDK:
+
+```python
+ds  = client.datasets.upload_file("train.jsonl", processing_mode="raw")
+run = client.autoscientist.create(dataset_id=ds.dataset_id, model="Qwen/Qwen3.5-4B",
+                                  training_method="instruction", data_format="instruction",
+                                  max_iterations=2)
+with client.autoscientist.with_streaming_response.download(run.id) as r:
+    r.stream_to_file("best-checkpoint.tgz")        # the LoRA adapter
+```
+
+**What we got**
+
+| | Untuned Qwen3.5-4B, rules in the prompt | Fine-tuned on Adaption |
 |---|---|---|
-| Verdict accuracy | 60% | **86%** |
-| Verdict and rule both right | 11% | **86%** |
+| Verdict accuracy | `██████░░░░` 60% | `█████████░` **86%** |
+| Verdict and rule both right | `█░░░░░░░░░` 11% | `█████████░` **86%** |
 | False alarms on 97 compliant logs | 80 | **23** |
-| Violation recall | 100% | 95% |
 
-Read these with three caveats:
+**What Adaption did for us**
 
-- The data is synthetic and templated, so 86% is optimistic and says little about real radio transcripts.
-- On the one realistic case, the Urda reconstruction, the fine-tuned model gets the verdict right and names the wrong rule.
-- The baseline is the untuned 4B model. A frontier model given the same rules has not been run.
+- **No training code and no GPU of our own.** One `create` call, 43 minutes, done.
+- **It searched the settings itself.** AutoScientist chose the LoRA rank, epochs and learning rate, and changed them between its two iterations.
+- **Open weights.** The result is a standard LoRA adapter, so we scored it ourselves with `transformers` and `peft` on a free Colab T4.
+- **We gave feedback.** Seven concrete suggestions for the Adaption team, from hosting tuned checkpoints to label-accuracy evals.
 
-The drill does not use this model yet. Copi in the drill runs on Claude.
+Next step: wire the model into the drill, where Claude does this job today.
 
-Full results are in [`finetune/REPORT.md`](finetune/REPORT.md), what we learned about the platform in [`finetune/ADAPTION.md`](finetune/ADAPTION.md), and the steps to reproduce in [`finetune/README.md`](finetune/README.md).
+📄 [Results](finetune/REPORT.md) · [Our Adaption write-up and feedback](finetune/ADAPTION.md) · [The six protocol rules](finetune/PROTOCOL.md) · [Reproduce it](finetune/README.md)
 
-## The business case
+## 💼 The business
 
-- **Customer:** ADIF. An annual licence of 40,000 € per control position, starting with a paid pilot in one centre.
-- **Market:** about 10 M€ a year in Spain (roughly 240 positions in 19 control centres) and about 125 M€ in Europe. Air traffic control comes after.
-- **Why now:** the Spanish government's safety plan of 3 November 2026 includes "an AI agent" to watch conversations between driver and controller, so far with no supplier, cost or date.
-- **Main risk:** access to ADIF's data, certification, and acceptance by controllers. The technology is the smaller problem.
+| 40,000 € | ~240 | ~10 M€ | ~125 M€ |
+|:---:|:---:|:---:|:---:|
+| per control position, per year | positions in ADIF's 19 control centres | a year in Spain | a year in Europe |
 
-The prices, rollout and costs are the team's assumptions, not published figures, and no lawyer has reviewed the legal part. The detail is in [`business/`](business/).
+- **Customer:** ADIF, starting with a paid pilot in one control centre. Air traffic control comes next.
+- **Why now:** Spain's rail safety plan of 3 November 2026 already asks for "an AI agent" to watch conversations between driver and controller. It has no supplier, cost or date yet.
+- **In perspective:** Copi across all of Spain costs less per year than 5% of a single ERTMS contract.
 
-## Limits
+Need, market, financials, feasibility, regulation and legal are in [`business/`](business/) (in Spanish). The figures are our own assumptions.
 
-- The scenarios are reconstructions from press reports. Neither investigation has published a final report.
-- The 40 km/h cap in the drill comes from press reports. The regulation says only "Marcha a la Vista" and gives no figure.
-- The model evaluation uses synthetic data.
-- This is a hackathon prototype. A real deployment would need a safety assessment (CENELEC EN 50126, 50128 and 50129), operator training, and evaluation with real controllers.
-- We do not claim Copi would have prevented Urda.
+## 📝 Honest notes
 
-## Team
+- The scenarios are rebuilt from press reports, and the Urda investigation is still open.
+- The model was tested on synthetic logs, not real radio.
+- Copi is a hackathon prototype, not a certified safety system.
 
-| Name | Worked on | GitHub |
+## 👥 Team
+
+| | Worked on | GitHub |
 |---|---|---|
-| Tomy | Platform: drill and replay console | @TomyCabrer |
-| Michel | Platform | |
-| Sobri | Fine-tuned model and its evaluation | @j-sobrino |
-| Jaime | Business, market, regulation and legal | @jaimeramaa |
-| Juan | Design and specification | @juaninjr |
+| **Tomy** | Platform: the drill and the replay console | @TomyCabrer |
+| **Michel** | Platform | |
+| **Sobri** | Fine-tuned model and evaluation | @j-sobrino |
+| **Jaime** | Business, market, regulation and legal | @jaimeramaa |
+| **Juan** | Design and specification | @juaninjr |
 
-## Working in this repo
+## 🔗 Links
 
-- `main` always runs. Work on a short branch (`feat/<thing>`), open a pull request, merge fast.
-- Never commit API keys. They go in `.env`, which is git-ignored.
-- Whatever we show on Sunday must run from a clean clone with the steps above.
-
-## Hackathon links
-
-- Website (schedule, tracks, submission): https://imperialaihack.com/login
-- Discord: https://discord.gg/28XrgECKY
-- Event page: https://luma.com/c6zebxau
-- Adaption: https://adaptionlabs.ai
-- Figma for Education: https://www.figma.com/education
+[Imperial AI Hack](https://imperialaihack.com/login) · [Adaption](https://adaptionlabs.ai) · [Discord](https://discord.gg/28XrgECKY) · [Event page](https://luma.com/c6zebxau)
