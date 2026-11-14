@@ -1,0 +1,22 @@
+{
+  "revision": "Juan — v36",
+  "captured_on": "2026-11-14",
+  "capture_type": "Original publisher web-page viewport, 794 × 1123 pixels (A4 proportion). Unaltered screenshots of the opening view; not print-edition scans or the complete article text.",
+  "sources": [
+    {
+      "publisher": "Infobae",
+      "url": "https://www.infobae.com/espana/2026/11/03/oscar-puente-anuncia-un-plan-de-seguridad-ferroviaria-con-inteligencia-artificial-doble-validacion-de-ordenes-y-mejora-de-condiciones-laborales-tras-el-accidente-de-urda/",
+      "file": "infobae-a4.jpg"
+    },
+    {
+      "publisher": "Vozpópuli",
+      "url": "https://www.vozpopuli.com/espana/politica/un-informe-europeo-desmonta-el-plan-de-ferroviario-del-gobierno-los-gemelos-digitales-no-predicen-fallos-en-tiempo-real.html",
+      "file": "vozpopuli-a4.jpg"
+    }
+  ],
+  "opening": {
+    "es": "115. Ni uno más.",
+    "en": "115. Not one more.",
+    "provenance": "115 refers to victims, as specified by Juan. Count, period and underlying incidents have not been independently verified; the phrase expresses an aim, not a validated safety guarantee."
+  }
+}

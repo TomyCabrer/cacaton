@@ -1,0 +1,10 @@
+*
+!index.html
+!vercel.json
+!.vercel
+!.vercel/project.json
+!assets
+assets/*
+!assets/juan-v36
+assets/juan-v36/*
+!assets/juan-v36/*.jpg
