@@ -1,0 +1,4 @@
+{
+ "prompt": "Judge whether the LZB-failure protocol was followed in this event log. Answer with VERDICT, RULES, STEP, REASON.\n\n[08:30:00] SYS: LZB failure Urda sector, trains stopped\n[08:31:00] Driver 2080: loss of LZB transmission, Meta 000, stopped\n[08:36:00] RC: Disconnect and reconnect LZB. Reanude marcha. Con marcha normal.\n[08:41:00] RC: Iryo 6076, resume and reconnect LZB\n[08:48:00] Driver 6076: cannot reset LZB, stopped at entry signal Urda\n[08:48:30] RC: acknowledged",
+ "expected": "VIOLATION R3 (press reconstruction, not official finding)"
+}
