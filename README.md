@@ -14,18 +14,20 @@ and flags the controller when the two don't match. **The human decides.**
   <img src="https://img.shields.io/badge/Imperial_AI_Hack-2026-121212?style=flat-square" alt="Imperial AI Hack 2026">
   <img src="https://img.shields.io/badge/Track_03-Voice%2C_Vision_%26_Generative_Media-4265d2?style=flat-square" alt="Track 03: Voice, Vision and Generative Media">
   <img src="https://img.shields.io/badge/Fine--tuned_on-Adaption-d52b1e?style=flat-square" alt="Fine-tuned on Adaption">
+  <a href="https://github.com/TomyCabrer/cacaton/releases/tag/lzb-adapter-v1"><img src="https://img.shields.io/badge/Model-lzb--adapter--v1-2ea44f?style=flat-square" alt="Model: lzb-adapter-v1"></a>
   <img src="https://img.shields.io/badge/Built_with-Claude-d97757?style=flat-square" alt="Built with Claude">
   <img src="https://img.shields.io/badge/Voice-LiveKit-121212?style=flat-square" alt="Voice by LiveKit">
   <img src="https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square" alt="Python 3.10+">
 </p>
 
-**[Try it](#-try-it-in-60-seconds)** · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [Team](#-team)
+**[▶ Watch the demo](video/Video%20demo_v39.mp4)** · [Try it](#-try-it-in-60-seconds) · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [Team](#-team)
 
 <br>
 
-<img src="docs/img/drill.gif" alt="The control tower's screen: the cab signalling fails, the tower clears a train for 160 km/h, and Copi flags it" width="880">
+<a href="video/Video%20demo_v39.mp4"><img src="docs/img/demo.gif" alt="Our demo video in nine frames: the cab signalling fails, Copi flags the missed stop, the controller orders the stop, Copi flags a 200 km/h clearance, and the controller corrects it to 40" width="880"></a>
 
-<sub>The tower's screen in our drill. The cab signalling fails, the tower clears a train for 160 km/h, and Copi flags it.</sub>
+<sub>Nine frames from our demo video. One person drives, the other controls, and Copi flags two mistakes.<br>
+<b><a href="video/Video%20demo_v39.mp4">▶ Watch the full demo with sound</a></b> (1 min 32 s).</sub>
 
 </div>
 
@@ -79,9 +81,13 @@ tower "Train A, continue at 160"    # the Urda mistake. Watch Copi flag it
 tower "Continue on sight at 40"     # the right order. Space releases the brake, ↑ drives on: keep to 40
 ```
 
+This is what the tower's screen shows:
+
+<img src="docs/img/drill.gif" alt="The control tower's screen: the cab signalling fails, the tower clears a train for 160 km/h, and Copi flags it" width="880">
+
 ### 🔑 Bring your own keys
 
-**This repo ships no API keys.** Out of the box, Copi replays Claude outputs we recorded, which is why everything above works offline. To run it live, add your own keys. They stay on your machine in a git-ignored file.
+**This repo ships no API keys, and nobody shares one.** Each person runs Copi on their own LLM key. Until you add a key, Copi replays Claude outputs we recorded, which is why the steps above need no account. To run it live, add your own keys. They stay on your machine in a git-ignored file.
 
 ```bash
 cp .env.example .env
@@ -203,6 +209,8 @@ with client.autoscientist.with_streaming_response.download(run.id) as r:
 - **Open weights.** The result is a standard LoRA adapter, so we scored it ourselves with `transformers` and `peft` on a free Colab T4.
 - **We gave feedback.** Seven concrete suggestions for the Adaption team, from hosting tuned checkpoints to label-accuracy evals.
 
+**📦 The model is published.** The trained adapter is in the [`lzb-adapter-v1` release](https://github.com/TomyCabrer/cacaton/releases/tag/lzb-adapter-v1): a LoRA for `Qwen/Qwen3.5-4B`, 160 MB to download. [`finetune/README.md`](finetune/README.md) shows how to score it on a GPU (a free Colab T4 works).
+
 Next step: wire the model into the drill, where Claude does this job today.
 
 📄 [Results](finetune/REPORT.md) · [Our Adaption write-up and feedback](finetune/ADAPTION.md) · [The six protocol rules](finetune/PROTOCOL.md) · [Reproduce it](finetune/README.md)
@@ -230,10 +238,9 @@ Need, market, financials, feasibility, regulation and legal are in [`business/`]
 | | Worked on | GitHub |
 |---|---|---|
 | **Tomy** | Platform: the drill and the replay console | @TomyCabrer |
-| **Michel** | Platform | |
 | **Sobri** | Fine-tuned model and evaluation | @j-sobrino |
 | **Jaime** | Business, market, regulation and legal | @jaimeramaa |
-| **Juan** | Design and specification | @juaninjr |
+| **Juan** | Design, specification and the demo video | @juaninjr |
 
 ## 🔗 Links
 
