@@ -1,11 +1,11 @@
-# Video demo_v39
+# Video demo_v56
 
-[Watch or download Video demo_v39](Video%20demo_v39.mp4)
+[Watch or download Video demo_v56](../local-preview/assets/video/copi.mp4)
 
-Juan — v39 · 1 min 32 sec · 1920 × 1080 · MP4
+Juan — v56 · 1 min 06 sec · 1920 × 1080 · MP4 (H.264 / AAC)
 
-The current Copi demo follows the controller and driver, with separate narration and a cumulative event timeline.
+The current repository video is the supplied Copi team presentation. It is not embedded on the website; Juan — v57 restores the previous quote-led opening. Its full duration and audio are retained in a web-optimized copy. The original 4K source remains local.
 
 ## Future video updates
 
-Keep one current demo MP4 in this folder. When Juan requests a later upload, replace the current video, use the new revision label, and update this README link. Do not accumulate multiple demo videos here; earlier revisions remain in Git history.
+Keep one current presentation MP4 at `local-preview/assets/video/copi.mp4`, preserved in the repository. When Juan requests a later upload, replace that file and its poster, update this revision label and update this link. Website embedding requires a separate request. Earlier revisions remain in Git history.
