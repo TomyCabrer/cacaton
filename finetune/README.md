@@ -97,7 +97,8 @@ with client.autoscientist.with_streaming_response.download(run_id) as r:
 # then: zstandard + tarfile to extract into checkpoint/extracted
 ```
 
-The adapter (170 MB, `adapter_model.safetensors`) is **not in git** (gitignored). Ask Sobri for it, or re-download from the run.
+The adapter (170 MB, `adapter_model.safetensors`) is **not in git** (gitignored; git rejects files over 100 MB). Download it from the
+[`lzb-adapter-v1` release](https://github.com/TomyCabrer/cacaton/releases/tag/lzb-adapter-v1) (`lzb-adapter-qwen3.5-4b.tar.gz`, 160 MB, repo access needed), or re-download it from the run.
 
 ## Evaluating (needs a GPU; Colab T4 works)
 
