@@ -20,7 +20,7 @@ and flags the controller when the two don't match. **The human decides.**
   <img src="https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square" alt="Python 3.10+">
 </p>
 
-**[▶ Watch the demo](https://github.com/user-attachments/assets/cf55fdb6-f108-46ef-9a5b-277d937b7882)** · [Try it](#-try-it-in-60-seconds) · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [Team](#-team)
+**[▶ Watch the demo](https://github.com/user-attachments/assets/cf55fdb6-f108-46ef-9a5b-277d937b7882)** · **[🌐 copi115.com](https://www.copi115.com/)** · [Try it](#-try-it-in-60-seconds) · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [What's next](#-where-copi-goes-next) · [Team](#-team)
 
 <br>
 
@@ -226,6 +226,17 @@ Next step: wire the model into the drill, where Claude does this job today.
 
 Need, market, financials, feasibility, regulation and legal are in [`business/`](business/) (in Spanish). The figures are our own assumptions.
 
+## 🔭 Where Copi goes next
+
+Spanish rail is the first case. The method is the same anywhere a controller gives safety orders by voice: listen to the radio, check each order against the written protocol, flag the mismatch.
+
+| 🌍 More countries | ✈️ Air traffic control | 🎓 Training |
+|---|---|---|
+| Every European network has control centres like ADIF's and relies on spoken orders when the signalling drops. By our estimate that is about 3,200 control positions. | The same problem: a controller, a radio and a protocol. The European project HAAWAII caught 82% of readback errors, with a 67% false-alarm rate. Precision is the hard part. | Degraded running is rare, so controllers and drivers get little practice at it. The drill in this repo is already a two-seat exercise, and Copi flags each mistake with the evidence behind it. |
+| **What it takes:** each country's rulebook, and radio data in its language. Our model is still weaker in Spanish (78%) than in English (95%). ADIF is the reference, with the same safety case. | **What it takes:** aviation phraseology, and surveillance data in place of train data. Checking the voice against where the aircraft is should cut the false alarms. Customers such as ENAIRE, Spain's air navigation provider. We have not sized this market. | **What it takes:** more cases. The engine holds five, one per protocol. It runs on two laptops and touches nothing live, so it can start in a training centre before any control room. Each session also produces the spoken radio data the model lacks today. |
+
+<sub>Figures and sources: <a href="business/02%20Mercado.md">business/02 Mercado.md</a> and <a href="finetune/REPORT.md">finetune/REPORT.md</a>.</sub>
+
 ## 📝 Honest notes
 
 - The scenarios are rebuilt from press reports, and the Urda investigation is still open.
@@ -243,4 +254,4 @@ Need, market, financials, feasibility, regulation and legal are in [`business/`]
 
 ## 🔗 Links
 
-[Imperial AI Hack](https://imperialaihack.com/login) · [Adaption](https://adaptionlabs.ai) · [Discord](https://discord.gg/28XrgECKY) · [Event page](https://luma.com/c6zebxau)
+[Copi website](https://www.copi115.com/) · [Imperial AI Hack](https://imperialaihack.com/login) · [Adaption](https://adaptionlabs.ai) · [Discord](https://discord.gg/28XrgECKY) · [Event page](https://luma.com/c6zebxau)
