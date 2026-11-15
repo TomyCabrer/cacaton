@@ -136,6 +136,12 @@ A second demo replays the real timeline of the Adamuz collision (18 January 2026
 
 ## 🧠 How it works
 
+The protocol, with Copi in the loop:
+
+<img src="docs/img/flow.png" alt="Flowchart of the protocol with Copi. An incident on the line starts it, and Copi listens to controller and driver. The controller gives an order. Decision: does the order follow the protocol? If not, Copi alerts the controller, writes what is wrong, the controller decides and gives a new order. If it does, the driver carries out the order. Decision: does the driver follow the order? If not, Copi alerts the controller, writes what is wrong and can speak to the driver, and the driver acts again. If so, Copi stays quiet: nothing to flag. Decision: is the protocol complete? If not, back to the controller's next order. If so, end." width="880">
+
+Inside Copi:
+
 ```mermaid
 flowchart LR
     P["🚄 Driver"] <-->|"voice radio"| T["🗼 Controller"]
@@ -172,14 +178,7 @@ Copi is a voice product. People talk, Copi listens, and the only thing anyone ha
 
 We used **Adaption AutoScientist** to turn a small open model into a protocol checker. It reads a control log from an LZB failure and answers with a verdict, the rule broken, the step, and a reason. The goal is a model that knows the protocol by heart, with no rule book in its prompt, and small enough to run on one GPU.
 
-```mermaid
-flowchart LR
-    A["📝 1,200 synthetic<br/>control logs"] --> B["⬆️ Upload<br/>raw mode"]
-    B --> C["🧪 AutoScientist<br/>Qwen3.5-4B, SFT, LoRA"]
-    C --> D["⏱️ 2 iterations<br/>43 minutes"]
-    D --> E["📦 LoRA adapter<br/>170 MB"]
-    E --> F["✅ Our own eval<br/>200 held-out logs"]
-```
+<img src="docs/img/adaption-flow.png" alt="Flowchart of how we used Adaption. Start: a small open model. We write 1,200 synthetic control logs and upload them to Adaption in raw mode. AutoScientist fine-tunes Qwen3.5-4B. Decision: target reached, or 2 iterations done? If not, AutoScientist changes its settings (LoRA rank, epochs, learning rate) and fine-tunes again. If so, after 2 iterations and 43 minutes, we download the LoRA adapter (170 MB) and score it on 200 held-out logs on a free Colab T4. Decision: better than the untuned model? If not, we improve the data and start again. If so, at 86% verdict accuracy against 60%, we publish the adapter as lzb-adapter-v1. End: a protocol checker." width="540">
 
 The whole pipeline is a few short scripts on the `adaption` Python SDK:
 
