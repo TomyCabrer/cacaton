@@ -16,7 +16,7 @@ and flags the controller when the two don't match. **The human decides.**
   <img src="https://img.shields.io/badge/Fine--tuned_on-Adaption-d52b1e?style=flat-square" alt="Fine-tuned on Adaption">
   <a href="https://github.com/TomyCabrer/cacaton/releases/tag/lzb-adapter-v1"><img src="https://img.shields.io/badge/Model-lzb--adapter--v1-2ea44f?style=flat-square" alt="Model: lzb-adapter-v1"></a>
   <img src="https://img.shields.io/badge/Built_with-Claude-d97757?style=flat-square" alt="Built with Claude">
-  <img src="https://img.shields.io/badge/Voice-LiveKit-121212?style=flat-square" alt="Voice by LiveKit">
+  <img src="https://img.shields.io/badge/Voice-ElevenLabs-121212?style=flat-square" alt="Voice by ElevenLabs">
   <img src="https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square" alt="Python 3.10+">
 </p>
 
