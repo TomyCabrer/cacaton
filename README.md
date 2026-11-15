@@ -20,7 +20,7 @@ and flags the controller when the two don't match. **The human decides.**
   <img src="https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square" alt="Python 3.10+">
 </p>
 
-**[▶ Watch the demo](https://github.com/user-attachments/assets/cf55fdb6-f108-46ef-9a5b-277d937b7882)** · **[🌐 copi115.com](https://www.copi115.com/)** · [Try it](#-try-it-in-60-seconds) · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [What's next](#-where-copi-goes-next) · [Team](#-team)
+**[▶ Watch the demo](https://github.com/user-attachments/assets/cf55fdb6-f108-46ef-9a5b-277d937b7882)** · **[🌐 copi115.com](https://www.copi115.com/)** · **[📑 Pitch deck](Copi_presentation.pdf)** · [Try it](#-try-it-in-60-seconds) · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [What's next](#-where-copi-goes-next) · [Team](#-team)
 
 <br>
 
@@ -212,6 +212,17 @@ Next step: wire the model into the drill, where Claude does this job today.
 
 📄 [Results](finetune/REPORT.md) · [Our Adaption write-up and feedback](finetune/ADAPTION.md) · [The six protocol rules](finetune/PROTOCOL.md) · [Reproduce it](finetune/README.md)
 
+## 📑 The pitch deck
+
+<div align="center">
+
+<a href="Copi_presentation.pdf"><img src="docs/img/deck.png" alt="A slide from our pitch deck: Copi hears every order and flags the ones that break protocol. It listens, knows the rule, spots the error, and the human decides." width="720"></a><br>
+<sub><b><a href="Copi_presentation.pdf">Open the pitch deck</a></b> (PDF, 8 slides).</sub>
+
+</div>
+
+The slides we present with: what happened at Urda, the check nobody makes, how Copi makes it, who has to buy it, what it costs, and the team.
+
 ## 💼 The business
 
 | 40,000 € | ~240 | ~10 M€ | ~125 M€ |
@@ -252,4 +263,4 @@ Spanish rail is the first case. The method is the same anywhere a controller giv
 
 ## 🔗 Links
 
-[Copi website](https://www.copi115.com/) · [Imperial AI Hack](https://imperialaihack.com/login) · [Adaption](https://adaptionlabs.ai) · [Discord](https://discord.gg/28XrgECKY) · [Event page](https://luma.com/c6zebxau)
+[Copi website](https://www.copi115.com/) · [Pitch deck](Copi_presentation.pdf) · [Imperial AI Hack](https://imperialaihack.com/login) · [Adaption](https://adaptionlabs.ai) · [Discord](https://discord.gg/28XrgECKY) · [Event page](https://luma.com/c6zebxau)
