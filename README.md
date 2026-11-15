@@ -20,14 +20,14 @@ and flags the controller when the two don't match. **The human decides.**
   <img src="https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square" alt="Python 3.10+">
 </p>
 
-**[▶ Watch the demo](video/Video%20demo_v39.mp4)** · [Try it](#-try-it-in-60-seconds) · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [Team](#-team)
+**[▶ Watch the demo](https://github.com/user-attachments/assets/cf55fdb6-f108-46ef-9a5b-277d937b7882)** · [Try it](#-try-it-in-60-seconds) · [How it works](#-how-it-works) · [Track 03](#-track-03-voice-vision--generative-media) · [Adaption](#-how-we-used-adaption) · [Business](#-the-business) · [Team](#-team)
 
 <br>
 
-<a href="video/Video%20demo_v39.mp4"><img src="docs/img/demo.gif" alt="Our demo video in nine frames: the cab signalling fails, Copi flags the missed stop, the controller orders the stop, Copi flags a 200 km/h clearance, and the controller corrects it to 40" width="880"></a>
+https://github.com/user-attachments/assets/cf55fdb6-f108-46ef-9a5b-277d937b7882
 
-<sub>Nine frames from our demo video. One person drives, the other controls, and Copi flags two mistakes.<br>
-<b><a href="video/Video%20demo_v39.mp4">▶ Watch the full demo with sound</a></b> (1 min 32 s).</sub>
+<sub>Our demo video (1 min 32 s). One person drives, the other controls, and Copi flags two mistakes.<br>
+GitHub starts it muted, so turn the sound on. The 1080p original is in <a href="video/Video%20demo_v39.mp4?raw=true">video/</a> (50 MB download).</sub>
 
 </div>
 
@@ -65,7 +65,6 @@ The first run sets up its own environment. Then open:
 |---|---|
 | 🗼 **Control tower** | http://localhost:8000/drill/control |
 | 🚄 **Pilot** (a second window) | http://localhost:8000/drill/driver |
-| 🎬 **Adamuz replay** | http://localhost:8000 |
 
 **Play the drill**
 
